@@ -36,6 +36,9 @@ body {
 
 /* ================= BRAND / LOGO ================= */
 .brand {
+  background-color: #5B3765;
+  padding: 10px 18px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
 }
