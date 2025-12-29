@@ -210,4 +210,9 @@ body {
   align-items: center;
 }
 
+.logo {
+  max-height: 55px;
+}
+
+
 
