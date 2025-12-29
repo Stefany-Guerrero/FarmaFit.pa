@@ -185,3 +185,8 @@ body {
     margin-top: 60px;
   }
 }
+
+.header nav a {
+  letter-spacing: 0.5px;
+}
+
