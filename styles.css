@@ -37,6 +37,7 @@ body {
   margin-left: 15px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1rem;   /* ← agranda el texto */
 }
 
 /* HERO */
