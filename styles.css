@@ -134,4 +134,56 @@ body {
   margin-top: 40px;
 }
 
+/* =========================
+   RESPONSIVE - CELULARES
+========================= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  .header-flex {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+  }
+
+  .header nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  /* CONTENEDORES */
+  .container {
+    padding: 30px 20px;
+  }
+
+  /* INFO */
+  .info-grid {
+    gap: 40px;
+  }
+
+  /* CATEGORIES / PRODUCTOS */
+  .categories {
+    margin-top: 40px;
+  }
+
+  .category {
+    padding: 30px 20px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 60px;
+  }
+}
+
+
 
