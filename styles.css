@@ -1,4 +1,4 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,24 +6,24 @@
   font-family: Arial, sans-serif;
 }
 
-/* BODY */
+/* ================= BODY ================= */
 body {
   line-height: 1.6;
   background: #ffffff;
   color: #5B3765;
 }
 
-/* CONTENEDOR */
+/* ================= CONTENEDOR ================= */
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   background: #5B3765;
-  color: #fff;
+  padding: 20px 0;
 }
 
 .header-flex {
@@ -32,61 +32,75 @@ body {
   align-items: center;
 }
 
-.header a {
-  color: #fff;
-  margin-left: 15px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 2.0rem;   /* ← agranda el texto */
+/* LOGO */
+.logo {
+  height: 90px;
+  width: auto;
 }
 
-/* HERO */
+/* NAV */
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+/* ================= HERO ================= */
 .hero {
   background: #F3CCDE;
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
 }
 
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #5B3765;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  color: #5B3765;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
 }
 
-/* BOTONES */
+/* ================= BOTONES ================= */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 14px 30px;
   background: #5B3765;
   color: #fff;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   background: #9E6899;
+  transform: translateY(-3px);
 }
 
-/* FEATURES ❌ OCULTADAS */
+/* ================= FEATURES (OCULTAS) ================= */
 .features {
   display: none;
 }
 
-/* INFO */
+/* ================= INFO ================= */
 .info {
   background: #ffffff;
 }
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
   align-items: center;
 }
 
@@ -96,98 +110,98 @@ body {
 
 .placeholder {
   background: #F3CCDE;
-  height: 220px;
-  border-radius: 10px;
+  height: 240px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5B3765;
   font-weight: bold;
 }
 
-/* CATEGORIES / PRODUCTOS */
+/* ================= PRODUCTOS ================= */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .category {
   background: #D6A8C4;
   color: #5B3765;
-  padding: 40px 20px;
+  padding: 50px 20px;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 14px;
   font-weight: bold;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .category:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
   background: #5B3765;
   color: #fff;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 25px;
+  margin-top: 80px;
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-
-  .logo {
-    height: 65px;
-  }
 
   /* HEADER */
   .header-flex {
     flex-direction: column;
-    gap: 10px;
-    padding: 15px 0;
+    gap: 20px;
+  }
+
+  .logo {
+    height: 70px;
   }
 
   .header nav {
-    display: flex;
-    gap: 15px;
+    gap: 20px;
+  }
+
+  .header nav a {
+    font-size: 1.2rem;
   }
 
   /* HERO */
   .hero {
-    padding: 60px 20px;
+    padding: 80px 20px;
   }
 
   .hero h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  /* CONTENEDORES */
+  /* CONTENEDOR */
   .container {
-    padding: 30px 20px;
+    padding: 50px 20px;
   }
 
   /* INFO */
   .info-grid {
-    gap: 40px;
+    gap: 50px;
   }
 
-  /* CATEGORIES / PRODUCTOS */
+  /* PRODUCTOS */
   .categories {
-    margin-top: 40px;
+    gap: 25px;
   }
 
   .category {
-    padding: 30px 20px;
+    padding: 40px 20px;
   }
 
   /* FOOTER */
   .footer {
-    margin-top: 60px;
+    margin-top: 100px;
   }
-}
-
-.header nav a {
-  letter-spacing: 0.5px;
 }
 
