@@ -41,10 +41,11 @@ body {
 }
 
 .logo {
-  height: auto;
-  max-height: 70px;   /* 🔥 AQUÍ controlas el tamaño real */
+  height: 90px;               /* ⬅️ TAMAÑO VISUAL REAL */
   width: auto;
+  max-width: none;
   object-fit: contain;
+  display: block;
 }
 
 /* ================= NAV ================= */
@@ -161,22 +162,20 @@ body {
   padding: 25px;
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-
   .header {
     height: auto;
     padding: 15px 0;
+  }
+
+  .logo {
+    height: 60px;
   }
 
   .header-flex {
     flex-direction: column;
     gap: 12px;
   }
-
-  .logo {
-  max-height: 55px;
-}
 
   .header nav {
     gap: 20px;
