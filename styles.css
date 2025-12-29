@@ -134,10 +134,11 @@ body {
   margin-top: 40px;
 }
 
-/* =========================
-   RESPONSIVE - CELULARES
-========================= */
 @media (max-width: 768px) {
+  .logo {
+    height: 65px;
+  }
+}
 
   /* HEADER */
   .header-flex {
@@ -193,7 +194,7 @@ body {
 }
 
 .logo {
-  height: 150px;
+  height: 200px;
   width: auto;
 }
 
