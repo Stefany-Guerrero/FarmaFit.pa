@@ -20,12 +20,11 @@ body {
   padding: 0 20px;
 }
 
-/* ================= HEADER ================= */
 .header {
-  background: #5B3765;
-  height: 90px;                 /* 🔒 ALTURA CONTROLADA */
+  background-color: #5b3b6e;
+  height: 100px;        /* ⬅ más espacio para el logo */
   display: flex;
-  align-items: center;
+  align-items: center; /* ⬅ centra verticalmente */
 }
 
 .header-flex {
@@ -42,11 +41,10 @@ body {
 }
 
 .logo {
-  height: 50px;                 /* 🔥 TAMAÑO REAL */
-  max-height: 50px;
+  height: auto;
+  max-height: 70px;   /* 🔥 AQUÍ controlas el tamaño real */
   width: auto;
   object-fit: contain;
-  display: block;
 }
 
 /* ================= NAV ================= */
@@ -177,8 +175,8 @@ body {
   }
 
   .logo {
-    height: 45px;
-  }
+  max-height: 55px;
+}
 
   .header nav {
     gap: 20px;
