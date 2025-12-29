@@ -135,10 +135,10 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .logo {
     height: 65px;
   }
-}
 
   /* HEADER */
   .header-flex {
@@ -185,23 +185,3 @@ body {
     margin-top: 60px;
   }
 }
-
-/* BRAND (LOGO + NOMBRE) */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo {
-  height: 250px;
-  width: auto;
-}
-
-.brand h1 {
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-
-
-
