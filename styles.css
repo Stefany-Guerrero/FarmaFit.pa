@@ -196,6 +196,65 @@ body {
   }
 }
 
+/* ================= LOGIN ================= */
+
+.login-body {
+  background: #F3CCDE;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.login-logo {
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #5B3765;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #5B3765;
+}
+
+.login-options {
+  margin-top: 20px;
+}
+
+.guest-link {
+  color: #5B3765;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.guest-link:hover {
+  text-decoration: underline;
+}
+
+
 
 
 
