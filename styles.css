@@ -6,7 +6,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* ================= BODY ================= */
+/* ================= BODY GENERAL ================= */
 body {
   line-height: 1.6;
   background: #ffffff;
@@ -32,18 +32,19 @@ body {
   align-items: center;
 }
 
+/* LOGO */
 .brand {
   display: flex;
   align-items: center;
-  background: transparent; /* ❌ quita el recuadro */
-  padding: 0;              /* ❌ quita el espacio extra */
+  background: transparent;
+  padding: 0;
 }
 
 .logo {
-  height: 65px;            /* ✅ tamaño correcto */
+  height: 65px;
   width: auto;
   display: block;
-  background: transparent; /* 🔒 por seguridad */
+  background: transparent;
 }
 
 /* NAV */
@@ -87,19 +88,16 @@ body {
   background: #5B3765;
   color: #ffffff;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 999px; /* 👈 redondeado global */
   font-weight: bold;
   transition: background 0.3s, transform 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
   background: #9E6899;
   transform: translateY(-3px);
-}
-
-/* ================= FEATURES ================= */
-.features {
-  display: none;
 }
 
 /* ================= INFO ================= */
@@ -113,10 +111,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
   align-items: center;
-}
-
-.info h3 {
-  margin-bottom: 10px;
 }
 
 .placeholder {
@@ -159,6 +153,83 @@ body {
   padding: 25px;
 }
 
+/* ================= LOGIN ================= */
+
+/* BODY SOLO PARA LOGIN */
+.login-body {
+  background: #F3CCDE;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CAJA LOGIN */
+.login-container {
+  background: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* LOGO LOGIN */
+.login-logo {
+  height: 70px;
+  margin-bottom: 20px;
+}
+
+/* TITULO */
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #5B3765;
+}
+
+/* FORM */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUTS OVALADOS */
+.login-form input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 15px;
+  border-radius: 999px; /* 👈 OVALADOS */
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #5B3765;
+}
+
+/* BOTÓN LOGIN */
+.login-form .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* OPCIONES */
+.login-options {
+  margin-top: 20px;
+}
+
+.guest-link {
+  color: #5B3765;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.guest-link:hover {
+  text-decoration: underline;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
 
@@ -196,63 +267,6 @@ body {
   }
 }
 
-/* ================= LOGIN ================= */
-
-.login-body {
-  background: #F3CCDE;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.login-container {
-  background: #ffffff;
-  padding: 40px;
-  width: 100%;
-  max-width: 380px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-.login-logo {
-  height: 70px;
-  margin-bottom: 20px;
-}
-
-.login-container h2 {
-  margin-bottom: 25px;
-  color: #5B3765;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-.login-form input:focus {
-  outline: none;
-  border-color: #5B3765;
-}
-
-.login-options {
-  margin-top: 20px;
-}
-
-.guest-link {
-  color: #5B3765;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.guest-link:hover {
-  text-decoration: underline;
-}
 
 
 
