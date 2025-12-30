@@ -3,62 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FarmaFit</title>
+  <title>FarmaFit | Iniciar sesión</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="login-body">
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header-flex">
+  <main class="login-container">
 
-    <div class="brand">
-      <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
-    </div>
+    <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="login-logo">
 
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#">Productos</a>
-      <a href="#">Contacto</a>
-      <a href="#">Comprar</a>
-    </nav>
+    <h1>Bienvenido a FarmaFit</h1>
+    <p>Inicia sesión para continuar</p>
 
-  </div>
-</header>
+    <form class="login-form">
+      <input type="email" placeholder="Correo electrónico" required>
+      <input type="password" placeholder="Contraseña" required>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h2>Catálogo de Productos</h2>
-    <p>Productos saludables al mejor precio.</p>
-    <a href="#" class="btn">Ver productos</a>
-  </div>
-</section>
+      <button type="submit">Iniciar sesión</button>
+      <button type="button" class="register-btn">Registrarse</button>
+    </form>
 
-<!-- INFO -->
-<section class="info">
-  <div class="container info-grid">
-    <div>
-      <h3>Conócenos</h3>
-      <p>Somos una tienda dedicada al bienestar y la salud.</p>
-      <a href="#" class="btn">Leer más</a>
-    </div>
-    <div class="placeholder">Contenido visual</div>
-  </div>
-</section>
-
-<!-- CATEGORIES -->
-<section class="categories container">
-  <div class="category">Producto 1</div>
-  <div class="category">Producto 2</div>
-  <div class="category">Producto 3</div>
-  <div class="category">Producto 4</div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2025 FarmaFit</p>
-</footer>
+  </main>
 
 </body>
 </html>
