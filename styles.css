@@ -32,16 +32,18 @@ body {
   align-items: center;
 }
 
-/* LOGO */
 .brand {
   display: flex;
   align-items: center;
+  background: transparent; /* ❌ quita el recuadro */
+  padding: 0;              /* ❌ quita el espacio extra */
 }
 
 .logo {
-  height: 65px;      /* ⬅️ tamaño real del logo */
+  height: 65px;            /* ✅ tamaño correcto */
   width: auto;
   display: block;
+  background: transparent; /* 🔒 por seguridad */
 }
 
 /* NAV */
