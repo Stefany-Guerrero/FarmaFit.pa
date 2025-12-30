@@ -13,38 +13,38 @@ body {
   color: #5B3765;
 }
 
-/* ================= CONTENEDOR GENERAL ================= */
+/* ================= CONTENEDOR ================= */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
 }
 
+/* ================= HEADER ================= */
 .header {
   background-color: #5B3765;
   padding: 15px 0;
 }
 
-/* ESTE es el layout real */
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* LOGO */
 .brand {
   display: flex;
   align-items: center;
-  max-width: 250px;   /* ⬅️ CLAVE */
 }
 
 .logo {
-  width: 100%;
-  max-width: 220px;   /* ⬅️ tamaño visible */
-  height: auto;
-  object-fit: contain;
+  height: 70px;      /* ⬅️ tamaño real del logo */
+  width: auto;
+  display: block;
 }
 
+/* NAV */
 .header nav {
   display: flex;
   gap: 30px;
@@ -95,7 +95,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* ================= FEATURES (ELIMINADAS) ================= */
+/* ================= FEATURES ================= */
 .features {
   display: none;
 }
@@ -157,30 +157,18 @@ body {
   padding: 25px;
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-
-  /* HEADER */
-  .header {
-    padding: 15px 0;
-  }
 
   .header-flex {
     flex-direction: column;
-    align-items: center;
     gap: 15px;
   }
 
-  /* BRAND / LOGO */
-  .brand {
-    max-width: 180px;   /* ⬅️ controla el tamaño del logo */
-  }
-
   .logo {
-    width: 100%;        /* ⬅️ escala proporcional */
-    height: auto;
+    height: 55px;
   }
 
-  /* NAV */
   .header nav {
     gap: 20px;
   }
@@ -189,7 +177,6 @@ body {
     font-size: 1.1rem;
   }
 
-  /* HERO */
   .hero {
     padding: 80px 20px;
   }
@@ -198,12 +185,10 @@ body {
     font-size: 2.2rem;
   }
 
-  /* INFO */
   .info {
     padding: 60px 0;
   }
 
-  /* CATEGORIES */
   .categories {
     padding: 60px 0;
   }
