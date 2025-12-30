@@ -1,5 +1,82 @@
-<script src="auth.js"></script>
-<script>checkAuth()</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmaFit | Tienda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-<h1>Bienvenido a FarmaFit</h1>
-<button onclick="logout()">Cerrar sesión</button>
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-flex">
+
+    <div class="brand">
+      <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
+    </div>
+
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#">Productos</a>
+      <a href="#">Mi cuenta</a>
+      <a href="index.html">Cerrar sesión</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h2>Belleza que se siente</h2>
+    <p>Productos de cuidado personal seleccionados para ti.</p>
+    <a href="#productos" class="btn">Ver productos</a>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="categories container">
+  <div class="category">
+    <h4>Crema Facial</h4>
+    <p>$12.99</p>
+    <button class="btn">Agregar</button>
+  </div>
+
+  <div class="category">
+    <h4>Serum Capilar</h4>
+    <p>$15.50</p>
+    <button class="btn">Agregar</button>
+  </div>
+
+  <div class="category">
+    <h4>Protector Solar</h4>
+    <p>$9.99</p>
+    <button class="btn">Agregar</button>
+  </div>
+
+  <div class="category">
+    <h4>Mascarilla Facial</h4>
+    <p>$7.25</p>
+    <button class="btn">Agregar</button>
+  </div>
+</section>
+
+<!-- INFO -->
+<section class="info">
+  <div class="container info-grid">
+    <div>
+      <h3>¿Por qué FarmaFit?</h3>
+      <p>Ofrecemos productos de belleza confiables, seguros y al mejor precio.</p>
+    </div>
+    <div class="placeholder">Imagen promocional</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2025 FarmaFit</p>
+</footer>
+
+</body>
+</html>
