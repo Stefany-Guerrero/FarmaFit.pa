@@ -8,109 +8,105 @@
 </head>
 <body>
 
-<!-- ===== LAYOUT GENERAL ===== -->
-<div class="layout">
+<!-- ================= ANUNCIO IZQUIERDO ================= -->
+<aside class="side-ad left-ad">
+  <video autoplay muted loop playsinline>
+    <source src="video/publicidad.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+</aside>
 
-  <!-- PANEL IZQUIERDO (VIDEO) -->
-  <aside class="side-ad left-ad">
-    <video autoplay muted loop playsinline>
-      <source src="video/publicidad.mp4" type="video/mp4">
-      Tu navegador no soporta video.
-    </video>
-  </aside>
+<!-- ================= ANUNCIO DERECHO ================= -->
+<aside class="side-ad right-ad">
+  <img src="img/publicidad.jpeg" alt="Publicidad">
+</aside>
 
-  <!-- ===== CONTENIDO CENTRAL ===== -->
-  <main class="main-content">
+<!-- ================= CONTENIDO PRINCIPAL ================= -->
+<div class="page">
 
-    <header class="header">
-      <div class="container header-flex">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-flex">
 
-        <div class="brand">
-          <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
-        </div>
-
-        <nav>
-          <a href="#">Inicio</a>
-          <a href="#">Productos</a>
-          <a href="#">Cuenta</a>
-          <a href="#">Compras</a>
-        </nav>
-
-      </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <h2>Suplementos nutricionales para tu bienestar</h2>
-        <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
-        <a href="#productos" class="btn">Ver suplementos</a>
-      </div>
-    </section>
-
-    <!-- PRODUCTOS -->
-    <section id="productos" class="categories container">
-
-      <div class="category">
-        <h4>Multivitamínico</h4>
-        <p>Refuerza tu sistema inmune</p>
-        <strong>$14.99</strong><br><br>
-        <button class="btn">Agregar</button>
+      <div class="brand">
+        <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
       </div>
 
-      <div class="category">
-        <h4>Proteína en Polvo</h4>
-        <p>Apoyo muscular y energía</p>
-        <strong>$29.99</strong><br><br>
-        <button class="btn">Agregar</button>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Cuenta</a>
+        <a href="#">Compras</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h2>Suplementos nutricionales para tu bienestar</h2>
+      <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
+      <a href="#productos" class="btn">Ver suplementos</a>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="categories container">
+
+    <div class="category">
+      <h4>Multivitamínico</h4>
+      <p>Refuerza tu sistema inmune</p>
+      <strong>$14.99</strong><br><br>
+      <button class="btn">Agregar</button>
+    </div>
+
+    <div class="category">
+      <h4>Proteína en Polvo</h4>
+      <p>Apoyo muscular y energía</p>
+      <strong>$29.99</strong><br><br>
+      <button class="btn">Agregar</button>
+    </div>
+
+    <div class="category">
+      <h4>Omega 3</h4>
+      <p>Salud cardiovascular</p>
+      <strong>$18.50</strong><br><br>
+      <button class="btn">Agregar</button>
+    </div>
+
+    <div class="category">
+      <h4>Colágeno Hidrolizado</h4>
+      <p>Piel, uñas y articulaciones</p>
+      <strong>$21.75</strong><br><br>
+      <button class="btn">Agregar</button>
+    </div>
+
+  </section>
+
+  <!-- INFO -->
+  <section id="beneficios" class="info">
+    <div class="container info-grid">
+
+      <div>
+        <h3>¿Por qué elegir FarmaFit?</h3>
+        <p>
+          En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad,
+          cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.
+        </p>
       </div>
 
-      <div class="category">
-        <h4>Omega 3</h4>
-        <p>Salud cardiovascular</p>
-        <strong>$18.50</strong><br><br>
-        <button class="btn">Agregar</button>
+      <div class="placeholder">
+        <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
       </div>
 
-      <div class="category">
-        <h4>Colágeno Hidrolizado</h4>
-        <p>Piel, uñas y articulaciones</p>
-        <strong>$21.75</strong><br><br>
-        <button class="btn">Agregar</button>
-      </div>
+    </div>
+  </section>
 
-    </section>
-
-    <!-- INFO -->
-    <section id="beneficios" class="info">
-      <div class="container info-grid">
-
-        <div>
-          <h3>¿Por qué elegir FarmaFit?</h3>
-          <p>
-            En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad,
-            cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.
-          </p>
-        </div>
-
-        <div class="placeholder">
-          <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
-        </div>
-
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
-    </footer>
-
-  </main>
-
-  <!-- PANEL DERECHO (IMAGEN) -->
-  <aside class="side-ad right-ad">
-    <img src="img/publicidad.jpeg" alt="Publicidad">
-  </aside>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
+  </footer>
 
 </div>
 
