@@ -110,13 +110,18 @@ body {
 }
 
 .placeholder {
-  height: 400px;
+  height: 260px;
+  background: #F3CCDE;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* rellena todo el espacio */
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
   display: block;
 }
 
