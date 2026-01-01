@@ -112,10 +112,12 @@ body {
 .placeholder {
   height: 260px;
   background: #F3CCDE;
-  border-radius: 16px;
+  border-radius: 20px;      /* 👈 curvas como las demás */
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;        /* 👈 CLAVE para recortar */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
 .brand-img {
@@ -124,7 +126,6 @@ body {
   object-fit: contain;
   display: block;
 }
-
 /* ================= PRODUCTOS ================= */
 .categories {
   padding: 80px 0;
