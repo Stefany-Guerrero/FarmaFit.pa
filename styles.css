@@ -111,13 +111,15 @@ body {
 
 .placeholder {
   height: 260px;
-  background: #F3CCDE;
+  background: repeating-conic-gradient(
+    #999 0% 25%,
+    #fff 0% 50%
+  ) 50% / 20px 20px;   /* 👈 fondo tipo Photoshop */
   border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px;          /* 👈 ESTO ES CLAVE */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  padding: 30px;
 }
 
 .brand-img {
