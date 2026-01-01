@@ -115,10 +115,7 @@ body {
 
 .placeholder {
   height: 260px;
-  background: repeating-conic-gradient(
-    #999 0% 25%,
-    #fff 0% 50%
-  ) 50% / 20px 20px;
+  background: #F3CCDE;   /* ← fondo rosado original */
   border-radius: 24px;
   display: flex;
   align-items: center;
