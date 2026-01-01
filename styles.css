@@ -110,10 +110,7 @@ body {
 }
 
 .placeholder {
-  background: #F3CCDE;
-  height: 240px;          /* altura del contenedor */
-  border-radius: 12px;
-  overflow: hidden;       /* CLAVE */
+  height: 400px;
 }
 
 .brand-img {
