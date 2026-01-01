@@ -6,26 +6,40 @@
   font-family: Arial, sans-serif;
 }
 
-/* ================= BODY GENERAL ================= */
+/* ================= BODY ================= */
 body {
   line-height: 1.6;
   background: #ffffff;
   color: #5B3765;
+  overflow-x: hidden;
 }
 
-/* ================= LAYOUT GENERAL ================= */
-.layout {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
+/* ================= CONTENIDO CENTRAL ================= */
+.page {
+  max-width: 1200px;
+  margin: auto;
+  background: #fff;
+  position: relative;
+  z-index: 2;
 }
 
-/* ================= PANELES LATERALES ================= */
+/* ================= ANUNCIOS LATERALES ================= */
 .side-ad {
+  position: fixed;
+  top: 0;
   width: 220px;
+  height: 100vh;
   background: #000;
+  z-index: 1;
   overflow: hidden;
-  flex-shrink: 0;
+}
+
+.left-ad {
+  left: 0;
+}
+
+.right-ad {
+  right: 0;
 }
 
 .side-ad video,
@@ -36,18 +50,9 @@ body {
   display: block;
 }
 
-/* ================= CONTENIDO CENTRAL ================= */
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
 /* ================= CONTENEDOR ================= */
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
 /* ================= HEADER ================= */
@@ -60,45 +65,41 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* LOGO */
-.brand {
-  display: flex;
-  align-items: center;
-}
-
 .logo {
   height: 65px;
-  width: auto;
 }
 
 /* NAV */
 .header nav {
   display: flex;
-  gap: 55px;
+  gap: 50px;
 }
 
 .header nav a {
   color: #ffffff;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   text-decoration: none;
 }
 
 .header nav a:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* ================= HERO ================= */
 .hero {
   background: #F3CCDE;
-  padding: 120px 20px;
+  padding: 110px 20px;
   text-align: center;
 }
 
 .hero h2 {
-  font-size: 2.8rem;
+  font-size: 2.7rem;
   margin-bottom: 15px;
 }
 
@@ -109,16 +110,15 @@ body {
 
 /* ================= BOTONES ================= */
 .btn {
-  display: inline-block;
   padding: 14px 30px;
   background: #5B3765;
-  color: #ffffff;
-  text-decoration: none;
+  color: #fff;
   border-radius: 999px;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -126,12 +126,36 @@ body {
   transform: translateY(-3px);
 }
 
+/* ================= PRODUCTOS ================= */
+.categories {
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 35px;
+}
+
+.category {
+  background: #D6A8C4;
+  padding: 45px 20px;
+  text-align: center;
+  border-radius: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
 /* ================= INFO ================= */
 .info {
-  padding: 80px 0;
+  padding: 80px 24px;
 }
 
 .info-grid {
+  max-width: 1200px;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
@@ -154,47 +178,32 @@ body {
   object-fit: contain;
 }
 
-/* ================= PRODUCTOS ================= */
-.categories {
-  padding: 80px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 35px;
-}
-
-.category {
-  background: #D6A8C4;
-  padding: 50px 20px;
-  text-align: center;
-  border-radius: 18px;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.category:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
 /* ================= FOOTER ================= */
 .footer {
   background: #5B3765;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   padding: 25px;
+  margin-top: 60px;
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
+
+/* Tablets y celulares */
+@media (max-width: 1024px) {
   .side-ad {
     display: none;
+  }
+
+  .page {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .header-flex {
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
   }
 
   .header nav {
@@ -206,9 +215,10 @@ body {
   }
 
   .hero h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 }
+
 
 
 
