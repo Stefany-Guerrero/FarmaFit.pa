@@ -425,3 +425,35 @@ body {
     padding: 40px 15px;
   }
 }
+
+/* ================= MODAL IMAGEN ================= */
+.modal {
+  display: none;              /* oculto por defecto */
+  position: fixed;            /* siempre encima de todo */
+  z-index: 1000;              /* encima de todo */
+  padding-top: 60px;          /* espacio arriba */
+  left: 0;
+  top: 0;
+  width: 100%;                /* ocupa toda la pantalla */
+  height: 100%;               /* ocupa toda la pantalla */
+  overflow: auto;             /* scroll si es necesario */
+  background-color: rgba(0,0,0,0.9); /* fondo oscuro semi-transparente */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;   /* ancho máximo proporcional */
+  max-height: 90%;  /* altura máxima proporcional */
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
