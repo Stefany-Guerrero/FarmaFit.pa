@@ -229,9 +229,10 @@ body {
 
 /* Click / toque (celular y PC) */
 .category:active {
-  background: #ffb3c6;
+  background: #f29caf;        /* color intermedio, bien visible */
   color: #5B3765;
-  transform: scale(0.97);
+  transform: scale(0.96);
+  box-shadow: 0 0 0 3px rgba(229, 125, 144, 0.45);
 }
 
 /* ================= INFO ================= */
