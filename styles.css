@@ -22,7 +22,7 @@ body {
 
 /* ================= HEADER ================= */
 .header {
-  grid-column: 2;              /* SOLO columna central */
+  grid-column: 1/4;              /* SOLO columna central */
   background: #5B3765;
   padding: 18px 0;
 }
@@ -72,10 +72,15 @@ body {
   justify-content: center;
 }
 
-.side-ad {
-  grid-row: 1 / -1; /* 👈 ocupa header + contenido + footer */
+.left-ad {
+  grid-column: 1;
+  grid-row: 1 / -1;
 }
 
+.right-ad {
+  grid-column: 3;
+  grid-row: 1 / -1;
+}
 
 .side-ad video,
 .side-ad img {
@@ -188,7 +193,7 @@ body {
 
 /* ================= FOOTER ================= */
 .footer {
-  grid-column: 2;
+  grid-column: 1/4;
   background: #5B3765;
   color: #ffffff;
   text-align: center;
