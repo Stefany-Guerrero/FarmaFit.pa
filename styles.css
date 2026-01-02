@@ -200,29 +200,30 @@ body {
 }
 
 /* ================= CATEGORÍAS ================= */
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  padding: 40px 20px;
-}
-
 .category {
-  background: #e57d90;      /* COLOR FUERTE QUE PEDISTE */
-  color: #ffffff;           /* texto blanco para contraste */
+  background: #e57d90;        /* color inicial */
+  color: #ffffff;             /* texto blanco */
   padding: 40px 30px;
   border-radius: 18px;
   font-weight: bold;
   text-align: center;
   min-width: 160px;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
+/* Hover en computadora */
 .category:hover {
-  background: #d4687d;      /* un poco más oscuro al tocar/hover */
+  background: #fdeaf2;
+  color: #5B3765;              /* texto oscuro cuando fondo es claro */
   transform: translateY(-5px);
+}
+
+/* Click / tap (móvil y PC) */
+.category:active {
+  background: #fdeaf2;
+  color: #5B3765;
+  transform: scale(0.97);
 }
 
 /* ================= INFO ================= */
