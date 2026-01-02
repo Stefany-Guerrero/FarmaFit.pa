@@ -201,28 +201,28 @@ body {
 
 /* ================= CATEGORÍAS ================= */
 .categories {
-  display: flex;              /* para que queden en fila */
-  flex-wrap: wrap;            /* se acomoden en varias filas si es necesario */
-  justify-content: center;    /* centradas horizontalmente */
-  gap: 25px;                  /* espacio entre categorías */
-  padding: 40px 20px;         /* espacio arriba y abajo */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px 20px;
 }
 
 .category {
-  background: #F9E6F2;        /* fondo clarito, más legible */
-  color: #5B3765;
-  padding: 40px 30px;         /* tamaño del panel */
-  border-radius: 18px;        /* bordes redondeados */
+  background: #e57d90;      /* COLOR FUERTE QUE PEDISTE */
+  color: #ffffff;           /* texto blanco para contraste */
+  padding: 40px 30px;
+  border-radius: 18px;
   font-weight: bold;
   text-align: center;
-  min-width: 160px;           /* mínimo ancho */
-  cursor: pointer;            /* efecto puntero al pasar */
-  transition: transform 0.3s, background 0.3s;
+  min-width: 160px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .category:hover {
-  background: #F3CCDE;     /* rosado un poco más fuerte al pasar mouse */
-  transform: translateY(-5px);/* efecto hover */
+  background: #d4687d;      /* un poco más oscuro al tocar/hover */
+  transform: translateY(-5px);
 }
 
 /* ================= INFO ================= */
