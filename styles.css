@@ -415,3 +415,18 @@ max-width: 50%;     /* máximo la mitad del contenedor */
     height: auto;
   }
 }
+
+/* ================= CATEGORÍAS RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .categories {
+    gap: 15px;            /* menos espacio entre paneles */
+    padding: 20px 10px;   /* menos padding general */
+  }
+
+  .category {
+    padding: 25px 15px;   /* panel más compacto */
+    min-width: 120px;     /* ancho más pequeño */
+    font-size: 0.9rem;    /* texto más proporcional */
+  }
+}
+
