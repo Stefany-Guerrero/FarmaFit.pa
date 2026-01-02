@@ -13,10 +13,10 @@ body {
   line-height: 1.6;
 }
 
-/* ================= GRID GENERAL ================= */
 .layout {
   display: grid;
   grid-template-columns: 220px 1fr 220px;
+  grid-template-rows: auto 1fr auto; /* 👈 ESTO FALTABA */
   min-height: 100vh;
 }
 
@@ -71,6 +71,11 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.side-ad {
+  grid-row: 1 / -1; /* 👈 ocupa header + contenido + footer */
+}
+
 
 .side-ad video,
 .side-ad img {
