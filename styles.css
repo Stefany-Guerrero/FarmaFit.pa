@@ -199,26 +199,30 @@ body {
   transform: translateY(-3px);
 }
 
-/* ================= PRODUCTOS ================= */
+/* ================= CATEGORÍAS ================= */
 .categories {
-  padding: 80px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 35px;
+  display: flex;              /* para que queden en fila */
+  flex-wrap: wrap;            /* se acomoden en varias filas si es necesario */
+  justify-content: center;    /* centradas horizontalmente */
+  gap: 25px;                  /* espacio entre categorías */
+  padding: 40px 20px;         /* espacio arriba y abajo */
 }
 
 .category {
-  background: #D6A8C4;
-  padding: 50px 20px;
-  text-align: center;
-  border-radius: 18px;
+  background: #F9E6F2;        /* fondo clarito, más legible */
+  color: #5B3765;             /* texto oscuro */
+  padding: 40px 30px;         /* tamaño del panel */
+  border-radius: 18px;        /* bordes redondeados */
   font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  min-width: 160px;           /* mínimo ancho */
+  cursor: pointer;            /* efecto puntero al pasar */
+  transition: transform 0.3s, background 0.3s;
 }
 
 .category:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  background: #F3CCDE;        /* rosado un poco más fuerte al pasar mouse */
+  transform: translateY(-5px);/* efecto hover */
 }
 
 /* ================= INFO ================= */
