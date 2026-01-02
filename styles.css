@@ -372,7 +372,7 @@ body {
   justify-content: center;
   gap: 40px;
   padding: 60px 20px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* permite que en móviles se acomoden verticalmente */
 }
 
 .promo-card {
@@ -384,49 +384,44 @@ body {
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   transition: transform 0.3s;
-
-flex: 1 1 400px;   /* permite crecer y encoger según el contenedor, mínimo 400px */
-max-width: 50%;     /* máximo la mitad del contenedor */
 }
 
-.promo-card:hover {
-  transform: translateY(-5px);
-}
-
-.video-promo video,
-.image-promo img {
-  width: 100%;
-  height: auto;      /* mantiene proporción real */
+/* Video */
+.video-promo video {
   display: block;
+  width: 464px; /* ancho fijo para computadora */
+  height: auto; /* ajusta altura proporcional */
+  max-height: 832px;
   object-fit: cover;
 }
 
-/* RESPONSIVE */
+/* Imagen */
+.image-promo img {
+  display: block;
+  width: 608px;
+  height: auto; /* ajusta altura proporcional */
+  max-height: 1080px;
+  object-fit: cover;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .promocionales {
-    flex-direction: column;
+    flex-direction: column; /* una debajo de otra en móviles */
     align-items: center;
     gap: 30px;
   }
 
   .video-promo video,
   .image-promo img {
-    width: 90%;
-    height: auto;
+    width: 90%; /* ancho relativo al móvil */
+    height: auto; /* altura proporcional */
   }
-}
 
-/* ================= CATEGORÍAS RESPONSIVE ================= */
-@media (max-width: 768px) {
+  /* Categorías */
   .categories {
-    gap: 15px;            /* menos espacio entre paneles */
-    padding: 20px 10px;   /* menos padding general */
-  }
-
-  .category {
-    padding: 25px 15px;   /* panel más compacto */
-    min-width: 120px;     /* ancho más pequeño */
-    font-size: 0.9rem;    /* texto más proporcional */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    padding: 40px 15px;
   }
 }
-
