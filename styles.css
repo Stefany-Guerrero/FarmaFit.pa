@@ -8,127 +8,82 @@
 
 /* ================= BODY ================= */
 body {
-  line-height: 1.6;
   background: #ffffff;
   color: #5B3765;
-  overflow-x: hidden;
 }
 
-/* ================= CONTENIDO CENTRAL ================= */
-.page {
-  max-width: 1200px;
-  margin: auto;
-  background: #fff;
-  position: relative;
-  z-index: 2;
-}
-
-/* ================= ANUNCIOS LATERALES ================= */
-.side-ad {
-  position: fixed;
-  top: 0;
-  width: 220px;
-  height: 100vh;
-  background: #000;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.left-ad {
-  left: 0;
-}
-
-.right-ad {
-  right: 0;
-}
-
-.side-ad video,
-.side-ad img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ================= CONTENEDOR ================= */
-.container {
-  padding: 0 24px;
+/* ================= GRID GENERAL ================= */
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  min-height: 100vh;
 }
 
 /* ================= HEADER ================= */
 .header {
-  background-color: #5B3765;
+  grid-column: 1 / 4;
+  background: #5B3765;
   padding: 18px 0;
 }
 
 .header-flex {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
 }
 
-/* LOGO */
 .logo {
   height: 65px;
 }
 
-/* NAV */
 .header nav {
   display: flex;
   gap: 50px;
 }
 
 .header nav a {
-  color: #ffffff;
-  font-size: 1.05rem;
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
 }
 
-.header nav a:hover {
-  opacity: 0.85;
+/* ================= ANUNCIOS ================= */
+.side-ad {
+  background: #000;
+  padding-top: 20px;
+}
+
+.side-ad video,
+.side-ad img {
+  width: 100%;
+  height: 600px;   /* 👈 CLAVE: NO gigantes */
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= CONTENIDO ================= */
+.main-content {
+  padding: 40px 20px;
 }
 
 /* ================= HERO ================= */
 .hero {
   background: #F3CCDE;
-  padding: 110px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .hero h2 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-}
-
-/* ================= BOTONES ================= */
-.btn {
-  padding: 14px 30px;
-  background: #5B3765;
-  color: #fff;
-  border-radius: 999px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background: #9E6899;
-  transform: translateY(-3px);
 }
 
 /* ================= PRODUCTOS ================= */
 .categories {
-  padding: 80px 24px;
+  margin: 80px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 35px;
@@ -136,88 +91,39 @@ body {
 
 .category {
   background: #D6A8C4;
-  padding: 45px 20px;
-  text-align: center;
+  padding: 40px 20px;
   border-radius: 18px;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.category:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-}
-
-/* ================= INFO ================= */
-.info {
-  padding: 80px 24px;
-}
-
-.info-grid {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  align-items: center;
-}
-
-.placeholder {
-  height: 260px;
-  background: #F3CCDE;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-}
-
-.brand-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  text-align: center;
 }
 
 /* ================= FOOTER ================= */
 .footer {
+  grid-column: 1 / 4;
   background: #5B3765;
   color: #fff;
   text-align: center;
   padding: 25px;
-  margin-top: 60px;
 }
 
 /* ================= RESPONSIVE ================= */
-
-/* Tablets y celulares */
 @media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
   .side-ad {
     display: none;
   }
 
-  .page {
-    max-width: 100%;
+  .header {
+    grid-column: 1;
+  }
+
+  .footer {
+    grid-column: 1;
   }
 }
 
-@media (max-width: 768px) {
-  .header-flex {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .header nav {
-    gap: 28px;
-  }
-
-  .hero {
-    padding: 80px 20px;
-  }
-
-  .hero h2 {
-    font-size: 2.1rem;
-  }
-}
 
 
 
