@@ -98,6 +98,19 @@
   </footer>
 
 </div>
+  <script>
+  const categories = document.querySelectorAll('.category');
+
+  categories.forEach(category => {
+    category.addEventListener('click', () => {
+      // quitar selección anterior
+      categories.forEach(c => c.classList.remove('selected'));
+
+      // marcar la actual
+      category.classList.add('selected');
+    });
+  });
+</script>
 
 </body>
 </html>
