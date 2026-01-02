@@ -381,27 +381,19 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   transition: transform 0.3s;
 
-  min-width: 200px;   /* 👈 fuerza tamaño mínimo */
-  min-height: 300px;  /* 👈 fuerza altura mínima visible */
+flex: 1 1 400px;   /* permite crecer y encoger según el contenedor, mínimo 400px */
+max-width: 50%;     /* máximo la mitad del contenedor */
 }
 
 .promo-card:hover {
   transform: translateY(-5px);
 }
 
-/* Video */
-.video-promo video {
-  display: block;      /* 👈 asegura que el video se vea */
-  width: 464px;
-  height: 832px;
-  object-fit: cover;
-}
-
-/* Imagen */
+.video-promo video,
 .image-promo img {
-  display: block;      /* 👈 asegura que la imagen se vea */
-  width: 608px;
-  height: 1080px;
+  width: 100%;
+  height: auto;      /* mantiene proporción real */
+  display: block;
   object-fit: cover;
 }
 
