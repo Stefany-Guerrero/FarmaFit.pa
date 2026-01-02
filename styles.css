@@ -372,7 +372,7 @@ body {
 }
 
 .promo-card {
-  background: #F3CCDE;          
+  background: #F3CCDE;
   border-radius: 24px;
   overflow: hidden;
   display: flex;
@@ -380,6 +380,9 @@ body {
   justify-content: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   transition: transform 0.3s;
+
+  min-width: 200px;   /* 👈 fuerza tamaño mínimo */
+  min-height: 300px;  /* 👈 fuerza altura mínima visible */
 }
 
 .promo-card:hover {
@@ -388,6 +391,7 @@ body {
 
 /* Video */
 .video-promo video {
+  display: block;      /* 👈 asegura que el video se vea */
   width: 464px;
   height: 832px;
   object-fit: cover;
@@ -395,6 +399,7 @@ body {
 
 /* Imagen */
 .image-promo img {
+  display: block;      /* 👈 asegura que la imagen se vea */
   width: 608px;
   height: 1080px;
   object-fit: cover;
@@ -414,16 +419,3 @@ body {
     height: auto;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
