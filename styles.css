@@ -362,6 +362,46 @@ body {
   }
 }
 
+.promocionales {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+.promo-card {
+  background: #F3CCDE;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-promo video {
+  max-width: 464px;
+  max-height: 832px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image-promo img {
+  max-width: 608px;
+  max-height: 1080px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
 
 
 
