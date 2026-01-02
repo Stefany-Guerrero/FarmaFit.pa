@@ -200,28 +200,36 @@ body {
 }
 
 /* ================= CATEGORÍAS ================= */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px 20px;
+}
+
 .category {
-  background: #e57d90;        /* color inicial */
-  color: #ffffff;             /* texto blanco */
+  background: #e57d90;        /* color al cargar */
+  color: #ffffff;
   padding: 40px 30px;
   border-radius: 18px;
   font-weight: bold;
   text-align: center;
   min-width: 160px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-/* Hover en computadora */
+/* Hover (computadora) */
 .category:hover {
   background: #fdeaf2;
-  color: #5B3765;              /* texto oscuro cuando fondo es claro */
+  color: #5B3765;
   transform: translateY(-5px);
 }
 
-/* Click / tap (móvil y PC) */
+/* Click / toque (celular y PC) */
 .category:active {
-  background: #fdeaf2;
+  background: #ffb3c6;
   color: #5B3765;
   transform: scale(0.97);
 }
