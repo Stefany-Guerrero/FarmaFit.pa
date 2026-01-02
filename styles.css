@@ -210,7 +210,7 @@ body {
 
 .category {
   background: #F9E6F2;        /* fondo clarito, más legible */
-  color: #5B3765;             /* texto oscuro */
+  color: #5B3765;
   padding: 40px 30px;         /* tamaño del panel */
   border-radius: 18px;        /* bordes redondeados */
   font-weight: bold;
@@ -221,7 +221,7 @@ body {
 }
 
 .category:hover {
-  background: #F3CCDE;        /* rosado un poco más fuerte al pasar mouse */
+  background: #F3CCDE;     /* rosado un poco más fuerte al pasar mouse */
   transform: translateY(-5px);/* efecto hover */
 }
 
