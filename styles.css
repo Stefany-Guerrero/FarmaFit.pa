@@ -469,11 +469,8 @@ body {
 
 /* Seleccionada (queda marcada) */
 .category.selected {
-  background: #f29caf;        /* color seleccionado */
+  background: #f08db7;        /* color seleccionado */
   color: #5B3765;
-  border: 3px solid #e57d90;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  transform: scale(0.98);
+  box-shadow: 0 0 0 3px #e57d90;
 }
-
 
