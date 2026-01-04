@@ -2,104 +2,104 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FarmaFit | Suplementos Nutricionales</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <div class="layout"> <!-- ✅ ENVOLVER TODO -->
-
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container header-flex">
-        <div class="brand">
-          <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
-        </div>
-        <nav>
-          <a href="#">Inicio</a>
-          <a href="#">Productos</a>
-          <a href="#">Cuenta</a>
-          <a href="#">Compras</a>
-        </nav>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-flex">
+      <div class="brand">
+        <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
       </div>
-    </header>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Cuenta</a>
+        <a href="#">Compras</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- MAIN CONTENT -->
-    <div class="main-content">
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
 
-      <!-- HERO -->
-      <section class="hero">
-        <div class="container">
-          <h2>Suplementos nutricionales para tu bienestar</h2>
-          <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
-          <a href="#productos" class="btn">Ver suplementos</a>
-        </div>
-      </section>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h2>Suplementos nutricionales para tu bienestar</h2>
+        <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
+        <a href="#productos" class="btn">Ver suplementos</a>
+      </div>
+    </section>
 
-      <!-- PROMOCIONALES -->
-      <section class="promocionales container">
-        <div class="promo-card video-promo">
-          <video id="promoVideo" loop playsinline controls>
-            <source src="video/publicidad.mp4" type="video/mp4">
-            Tu navegador no soporta video.
-          </video>
-        </div>
-
-        <div class="promo-card image-promo">
-          <img src="img/publicidad.jpeg" alt="Oferta: 2x1 productos">
-        </div>
-      </section>
-
-      <!-- MODAL PARA AMPLIAR IMAGEN -->
-      <div id="imgModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImg">
+    <!-- PROMOCIONALES -->
+    <section class="promocionales container">
+      <div class="promo-card video-promo">
+        <video id="promoVideo" loop playsinline controls>
+          <source src="video/publicidad.mp4" type="video/mp4">
+          Tu navegador no soporta video.
+        </video>
       </div>
 
-      <!-- CATEGORÍAS -->
-      <section id="categorias" class="categories container">
-        <!-- ...tus categorías... -->
-      </section>
+      <div class="promo-card image-promo">
+        <img src="img/publicidad.jpeg" alt="Oferta: 2x1 productos">
+      </div>
+    </section>
 
-      <!-- INFO -->
-      <section id="beneficios" class="info">
-        <div class="container info-grid">
-          <div>
-            <h3>¿Por qué elegir FarmaFit?</h3>
-            <p>En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad, cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.</p>
-          </div>
-          <div class="placeholder">
-            <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
-          </div>
+    <!-- MODAL PARA AMPLIAR IMAGEN -->
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+    </div>
+
+    <!-- CATEGORÍAS -->
+    <section id="categorias" class="categories container">
+      <div class="category" data-tag="maquillaje"><h4>Maquillaje</h4></div>
+      <div class="category" data-tag="skincare"><h4>Skincare</h4></div>
+      <div class="category" data-tag="cabello"><h4>Cuidado del Cabello</h4></div>
+      <div class="category" data-tag="personales"><h4>Cuidados Personales</h4></div>
+      <div class="category" data-tag="hombres"><h4>Hombres</h4></div>
+      <div class="category" data-tag="nutricion"><h4>Nutrición</h4></div>
+    </section>
+
+    <!-- INFO -->
+    <section id="beneficios" class="info">
+      <div class="container info-grid">
+        <div>
+          <h3>¿Por qué elegir FarmaFit?</h3>
+          <p>En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad, cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.</p>
         </div>
-      </section>
+        <div class="placeholder">
+          <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
+        </div>
+      </div>
+    </section>
 
-    </div> <!-- fin main-content -->
+  </div> <!-- fin main-content -->
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
+  </footer>
 
-  </div> <!-- fin layout -->
-
+  <!-- SCRIPT DE CATEGORÍAS -->
   <script>
-  const categories = document.querySelectorAll('.category');
+    const categories = document.querySelectorAll('.category');
 
-  categories.forEach(category => {
-    category.addEventListener('click', () => {
-      // quitar selección anterior
-      categories.forEach(c => c.classList.remove('selected'));
-
-      // marcar la actual
-      category.classList.add('selected');
+    categories.forEach(category => {
+      category.addEventListener('click', () => {
+        categories.forEach(c => c.classList.remove('selected'));
+        category.classList.add('selected');
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
+
 
 
 
