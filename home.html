@@ -8,98 +8,82 @@
 </head>
 <body>
 
-<div class="main-content">
+  <div class="layout"> <!-- ✅ ENVOLVER TODO -->
 
-   <div class="layout"> <!-- ✅ CAMBIO: envolver todo -->
-     
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-flex">
-      <div class="brand">
-        <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-flex">
+        <div class="brand">
+          <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
+        </div>
+        <nav>
+          <a href="#">Inicio</a>
+          <a href="#">Productos</a>
+          <a href="#">Cuenta</a>
+          <a href="#">Compras</a>
+        </nav>
       </div>
-      <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Productos</a>
-        <a href="#">Cuenta</a>
-        <a href="#">Compras</a>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h2>Suplementos nutricionales para tu bienestar</h2>
-      <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
-      <a href="#productos" class="btn">Ver suplementos</a>
-    </div>
-  </section>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
 
-<!-- PROMOCIONALES -->
-<section class="promocionales container">
-  <!-- Video promocional -->
-<div class="promo-card video-promo">
-  <video id="promoVideo" loop playsinline controls>
-    <source src="video/publicidad.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-  </video>
-</div>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <h2>Suplementos nutricionales para tu bienestar</h2>
+          <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
+          <a href="#productos" class="btn">Ver suplementos</a>
+        </div>
+      </section>
 
-  <!-- Imagen oferta especial -->
-  <div class="promo-card image-promo">
-    <img src="img/publicidad.jpeg" alt="Oferta: 2x1 productos">
-  </div>
-</section>
+      <!-- PROMOCIONALES -->
+      <section class="promocionales container">
+        <div class="promo-card video-promo">
+          <video id="promoVideo" loop playsinline controls>
+            <source src="video/publicidad.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+          </video>
+        </div>
 
-  <!-- MODAL PARA AMPLIAR IMAGEN -->
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
+        <div class="promo-card image-promo">
+          <img src="img/publicidad.jpeg" alt="Oferta: 2x1 productos">
+        </div>
+      </section>
 
-<!-- CATEGORÍAS -->
-<section id="categorias" class="categories container">
-  <div class="category" data-tag="maquillaje">
-    <h4>Maquillaje</h4>
-  </div>
-  <div class="category" data-tag="skincare">
-    <h4>Skincare</h4>
-  </div>
-  <div class="category" data-tag="cabello">
-    <h4>Cuidado del Cabello</h4>
-  </div>
-  <div class="category" data-tag="personales">
-    <h4>Cuidados Personales</h4>
-  </div>
-  <div class="category" data-tag="hombres">
-    <h4>Hombres</h4>
-  </div>
-  <div class="category" data-tag="nutricion">
-    <h4>Nutrición</h4>
-  </div>
-</section>
-
-
-  <!-- INFO -->
-  <section id="beneficios" class="info">
-    <div class="container info-grid">
-      <div>
-        <h3>¿Por qué elegir FarmaFit?</h3>
-        <p>En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad, cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.</p>
+      <!-- MODAL PARA AMPLIAR IMAGEN -->
+      <div id="imgModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
       </div>
-      <div class="placeholder">
-        <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
-      </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
-  </footer>
+      <!-- CATEGORÍAS -->
+      <section id="categorias" class="categories container">
+        <!-- ...tus categorías... -->
+      </section>
 
-</div>
+      <!-- INFO -->
+      <section id="beneficios" class="info">
+        <div class="container info-grid">
+          <div>
+            <h3>¿Por qué elegir FarmaFit?</h3>
+            <p>En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad, cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.</p>
+          </div>
+          <div class="placeholder">
+            <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- fin main-content -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
+    </footer>
+
+  </div> <!-- fin layout -->
+
   <script>
   const categories = document.querySelectorAll('.category');
 
