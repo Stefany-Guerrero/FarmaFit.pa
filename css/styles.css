@@ -440,6 +440,87 @@ body {
     cursor: pointer;
 }
 
+.star {
+    cursor: pointer;
+    font-size: 20px;
+    color: gold;
+}
+
+.reviews {
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.reviews-list .review {
+    margin-bottom: 10px;
+}
+
+.review-img {
+    max-width: 100%;
+    max-height: 150px;
+    display: block;
+    margin-top: 5px;
+}
+/* ================= PRODUCTS RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    #products-container {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .product {
+        width: 45%; /* dos productos por fila */
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* un producto por fila en móviles */
+        padding: 10px;
+    }
+
+    .reviews textarea {
+        width: 100%;
+        min-height: 60px;
+    }
+
+    .reviews input[type="file"] {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .reviews button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .star {
+        font-size: 18px; /* ajusta estrellas en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        padding: 8px;
+    }
+
+    .star {
+        font-size: 16px;
+    }
+
+    .reviews textarea {
+        font-size: 0.9rem;
+    }
+
+    .reviews button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+
 
 
 
