@@ -275,7 +275,7 @@ body {
 
 /* ================= LOGIN ================= */
 .login-body {
-  background: #F3CCDE;
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -283,7 +283,7 @@ body {
 }
 
 .login-container {
-  background: #ffffff;
+  background: ##F3CCDE;
   padding: 40px;
   width: 100%;
   max-width: 380px;
