@@ -388,5 +388,30 @@ body {
   border-color: #000000;
 }
 
+/* ================= HEADER MOBILE ================= */
+@media (max-width: 768px) {
+
+  .header-flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .header nav {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header nav a {
+    font-size: 0.95rem;
+  }
+
+}
+
+
 
 
