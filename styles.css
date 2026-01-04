@@ -474,3 +474,50 @@ body {
   box-shadow: 0 0 0 3px #e57d90;
 }
 
+/* ================= LOGIN SOCIAL ================= */
+
+.social-login {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Colores por red */
+.social-btn.google {
+  border-color: #ea4335;
+}
+
+.social-btn.facebook {
+  border-color: #1877f2;
+}
+
+.social-btn.apple {
+  border-color: #000000;
+}
+
+
