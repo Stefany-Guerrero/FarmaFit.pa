@@ -56,34 +56,36 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
 // ===============================
 const allProducts = [
   {
+    nombre: "Máscara de Pestañas",
+    precio: 12,
+    imagen: "img/productos/mascara.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara"
+  },
+  {
+    nombre: "Delineador Negro",
+    precio: 10,
+    imagen: "img/productos/delineador.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "eyeliner"
+  },
+  {
+    nombre: "Labial Mate",
+    precio: 9,
+    imagen: "img/productos/labial.jpg",
+    categoria: "maquillaje",
+    subcategoria: "labios",
+    tipo: "labial"
+  },
+  {
     nombre: "Proteína Whey",
-    categoria: "proteinas",
     precio: 35,
-    imagen: "img/productos/whey.jpg"
-  },
-  {
-    nombre: "Creatina",
-    categoria: "energia",
-    precio: 18,
-    imagen: "img/productos/creatina.jpg"
-  },
-  {
-    nombre: "Multivitamínico",
-    categoria: "vitaminas",
-    precio: 20,
-    imagen: "img/productos/multivitaminico.jpg"
-  },
-  {
-    nombre: "Omega 3",
-    categoria: "salud",
-    precio: 25,
-    imagen: "img/productos/omega3.jpg"
-  },
-  {
-    nombre: "BCAA",
-    categoria: "energia",
-    precio: 22,
-    imagen: "img/productos/bcaa.jpg"
+    imagen: "img/productos/whey.jpg",
+    categoria: "nutricion",
+    subcategoria: "proteinas",
+    tipo: "whey"
   }
 ];
 
