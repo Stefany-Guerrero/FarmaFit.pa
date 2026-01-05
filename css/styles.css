@@ -437,6 +437,18 @@ body {
   }
 }
 
+/* ================= LOGIN LINKS UNIFICADOS ================= */
+.login-options a {
+  color: #000000;          /* negro para todos los links de login */
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.login-options a:hover {
+  opacity: 0.7;
+}
 
 
 
