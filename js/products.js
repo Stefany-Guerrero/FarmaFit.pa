@@ -6,17 +6,43 @@ const secciones = {
   compras: document.getElementById("seccion-compras")
 };
 
-document.getElementById("nav-inicio").addEventListener("click", () => mostrarSeccion("inicio"));
-document.getElementById("nav-productos").addEventListener("click", () => mostrarSeccion("productos"));
-document.getElementById("nav-cuenta").addEventListener("click", () => mostrarSeccion("cuenta"));
-document.getElementById("nav-compras").addEventListener("click", () => mostrarSeccion("compras"));
-document.getElementById("btn-ver-productos").addEventListener("click", () => mostrarSeccion("productos"));
-
 function mostrarSeccion(nombre) {
   Object.values(secciones).forEach(sec => sec.style.display = "none");
   secciones[nombre].style.display = "block";
+
+  // 👉 si entra a productos, cargar productos
+  if (nombre === "productos") {
+    mostrarProductos(allProducts);
+  }
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+// ======= EVENTOS NAV (PREVENT DEFAULT) =======
+document.getElementById("nav-inicio").addEventListener("click", e => {
+  e.preventDefault();
+  mostrarSeccion("inicio");
+});
+
+document.getElementById("nav-productos").addEventListener("click", e => {
+  e.preventDefault();
+  mostrarSeccion("productos");
+});
+
+document.getElementById("nav-cuenta").addEventListener("click", e => {
+  e.preventDefault();
+  mostrarSeccion("cuenta");
+});
+
+document.getElementById("nav-compras").addEventListener("click", e => {
+  e.preventDefault();
+  mostrarSeccion("compras");
+});
+
+document.getElementById("btn-ver-productos").addEventListener("click", e => {
+  e.preventDefault();
+  mostrarSeccion("productos");
+});
 
 // ======= PRODUCTOS =======
 const allProducts = [
@@ -34,24 +60,23 @@ function mostrarProductos(productos) {
 
   productos.forEach(prod => {
     const div = document.createElement("div");
-    div.classList.add("product");
+    div.className = "product";
 
     div.innerHTML = `
       <img src="${prod.imagen}" alt="${prod.nombre}">
       <h4>${prod.nombre}</h4>
       <p>$${prod.precio}</p>
-      <button>Agregar al carrito</button>
+      <button class="btn">Agregar al carrito</button>
     `;
 
-    div.addEventListener("mouseenter", () => div.style.transform = "translateY(-5px)");
-    div.addEventListener("mouseleave", () => div.style.transform = "translateY(0)");
-    div.addEventListener("click", () => alert(`Agregaste ${prod.nombre} al carrito`));
+    div.querySelector("button").addEventListener("click", e => {
+      e.stopPropagation();
+      alert(`Agregaste ${prod.nombre} al carrito`);
+    });
 
     productsContainer.appendChild(div);
   });
 }
-
-mostrarProductos(allProducts);
 
 // ======= FILTRO POR PRECIO =======
 document.getElementById("filter-btn").addEventListener("click", () => {
