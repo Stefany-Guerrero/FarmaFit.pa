@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="layout">
+
+<div class="layout">
 
   <!-- HEADER -->
   <header class="header">
@@ -24,11 +25,13 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <div class="main-content">
 
     <!-- SECCIÓN INICIO -->
     <section id="seccion-inicio">
+
+      <!-- HERO -->
       <section class="hero">
         <div class="container">
           <h2>Suplementos nutricionales para tu bienestar</h2>
@@ -37,6 +40,7 @@
         </div>
       </section>
 
+      <!-- PROMOCIONALES -->
       <section class="promocionales container">
         <div class="promo-card video-promo">
           <video loop playsinline controls>
@@ -49,6 +53,7 @@
         </div>
       </section>
 
+      <!-- CATEGORÍAS -->
       <section id="categorias" class="categories container">
         <div class="category"><h4>Maquillaje</h4></div>
         <div class="category"><h4>Skincare</h4></div>
@@ -58,40 +63,47 @@
         <div class="category"><h4>Nutrición</h4></div>
       </section>
 
-  <section class="info">
-  <div class="container info-grid">
+      <!-- INFO -->
+      <section class="info">
+        <div class="container info-grid">
 
-    <!-- TEXTO -->
-    <div class="info-text">
-      <h3>¿Por qué elegir FarmaFit?</h3>
-      <p>Suplementos nutricionales de alta calidad para tu bienestar.</p>
-    </div>
+          <div class="info-text">
+            <h3>¿Por qué elegir FarmaFit?</h3>
+            <p>Suplementos nutricionales de alta calidad para tu bienestar.</p>
+          </div>
 
-    <!-- IMAGEN -->
-    <div class="placeholder">
-      <img src="img/fotodelamarcav3.png" class="brand-img" alt="FarmaFit">
-    </div>
+          <div class="placeholder">
+            <img src="img/fotodelamarcav3.png"
+                 class="brand-img"
+                 alt="FarmaFit">
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
+
+    </section>
 
     <!-- SECCIÓN PRODUCTOS -->
     <section id="seccion-productos" style="display:none;">
       <div class="container">
         <h2>Todos los Productos</h2>
 
+        <!-- FILTRO -->
         <div class="price-filter">
           <label>
             Precio mínimo:
             <input type="number" id="min-price" min="0" step="1" placeholder="0">
           </label>
+
           <label>
             Precio máximo:
             <input type="number" id="max-price" min="0" step="1" placeholder="999">
           </label>
+
           <button id="filter-btn">Filtrar</button>
         </div>
 
+        <!-- PRODUCTOS -->
         <div id="products-container" class="products-grid"></div>
       </div>
     </section>
@@ -114,16 +126,18 @@
 
   </div>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
   </footer>
 
-  <!-- JS EXTERNO -->
-  <script src="js/products.js"></script>
-    </div>
+</div>
+
+<!-- JS -->
+<script src="js/products.js"></script>
+
 </body>
 </html>
-
 
 
 
