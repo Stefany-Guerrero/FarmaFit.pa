@@ -1,129 +1,67 @@
-document.addEventListener("DOMContentLoaded", function() {
+// ======= MENÚ DINÁMICO =======
+const secciones = {
+  inicio: document.getElementById("seccion-inicio"),
+  productos: document.getElementById("seccion-productos"),
+  cuenta: document.getElementById("seccion-cuenta"),
+  compras: document.getElementById("seccion-compras")
+};
 
-    // Lista de productos
-    const products = [
-        { id: 1, name: "Proteína Whey", price: 25.99, img: "img/proteina-whey.jpg" },
-        { id: 2, name: "Multivitamínico", price: 15.50, img: "img/multivitaminico.jpg" },
-        { id: 3, name: "Aminoácidos BCAA", price: 19.99, img: "img/bcaa.jpg" }
-    ];
+document.getElementById("nav-inicio").addEventListener("click", () => mostrarSeccion("inicio"));
+document.getElementById("nav-productos").addEventListener("click", () => mostrarSeccion("productos"));
+document.getElementById("nav-cuenta").addEventListener("click", () => mostrarSeccion("cuenta"));
+document.getElementById("nav-compras").addEventListener("click", () => mostrarSeccion("compras"));
+document.getElementById("btn-ver-productos").addEventListener("click", () => mostrarSeccion("productos"));
 
-    const container = document.getElementById("products-container");
+function mostrarSeccion(nombre) {
+  Object.values(secciones).forEach(sec => sec.style.display = "none");
+  secciones[nombre].style.display = "block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
-    // Cargar reseñas desde localStorage
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || {};
+// ======= PRODUCTOS =======
+const allProducts = [
+  { nombre: "Proteína Whey", imagen: "img/productos/whey.jpg", precio: 35 },
+  { nombre: "Multivitamínico", imagen: "img/productos/multivitaminico.jpg", precio: 20 },
+  { nombre: "Creatina", imagen: "img/productos/creatina.jpg", precio: 18 },
+  { nombre: "Omega 3", imagen: "img/productos/omega3.jpg", precio: 25 },
+  { nombre: "BCAA", imagen: "img/productos/bcaa.jpg", precio: 22 }
+];
 
-    // Crear cada producto
-    products.forEach(product => {
-        const div = document.createElement("div");
-        div.classList.add("product");
+const productsContainer = document.getElementById("products-container");
 
-        div.innerHTML = `
-            <img src="${product.img}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>Precio: $${product.price.toFixed(2)}</p>
-            <button onclick="addToCart(${product.id})">Agregar al carrito</button>
+function mostrarProductos(productos) {
+  productsContainer.innerHTML = "";
 
-            <div class="rating" id="rating-${product.id}">
-                Calificación:
-                ${[1,2,3,4,5].map(i => `<span class="star" data-star="${i}">&#9734;</span>`).join('')}
-            </div>
+  productos.forEach(prod => {
+    const div = document.createElement("div");
+    div.classList.add("product");
 
-            <div class="reviews" id="reviews-${product.id}">
-                <h4>Reseñas:</h4>
-                <div class="reviews-list"></div>
-                <textarea placeholder="Escribe tu reseña..." id="review-text-${product.id}"></textarea>
-                <input type="file" id="review-img-${product.id}" accept="image/*">
-                <button class="add-review-btn" data-id="${product.id}">Agregar reseña</button>
-            </div>
-        `;
+    div.innerHTML = `
+      <img src="${prod.imagen}" alt="${prod.nombre}">
+      <h4>${prod.nombre}</h4>
+      <p>$${prod.precio}</p>
+      <button>Agregar al carrito</button>
+    `;
 
-        container.appendChild(div);
+    div.addEventListener("mouseenter", () => div.style.transform = "translateY(-5px)");
+    div.addEventListener("mouseleave", () => div.style.transform = "translateY(0)");
+    div.addEventListener("click", () => alert(`Agregaste ${prod.nombre} al carrito`));
 
-        // Pintar estrellas guardadas
-        if(reviews[product.id]){
-            setStars(product.id, reviews[product.id].rating);
-            renderReviews(product.id);
-        }
-    });
+    productsContainer.appendChild(div);
+  });
+}
 
-    // --- FUNCIONES ---
-    window.addToCart = function(id){
-        const product = products.find(p => p.id === id);
-        alert(`${product.name} agregado al carrito`);
-    }
+mostrarProductos(allProducts);
 
-    function setStars(productId, rating){
-        const stars = document.querySelectorAll(`#rating-${productId} .star`);
-        stars.forEach(s => {
-            s.innerHTML = parseInt(s.dataset.star) <= rating ? "★" : "☆";
-        });
-    }
+// ======= FILTRO POR PRECIO =======
+document.getElementById("filter-btn").addEventListener("click", () => {
+  const min = parseFloat(document.getElementById("min-price").value) || 0;
+  const max = parseFloat(document.getElementById("max-price").value) || Infinity;
 
-    function renderReviews(productId){
-        const list = document.querySelector(`#reviews-${productId} .reviews-list`);
-        list.innerHTML = "";
-        if(reviews[productId] && reviews[productId].reviews){
-            reviews[productId].reviews.forEach(r => {
-                const div = document.createElement("div");
-                div.classList.add("review");
-                div.innerHTML = `
-                    <p>${r.text}</p>
-                    ${r.img ? `<img src="${r.img}" class="review-img">` : ""}
-                    <hr>
-                `;
-                list.appendChild(div);
-            });
-        }
-    }
+  const filtrados = allProducts.filter(
+    p => p.precio >= min && p.precio <= max
+  );
 
-    // --- EVENTOS DINÁMICOS ---
-    // Estrellas
-    document.querySelectorAll(".rating").forEach(ratingDiv => {
-        ratingDiv.addEventListener("click", function(e){
-            if(e.target.classList.contains("star")){
-                const productId = this.id.split("-")[1];
-                const rating = parseInt(e.target.dataset.star);
-
-                if(!reviews[productId]) reviews[productId] = {rating: 0, reviews: []};
-                reviews[productId].rating = rating;
-                localStorage.setItem("reviews", JSON.stringify(reviews));
-                setStars(productId, rating);
-            }
-        });
-    });
-
-    // Reseñas
-    document.querySelectorAll(".add-review-btn").forEach(btn => {
-        btn.addEventListener("click", function(){
-            const productId = this.dataset.id;
-            const text = document.getElementById(`review-text-${productId}`).value;
-            const imgInput = document.getElementById(`review-img-${productId}`);
-            const imgFile = imgInput.files[0];
-
-            if(!text && !imgFile) return alert("Debes escribir algo o subir una imagen");
-
-            if(!reviews[productId]) reviews[productId] = {rating: 0, reviews: []};
-
-            const reviewObj = {text, img: null};
-
-            if(imgFile){
-                const reader = new FileReader();
-                reader.onload = function(e){
-                    reviewObj.img = e.target.result;
-                    reviews[productId].reviews.push(reviewObj);
-                    localStorage.setItem("reviews", JSON.stringify(reviews));
-                    renderReviews(productId);
-                }
-                reader.readAsDataURL(imgFile);
-            } else {
-                reviews[productId].reviews.push(reviewObj);
-                localStorage.setItem("reviews", JSON.stringify(reviews));
-                renderReviews(productId);
-            }
-
-            document.getElementById(`review-text-${productId}`).value = "";
-            imgInput.value = "";
-        });
-    });
-
+  mostrarProductos(filtrados);
 });
+
