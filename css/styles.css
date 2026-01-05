@@ -528,6 +528,57 @@ body {
   gap: 25px;
 }
 
+/* =======================
+   LAYOUT PRODUCTOS
+======================= */
+.productos-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+}
+
+/* FILTROS */
+.filtros {
+  border-right: 1px solid #ddd;
+  padding-right: 15px;
+}
+
+.filtro-grupo {
+  margin-bottom: 15px;
+}
+
+.filtro-grupo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filtro-grupo input,
+.filtro-grupo select {
+  width: 100%;
+  padding: 6px;
+}
+
+/* PRODUCTOS */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+
 
 
 
