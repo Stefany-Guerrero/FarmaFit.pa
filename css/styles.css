@@ -405,7 +405,7 @@ body {
 
 /* ================= LINKS LOGIN ================= */
 .login-options {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .login-options .guest-link {
@@ -413,12 +413,15 @@ body {
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
+  transition: opacity 0.25s ease;
 }
 
 .login-options .guest-link:hover {
-  text-decoration: underline;
-  opacity: 0.75;
+  opacity: 0.7;
 }
+
+
+
 
 
 
