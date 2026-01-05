@@ -430,6 +430,54 @@ body {
   opacity: 0.7;
 }
 
+/* ====== LAYOUT PRODUCTOS ====== */
+.productos-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* ====== FILTROS ====== */
+.filtros {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  height: fit-content;
+}
+
+.filtros h3 {
+  margin-bottom: 15px;
+  color: #5B3765;
+}
+
+.filtro-grupo {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro-grupo label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.filtro-grupo input,
+.filtro-grupo select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ====== PRODUCTOS ====== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+
 
 
 
