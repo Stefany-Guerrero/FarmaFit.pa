@@ -122,18 +122,20 @@ function mostrarProductos(productos) {
 // FILTROS
 // ===============================
 document.getElementById("filter-btn").addEventListener("click", () => {
-  const min =
-    parseFloat(document.getElementById("min-price").value) || 0;
-  const max =
-    parseFloat(document.getElementById("max-price").value) || Infinity;
-  const categoria =
-    document.getElementById("category-filter").value;
+  const min = parseFloat(minPrice.value) || 0;
+  const max = parseFloat(maxPrice.value) || Infinity;
+  const cat = document.getElementById("filter-category").value;
+  const sub = document.getElementById("filter-subcategory").value;
+  const tipo = document.getElementById("filter-type").value;
 
   const filtrados = allProducts.filter(p => {
-    const precioOk = p.precio >= min && p.precio <= max;
-    const categoriaOk =
-      categoria === "all" || p.categoria === categoria;
-    return precioOk && categoriaOk;
+    return (
+      p.precio >= min &&
+      p.precio <= max &&
+      (cat === "all" || p.categoria === cat) &&
+      (sub === "all" || p.subcategoria === sub) &&
+      (tipo === "all" || p.tipo === tipo)
+    );
   });
 
   mostrarProductos(filtrados);
