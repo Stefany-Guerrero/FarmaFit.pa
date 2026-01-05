@@ -87,9 +87,52 @@
     <section id="seccion-productos" style="display:none;">
   <div class="container productos-layout">
 
-    <!-- FILTROS -->
-    <aside class="filtros">
-      <h3>Filtrar productos</h3>
+<!-- FILTROS -->
+<aside class="filtros">
+  <h3>Filtrar productos</h3>
+
+  <div class="filtro-grupo">
+    <label>Precio mínimo</label>
+    <input type="number" id="min-price" min="0" step="1" placeholder="0">
+  </div>
+
+  <div class="filtro-grupo">
+    <label>Precio máximo</label>
+    <input type="number" id="max-price" min="0" step="1" placeholder="999">
+  </div>
+
+  <div class="filtro-grupo">
+    <label>Categoría</label>
+    <select id="filter-category">
+      <option value="all">Todas</option>
+      <option value="maquillaje">Maquillaje</option>
+      <option value="nutricion">Nutrición</option>
+    </select>
+  </div>
+
+  <div class="filtro-grupo">
+    <label>Subcategoría</label>
+    <select id="filter-subcategory">
+      <option value="all">Todas</option>
+      <option value="ojos">Ojos</option>
+      <option value="labios">Labios</option>
+      <option value="proteinas">Proteínas</option>
+    </select>
+  </div>
+
+  <div class="filtro-grupo">
+    <label>Tipo</label>
+    <select id="filter-type">
+      <option value="all">Todos</option>
+      <option value="mascara">Máscara</option>
+      <option value="eyeliner">Delineador</option>
+      <option value="labial">Labial</option>
+      <option value="whey">Whey</option>
+    </select>
+  </div>
+
+  <button id="filter-btn" class="btn">Aplicar filtros</button>
+</aside>
 
       <!-- PRECIO -->
       <div class="filtro-grupo">
