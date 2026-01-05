@@ -46,11 +46,11 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
 
 // ======= PRODUCTOS =======
 const allProducts = [
-  { nombre: "Proteína Whey", imagen: "img/productos/whey.jpg", precio: 35 },
-  { nombre: "Multivitamínico", imagen: "img/productos/multivitaminico.jpg", precio: 20 },
-  { nombre: "Creatina", imagen: "img/productos/creatina.jpg", precio: 18 },
-  { nombre: "Omega 3", imagen: "img/productos/omega3.jpg", precio: 25 },
-  { nombre: "BCAA", imagen: "img/productos/bcaa.jpg", precio: 22 }
+  { nombre: "Proteína Whey", categoria: "proteinas", precio: 35, imagen: "img/productos/whey.jpg" },
+  { nombre: "Creatina", categoria: "energia", precio: 18, imagen: "img/productos/creatina.jpg" },
+  { nombre: "Multivitamínico", categoria: "vitaminas", precio: 20, imagen: "img/productos/multivitaminico.jpg" },
+  { nombre: "Omega 3", categoria: "salud", precio: 25, imagen: "img/productos/omega3.jpg" },
+  { nombre: "BCAA", categoria: "energia", precio: 22, imagen: "img/productos/bcaa.jpg" }
 ];
 
 const productsContainer = document.getElementById("products-container");
@@ -58,34 +58,39 @@ const productsContainer = document.getElementById("products-container");
 function mostrarProductos(productos) {
   productsContainer.innerHTML = "";
 
-  productos.forEach(prod => {
-    const div = document.createElement("div");
-    div.className = "product";
+  if (productos.length === 0) {
+    productsContainer.innerHTML = "<p>No hay productos para esos filtros</p>";
+    return;
+  }
 
-    div.innerHTML = `
-      <img src="${prod.imagen}" alt="${prod.nombre}">
-      <h4>${prod.nombre}</h4>
-      <p>$${prod.precio}</p>
-      <button class="btn">Agregar al carrito</button>
+  productos.forEach(p => {
+    const card = document.createElement("div");
+    card.classList.add("product");
+
+    card.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}">
+      <h4>${p.nombre}</h4>
+      <p>$${p.precio}</p>
+      <button>Agregar</button>
     `;
 
-    div.querySelector("button").addEventListener("click", e => {
-      e.stopPropagation();
-      alert(`Agregaste ${prod.nombre} al carrito`);
-    });
-
-    productsContainer.appendChild(div);
+    productsContainer.appendChild(card);
   });
 }
 
-// ======= FILTRO POR PRECIO =======
+mostrarProductos(allProducts);
+
+/* ====== FILTRAR ====== */
 document.getElementById("filter-btn").addEventListener("click", () => {
   const min = parseFloat(document.getElementById("min-price").value) || 0;
   const max = parseFloat(document.getElementById("max-price").value) || Infinity;
+  const categoria = document.getElementById("category-filter").value;
 
-  const filtrados = allProducts.filter(
-    p => p.precio >= min && p.precio <= max
-  );
+  const filtrados = allProducts.filter(p => {
+    const precioOk = p.precio >= min && p.precio <= max;
+    const categoriaOk = categoria === "all" || p.categoria === categoria;
+    return precioOk && categoriaOk;
+  });
 
   mostrarProductos(filtrados);
 });
