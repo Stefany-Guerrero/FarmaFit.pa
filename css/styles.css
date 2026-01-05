@@ -403,6 +403,24 @@ body {
   }
 }
 
+/* ================= LINKS LOGIN ================= */
+.login-options {
+  margin-top: 18px;
+}
+
+.login-options .guest-link {
+  color: #000000;          /* negro normal */
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-options .guest-link:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
+
 
 
 
