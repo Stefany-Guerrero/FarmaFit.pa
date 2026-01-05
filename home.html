@@ -28,7 +28,6 @@
 
     <!-- SECCIÓN INICIO -->
     <section id="seccion-inicio">
-      <!-- HERO -->
       <section class="hero">
         <div class="container">
           <h2>Suplementos nutricionales para tu bienestar</h2>
@@ -37,39 +36,35 @@
         </div>
       </section>
 
-      <!-- PROMOCIONALES -->
       <section class="promocionales container">
         <div class="promo-card video-promo">
-          <video id="promoVideo" loop playsinline controls>
+          <video loop playsinline controls>
             <source src="video/publicidad.mp4" type="video/mp4">
-            Tu navegador no soporta video.
           </video>
         </div>
 
         <div class="promo-card image-promo">
-          <img src="img/publicidad.jpeg" alt="Oferta: 2x1 productos">
+          <img src="img/publicidad.jpeg" alt="Oferta">
         </div>
       </section>
 
-      <!-- CATEGORÍAS -->
       <section id="categorias" class="categories container">
-        <div class="category" data-tag="maquillaje"><h4>Maquillaje</h4></div>
-        <div class="category" data-tag="skincare"><h4>Skincare</h4></div>
-        <div class="category" data-tag="cabello"><h4>Cuidado del Cabello</h4></div>
-        <div class="category" data-tag="personales"><h4>Cuidados Personales</h4></div>
-        <div class="category" data-tag="hombres"><h4>Hombres</h4></div>
-        <div class="category" data-tag="nutricion"><h4>Nutrición</h4></div>
+        <div class="category"><h4>Maquillaje</h4></div>
+        <div class="category"><h4>Skincare</h4></div>
+        <div class="category"><h4>Cuidado del Cabello</h4></div>
+        <div class="category"><h4>Cuidados Personales</h4></div>
+        <div class="category"><h4>Hombres</h4></div>
+        <div class="category"><h4>Nutrición</h4></div>
       </section>
 
-      <!-- INFO -->
-      <section id="beneficios" class="info">
+      <section class="info">
         <div class="container info-grid">
           <div>
             <h3>¿Por qué elegir FarmaFit?</h3>
-            <p>En FarmaFit nos enfocamos en suplementos nutricionales de alta calidad, cuidadosamente seleccionados para mejorar tu bienestar, rendimiento y salud.</p>
+            <p>Suplementos nutricionales de alta calidad para tu bienestar.</p>
           </div>
-          <div class="placeholder">
-            <img src="img/fotodelamarcav3.png" alt="Foto de la marca" class="brand-img">
+          <div>
+            <img src="img/fotodelamarcav3.png" class="brand-img">
           </div>
         </div>
       </section>
@@ -80,116 +75,49 @@
       <div class="container">
         <h2>Todos los Productos</h2>
 
-        <!-- FILTRO POR PRECIO -->
         <div class="price-filter">
-<input type="number" id="min-price" min="0" step="1" placeholder="0">
-<input type="number" id="max-price" min="0" step="1" placeholder="999">
+          <label>
+            Precio mínimo:
+            <input type="number" id="min-price" min="0" step="1" placeholder="0">
+          </label>
+          <label>
+            Precio máximo:
+            <input type="number" id="max-price" min="0" step="1" placeholder="999">
+          </label>
           <button id="filter-btn">Filtrar</button>
         </div>
 
-        <!-- CONTENEDOR DE PRODUCTOS -->
         <div id="products-container" class="products-grid"></div>
       </div>
     </section>
 
-    <!-- SECCIÓN CUENTA -->
+    <!-- CUENTA -->
     <section id="seccion-cuenta" style="display:none;">
       <div class="container">
         <h2>Mi cuenta</h2>
-        <p>Esta sección se usa para iniciar sesión o gestionar la cuenta.</p>
+        <p>Gestión de cuenta y sesión.</p>
       </div>
     </section>
 
-    <!-- SECCIÓN COMPRAS -->
+    <!-- COMPRAS -->
     <section id="seccion-compras" style="display:none;">
       <div class="container">
         <h2>Mis compras</h2>
-        <p>Lista de productos comprados aparecerá aquí.</p>
+        <p>Historial de compras.</p>
       </div>
     </section>
 
-  </div> <!-- fin main-content -->
+  </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
   </footer>
 
-  <!-- SCRIPT -->
-  <script>
-    // ======= MENÚ DINÁMICO =======
-    const secciones = {
-      inicio: document.getElementById("seccion-inicio"),
-      productos: document.getElementById("seccion-productos"),
-      cuenta: document.getElementById("seccion-cuenta"),
-      compras: document.getElementById("seccion-compras")
-    };
-
-    document.getElementById("nav-inicio").addEventListener("click", () => mostrarSeccion("inicio"));
-    document.getElementById("nav-productos").addEventListener("click", () => mostrarSeccion("productos"));
-    document.getElementById("nav-cuenta").addEventListener("click", () => mostrarSeccion("cuenta"));
-    document.getElementById("nav-compras").addEventListener("click", () => mostrarSeccion("compras"));
-    document.getElementById("btn-ver-productos").addEventListener("click", () => mostrarSeccion("productos"));
-
-    function mostrarSeccion(nombre) {
-      Object.values(secciones).forEach(sec => sec.style.display = "none");
-      secciones[nombre].style.display = "block";
-      window.scrollTo({top:0, behavior:'smooth'});
-    }
-
-    // ======= CATEGORÍAS =======
-    const categories = document.querySelectorAll('.category');
-    categories.forEach(category => {
-      category.addEventListener('click', () => {
-        categories.forEach(c => c.classList.remove('selected'));
-        category.classList.add('selected');
-      });
-    });
-
-    // ======= PRODUCTOS DINÁMICOS =======
-    const allProducts = [
-      {nombre: "Proteína Whey", imagen: "img/productos/whey.jpg", precio: 35},
-      {nombre: "Multivitamínico", imagen: "img/productos/multivitaminico.jpg", precio: 20},
-      {nombre: "Creatina", imagen: "img/productos/creatina.jpg", precio: 18},
-      {nombre: "Aceite de Omega 3", imagen: "img/productos/omega3.jpg", precio: 25},
-      {nombre: "BCAA", imagen: "img/productos/bcaa.jpg", precio: 22}
-    ];
-
-    const productsContainer = document.getElementById("products-container");
-
-    function mostrarProductos(productos) {
-      productsContainer.innerHTML = "";
-      productos.forEach(prod => {
-        const div = document.createElement("div");
-        div.classList.add("product");
-        div.innerHTML = `
-          <img src="${prod.imagen}" alt="${prod.nombre}">
-          <h4>${prod.nombre}</h4>
-          <p>$${prod.precio}</p>
-          <button>Agregar al carrito</button>
-        `;
-        div.addEventListener("mouseenter", () => div.style.transform = "translateY(-5px)");
-        div.addEventListener("mouseleave", () => div.style.transform = "translateY(0)");
-        div.addEventListener("click", () => alert(`Agregaste ${prod.nombre} al carrito!`));
-        productsContainer.appendChild(div);
-      });
-    }
-
-    // Mostrar todos al inicio
-    mostrarProductos(allProducts);
-
-    // Filtro por precio
-    document.getElementById("filter-btn").addEventListener("click", () => {
-      const min = parseFloat(document.getElementById("min-price").value) || 0;
-      const max = parseFloat(document.getElementById("max-price").value) || Infinity;
-      const filtrados = allProducts.filter(p => p.precio >= min && p.precio <= max);
-      mostrarProductos(filtrados);
-    });
-
-  </script>
-
+  <!-- JS EXTERNO -->
+  <script src="js/home.js"></script>
 </body>
 </html>
+
 
 
 
