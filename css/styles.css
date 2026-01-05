@@ -179,6 +179,7 @@ body {
 /* ================= INFO ================= */
 .info {
   padding: 80px 20px;
+  background: #fdeaf2;
 }
 
 .info-grid {
@@ -187,6 +188,14 @@ body {
   gap: 40px;
   align-items: center;
 }
+
+.info-text {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
 
 .placeholder {
   background: #F3CCDE;
@@ -198,8 +207,9 @@ body {
 }
 
 .brand-img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 320px;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
