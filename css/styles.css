@@ -319,17 +319,11 @@ body {
   gap: 12px;
 }
 
-.social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 999px;
-  border: 1px solid #ddd;
-  background: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
+/* ================= ICONOS LOGIN SOCIAL ================= */
+.social-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 /* ================= RESPONSIVE ================= */
