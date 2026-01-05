@@ -319,6 +319,57 @@ body {
   gap: 12px;
 }
 
+/* ================= BOTONES LOGIN SOCIAL ================= */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+  width: 100%;
+
+  border-radius: 999px; /* 👈 OVALADO */
+  border: 1px solid #ddd;
+
+  background: #ffffff;
+  color: #5B3765;
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Hover */
+.social-btn:hover {
+  background: #fdeaf2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Click (mobile friendly) */
+.social-btn:active {
+  transform: scale(0.97);
+}
+
+/* Colores por red */
+.social-btn.google {
+  border-color: #ea4335;
+}
+
+.social-btn.facebook {
+  border-color: #1877f2;
+}
+
+.social-btn.apple {
+  border-color: #000000;
+}
+
+
 /* ================= ICONOS LOGIN SOCIAL ================= */
 .social-btn img {
   width: 20px;
