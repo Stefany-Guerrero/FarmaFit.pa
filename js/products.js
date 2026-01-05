@@ -9,10 +9,7 @@ const secciones = {
 };
 
 function mostrarSeccion(nombre) {
-  Object.values(secciones).forEach(sec => {
-    sec.style.display = "none";
-  });
-
+  Object.values(secciones).forEach(sec => sec.style.display = "none");
   secciones[nombre].style.display = "block";
 
   // Si entra a productos, cargar todos
@@ -98,8 +95,7 @@ function mostrarProductos(productos) {
   productsContainer.innerHTML = "";
 
   if (productos.length === 0) {
-    productsContainer.innerHTML =
-      "<p>No hay productos para esos filtros</p>";
+    productsContainer.innerHTML = "<p>No hay productos para esos filtros</p>";
     return;
   }
 
@@ -114,6 +110,11 @@ function mostrarProductos(productos) {
       <button class="btn">Agregar</button>
     `;
 
+    // Botón agregar funcional
+    card.querySelector("button").addEventListener("click", () => {
+      alert(`Agregaste ${p.nombre} al carrito`);
+    });
+
     productsContainer.appendChild(card);
   });
 }
@@ -121,9 +122,11 @@ function mostrarProductos(productos) {
 // ===============================
 // FILTROS
 // ===============================
-document.getElementById("filter-btn").addEventListener("click", () => {
-  const min = parseFloat(minPrice.value) || 0;
-  const max = parseFloat(maxPrice.value) || Infinity;
+document.getElementById("filter-btn").addEventListener("click", e => {
+  e.preventDefault();
+
+  const min = parseFloat(document.getElementById("min-price").value) || 0;
+  const max = parseFloat(document.getElementById("max-price").value) || Infinity;
   const cat = document.getElementById("filter-category").value;
   const sub = document.getElementById("filter-subcategory").value;
   const tipo = document.getElementById("filter-type").value;
@@ -145,5 +148,3 @@ document.getElementById("filter-btn").addEventListener("click", () => {
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
-
-
