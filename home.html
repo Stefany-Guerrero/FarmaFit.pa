@@ -85,28 +85,45 @@
 
     <!-- SECCIÓN PRODUCTOS -->
     <section id="seccion-productos" style="display:none;">
-      <div class="container">
-        <h2>Todos los Productos</h2>
+  <div class="container productos-layout">
 
-        <!-- FILTRO -->
-        <div class="price-filter">
-          <label>
-            Precio mínimo:
-            <input type="number" id="min-price" min="0" step="1" placeholder="0">
-          </label>
+    <!-- FILTROS -->
+    <aside class="filtros">
+      <h3>Filtrar productos</h3>
 
-          <label>
-            Precio máximo:
-            <input type="number" id="max-price" min="0" step="1" placeholder="999">
-          </label>
-
-          <button id="filter-btn">Filtrar</button>
-        </div>
-
-        <!-- PRODUCTOS -->
-        <div id="products-container" class="products-grid"></div>
+      <!-- PRECIO -->
+      <div class="filtro-grupo">
+        <label>Precio mínimo</label>
+        <input type="number" id="min-price" min="0" step="1" placeholder="0">
       </div>
+
+      <div class="filtro-grupo">
+        <label>Precio máximo</label>
+        <input type="number" id="max-price" min="0" step="1" placeholder="999">
+      </div>
+
+      <!-- CATEGORÍA -->
+      <div class="filtro-grupo">
+        <label>Categoría</label>
+        <select id="category-filter">
+          <option value="all">Todas</option>
+          <option value="proteinas">Proteínas</option>
+          <option value="vitaminas">Vitaminas</option>
+          <option value="energia">Energía</option>
+          <option value="salud">Salud</option>
+        </select>
+      </div>
+
+      <button id="filter-btn" class="btn">Aplicar filtros</button>
+    </aside>
+
+    <!-- PRODUCTOS -->
+    <section class="productos">
+      <div id="products-container" class="products-grid"></div>
     </section>
+
+  </div>
+</section>
 
     <!-- CUENTA -->
     <section id="seccion-cuenta" style="display:none;">
