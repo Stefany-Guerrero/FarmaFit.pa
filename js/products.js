@@ -53,36 +53,44 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
 // ===============================
 const allProducts = [
   {
+    id: "FF-MK-001",
     nombre: "Double Lash Extend Mascara",
     precio: 26.90,
     imagen: "productos/doublelashextendmascara.jpg",
     categoria: "maquillaje",
     subcategoria: "ojos",
-    tipo: "mascara"
+    tipo: "mascara",
+    favorito: false
   },
   {
+    id: "FF-MK-002",
     nombre: "Eyebrow & Lash Serum",
     precio: 37.00,
     imagen: "productos/eyebrow&lashserum.jpg",
     categoria: "maquillaje",
     subcategoria: "ojos",
-    tipo: "mascara"
+    tipo: "mascara",
+    favorito: false
   },
   {
+    id: "FF-MK-003",
     nombre: "Full Blast Mascara",
     precio: 36.50,
     imagen: "productos/fullblastmascara.jpg",
     categoria: "maquillaje",
     subcategoria: "ojos",
-    tipo: "mascara"
+    tipo: "mascara",
+    favorito: false
   },
   {
+    id: "FF-NT-001",
     nombre: "Proteína Whey",
     precio: 35,
     imagen: "img/productos/whey.jpg",
     categoria: "nutricion",
     subcategoria: "proteinas",
-    tipo: "whey"
+    tipo: "whey",
+    favorito: false
   }
 ];
 
@@ -104,11 +112,26 @@ function mostrarProductos(productos) {
     card.classList.add("product");
 
     card.innerHTML = `
+      <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
+        ❤
+      </div>
+
       <img src="${p.imagen}" alt="${p.nombre}">
+
       <h4>${p.nombre}</h4>
-      <p>$${p.precio}</p>
+      <span class="product-code">${p.id}</span>
+
+      <p class="price">$${p.precio}</p>
+
       <button class="btn">Agregar</button>
     `;
+
+    // Favoritos
+    const favBtn = card.querySelector(".product-fav");
+    favBtn.addEventListener("click", () => {
+      p.favorito = !p.favorito;
+      favBtn.classList.toggle("active");
+    });
 
     // Botón agregar funcional
     card.querySelector("button").addEventListener("click", () => {
@@ -148,3 +171,4 @@ document.getElementById("filter-btn").addEventListener("click", e => {
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
+
