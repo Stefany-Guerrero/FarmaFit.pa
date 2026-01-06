@@ -85,7 +85,7 @@ const allProducts = [
   {
     id: "FF-NT-004",
     nombre: "Proteína Whey",
-    precio: 35,
+    precio: 33.50,
     imagen: "productos/infinilashmascara.jpg",
     categoria: "maquillaje",
     subcategoria: "ojos",
