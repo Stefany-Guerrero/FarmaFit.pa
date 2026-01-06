@@ -220,6 +220,7 @@ body {
   align-items: flex-start;
   margin-top: 30px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* FILTROS (IZQUIERDA) */
@@ -259,17 +260,20 @@ body {
 /* PRODUCTOS (DERECHA) */
 .productos {
   flex: 1;
-  display: flex;           /* habilitamos flex para centrar la grid */
-  justify-content: center; /* centramos la grid dentro del contenedor */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* GRID DE PRODUCTOS */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
-  justify-items: center; /* centramos cada producto dentro de su celda */
-  padding: 0 10px;       /* margen interno para que no toque los bordes */
+  justify-content: center;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* PRODUCTO INDIVIDUAL */
@@ -283,11 +287,11 @@ body {
   cursor: pointer;
   border: 1px solid #ddd;
   width: 100%;
-  max-width: 220px; /* no se estire más del ancho deseado */
+  max-width: 220px;
 }
 
 .product:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
@@ -403,6 +407,13 @@ body {
 }
 
 /* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .header-flex {
     flex-direction: column;
@@ -437,18 +448,25 @@ body {
 
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .product {
+    max-width: 100%;
   }
 }
 
 /* ================= LOGIN LINKS UNIFICADOS ================= */
 .login-options a {
-  color: #000000;          /* negro para todos los links de login */
+  color: #000000;
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -459,16 +477,3 @@ body {
   opacity: 0.7;
 }
 
-/* MEDIA QUERY MÓVIL */
-@media (max-width: 480px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-    justify-items: center; /* centramos cada producto */
-    gap: 20px;
-    padding: 0 15px; /* no tocar bordes */
-  }
-
-  .product {
-    max-width: 300px; /* evita que se estire demasiado */
-  }
-}
