@@ -453,14 +453,22 @@ body {
 }
 
 @media (max-width: 480px) {
+  .productos {
+    justify-content: center; /* centra el contenedor de productos */
+    flex-wrap: wrap;
+  }
+
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;   /* 1 columna */
+    justify-items: center;        /* cada producto centrado en su celda */
     gap: 15px;
     padding: 0 10px;
+    width: 100%;                  /* ocupa todo el ancho */
   }
 
   .product {
-    max-width: 100%;
+    max-width: 280px;             /* limita ancho para que no quede pegado al borde */
+    width: 100%;
   }
 }
 
