@@ -84,7 +84,7 @@ const allProducts = [
   },
   {
     id: "FF-NT-004",
-    nombre: "Proteína Whey",
+    nombre: "Infinilash Mascara",
     precio: 33.50,
     imagen: "productos/infinilashmascara.jpg",
     categoria: "maquillaje",
@@ -113,6 +113,34 @@ const allProducts = [
     favorito: false
   },
 ];
+
+// ===============================
+// RELACIÓN CATEGORÍA → SUBCATEGORÍA → TIPO
+// ===============================
+const filtrosPorCategoria = {
+  maquillaje: {
+    subcategorias: {
+      ojos: ["mascara", "delineador", "sombras"],
+      labios: ["labial", "gloss"],
+      rostro: ["base", "rubor"]
+    }
+  },
+
+  nutricion: {
+    subcategorias: {
+      suplementos: ["proteina", "whey", "creatina"],
+      vitaminas: ["vitamina c", "multivitaminico"]
+    }
+  },
+
+  piel: {
+    subcategorias: {
+      limpieza: ["gel", "espuma"],
+      hidratacion: ["crema", "serum"]
+    }
+  }
+};
+
 
 // ===============================
 // RENDER PRODUCTOS
@@ -165,6 +193,50 @@ function mostrarProductos(productos) {
     productsContainer.appendChild(card);
   });
 }
+
+function actualizarSubcategoriasYTipos() {
+  const categoriaSelect = document.getElementById("filter-category");
+  const subSelect = document.getElementById("filter-subcategory");
+  const tipoSelect = document.getElementById("filter-type");
+
+  const categoria = categoriaSelect.value;
+
+  // Reset
+  subSelect.innerHTML = `<option value="all">Todas</option>`;
+  tipoSelect.innerHTML = `<option value="all">Todos</option>`;
+
+  if (categoria === "all" || !filtrosPorCategoria[categoria]) return;
+
+  const subcategorias = filtrosPorCategoria[categoria].subcategorias;
+
+  // Cargar subcategorías
+  Object.keys(subcategorias).forEach(sub => {
+    const opt = document.createElement("option");
+    opt.value = sub;
+    opt.textContent = sub.charAt(0).toUpperCase() + sub.slice(1);
+    subSelect.appendChild(opt);
+  });
+
+  // Cuando cambia subcategoría → cargar tipos
+  subSelect.onchange = () => {
+    tipoSelect.innerHTML = `<option value="all">Todos</option>`;
+
+    const sub = subSelect.value;
+    if (sub === "all") return;
+
+    subcategorias[sub].forEach(tipo => {
+      const opt = document.createElement("option");
+      opt.value = tipo;
+      opt.textContent = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+      tipoSelect.appendChild(opt);
+    });
+  };
+}
+
+
+  document
+  .getElementById("filter-category")
+  .addEventListener("change", actualizarSubcategoriasYTipos);
 
 // ===============================
 // FILTROS
