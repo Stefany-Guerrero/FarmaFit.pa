@@ -53,7 +53,7 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
 // ===============================
 const allProducts = [
   {
-    nombre: "Máscara de pestañas Double Lash Extend",
+    nombre: "Double Lash Extend Mascara",
     precio: 26.90,
     imagen: "productos/doublelashextendmascara.jpg",
     categoria: "maquillaje",
