@@ -56,9 +56,9 @@ const allProducts = [
     nombre: "Máscara de pestañas Double Lash Extend",
     precio: 26.90,
     imagen: "productos/doublelashextendmascara.jpg",
-    categoria: "Maquillaje",
-    subcategoria: "Ojos",
-    tipo: "Máscara"
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara"
   },
   {
     nombre: "Delineador Negro",
