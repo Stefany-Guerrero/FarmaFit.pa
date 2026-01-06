@@ -453,21 +453,42 @@ body {
 }
 
 @media (max-width: 480px) {
+  /* CENTRADO DEL LAYOUT COMPLETO */
+  .productos-layout {
+    flex-direction: column;   /* apila filtros y productos */
+    align-items: center;      /* centra todo el layout */
+  }
+
+  .filtros {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* CONTENEDOR DE PRODUCTOS */
   .productos {
-    justify-content: center; /* centra el contenedor de productos */
+    width: 100%;              /* ocupa todo el ancho */
+    display: flex;
+    justify-content: center;  /* centra la grid */
     flex-wrap: wrap;
   }
 
+  /* GRID DE PRODUCTOS */
   .products-grid {
-    grid-template-columns: 1fr;   /* 1 columna */
-    justify-items: center;        /* cada producto centrado en su celda */
+    width: 100%;
+    max-width: 320px;         /* limita ancho de la grid */
+    grid-template-columns: 1fr;
+    justify-items: center;    /* centra cada producto dentro de la celda */
     gap: 15px;
+    margin: 0 auto;           /* asegura centrado */
     padding: 0 10px;
-    width: 100%;                  /* ocupa todo el ancho */
   }
 
+  /* PRODUCTOS INDIVIDUALES */
   .product {
-    max-width: 280px;             /* limita ancho para que no quede pegado al borde */
+    max-width: 280px;         /* limita ancho de cada producto */
     width: 100%;
   }
 }
