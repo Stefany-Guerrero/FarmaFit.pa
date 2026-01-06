@@ -107,24 +107,26 @@ function mostrarProductos(productos) {
     return;
   }
 
-  productos.forEach(p => {
-    const card = document.createElement("div");
-    card.classList.add("product");
+productos.forEach(p => {
+  const card = document.createElement("div");
+  card.classList.add("product");
 
-    card.innerHTML = `
-      <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
-        ❤
-      </div>
+  // 👇 AQUÍ se define todo lo que se ve en cada producto
+  card.innerHTML = `
+    <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
+      ❤
+    </div>
 
-      <img src="${p.imagen}" alt="${p.nombre}">
+    <img src="${p.imagen}" alt="${p.nombre}">
 
-      <h4>${p.nombre}</h4>
-      <span class="product-code">${p.id}</span>
+    <h4>${p.nombre}</h4>
+    <span class="product-code">${p.id}</span>
 
-      <p class="price">$${p.precio}</p>
+    <p class="price">$${p.precio}</p>
 
-      <button class="btn">Agregar</button>
-    `;
+    <button class="btn">Agregar</button>
+  `;
+});
 
     // Favoritos
     const favBtn = card.querySelector(".product-fav");
