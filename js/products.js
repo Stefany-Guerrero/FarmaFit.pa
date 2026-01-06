@@ -91,7 +91,27 @@ const allProducts = [
     subcategoria: "ojos",
     tipo: "mascara",
     favorito: false
-  }
+  },
+    {
+    id: "FF-NT-005",
+    nombre: "Infinilash Mascara - Brown",
+    precio: 30.90,
+    imagen: "productos/infinilashmascara.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara",
+    favorito: false
+  },
+      {
+    id: "FF-NT-006",
+    nombre: "Zen Extension Lash Mascara",
+    precio: 15.50,
+    imagen: "productos/zenextensionlashmascara.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara",
+    favorito: false
+  },
 ];
 
 // ===============================
