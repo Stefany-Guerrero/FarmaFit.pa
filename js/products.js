@@ -53,12 +53,12 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
 // ===============================
 const allProducts = [
   {
-    nombre: "Máscara de Pestañas",
-    precio: 12,
-    imagen: "img/productos/mascara.jpg",
-    categoria: "maquillaje",
-    subcategoria: "ojos",
-    tipo: "mascara"
+    nombre: "Máscara de pestañas Double Lash Extend",
+    precio: 26.90,
+    imagen: "productos/doublelashextendmascara.jpg",
+    categoria: "Máscara",
+    subcategoria: "Ojos",
+    tipo: "Máscara"
   },
   {
     nombre: "Delineador Negro",
