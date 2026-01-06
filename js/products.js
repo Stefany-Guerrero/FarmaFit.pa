@@ -107,39 +107,41 @@ function mostrarProductos(productos) {
     return;
   }
 
-productos.forEach(p => {
-  const card = document.createElement("div");
-  card.classList.add("product");
+  productos.forEach(p => {
+    const card = document.createElement("div");
+    card.classList.add("product");
 
-  // 👇 AQUÍ se define todo lo que se ve en cada producto
-  card.innerHTML = `
-    <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
-      ❤
-    </div>
+    // CONTENIDO DEL PRODUCTO
+    card.innerHTML = `
+      <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
+        ❤
+      </div>
 
-    <img src="${p.imagen}" alt="${p.nombre}">
+      <img src="${p.imagen}" alt="${p.nombre}">
 
-    <h4>${p.nombre}</h4>
-    <span class="product-code">${p.id}</span>
+      <h4>${p.nombre}</h4>
+      <span class="product-code">${p.id}</span>
 
-    <p class="price">$${p.precio}</p>
+      <p class="price">$${p.precio}</p>
 
-    <button class="btn">Agregar</button>
-  `;
-});
+      <button class="btn">Agregar</button>
+    `;
 
-    // Favoritos
+    // ❤️ FAVORITOS (FUNCIONAL)
     const favBtn = card.querySelector(".product-fav");
-    favBtn.addEventListener("click", () => {
+    favBtn.addEventListener("click", e => {
+      e.stopPropagation(); // evita conflictos de click
       p.favorito = !p.favorito;
       favBtn.classList.toggle("active");
     });
 
-    // Botón agregar funcional
-    card.querySelector("button").addEventListener("click", () => {
+    // 🛒 BOTÓN AGREGAR
+    card.querySelector("button").addEventListener("click", e => {
+      e.stopPropagation();
       alert(`Agregaste ${p.nombre} al carrito`);
     });
 
+    // AGREGAR AL CONTENEDOR
     productsContainer.appendChild(card);
   });
 }
@@ -173,4 +175,5 @@ document.getElementById("filter-btn").addEventListener("click", e => {
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
+
 
