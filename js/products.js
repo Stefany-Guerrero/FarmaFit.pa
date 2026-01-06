@@ -83,13 +83,13 @@ const allProducts = [
     favorito: false
   },
   {
-    id: "FF-NT-001",
+    id: "FF-NT-004",
     nombre: "Proteína Whey",
     precio: 35,
-    imagen: "img/productos/whey.jpg",
-    categoria: "nutricion",
-    subcategoria: "proteinas",
-    tipo: "whey",
+    imagen: "productos/infinilashmascara.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara",
     favorito: false
   }
 ];
