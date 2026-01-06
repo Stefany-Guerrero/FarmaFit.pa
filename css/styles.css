@@ -266,6 +266,7 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 25px;
   justify-items: center; /* centramos cada producto en su celda */
+  padding: 0 10px;       /* margen interno para que no toque los bordes */
 }
 
 .product {
@@ -453,6 +454,20 @@ body {
 .login-options a:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    justify-items: center; /* centramos cada producto */
+    padding: 0 15px;       /* margen interno para que no toque los bordes */
+    gap: 20px;             /* opcional: un poco menos de espacio entre filas en móvil */
+  }
+  
+  .product {
+    max-width: 300px; /* opcional, para no estirar demasiado la tarjeta */
+  }
+}
+
 
 
 
