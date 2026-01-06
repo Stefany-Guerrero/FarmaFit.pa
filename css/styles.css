@@ -506,3 +506,45 @@ body {
   opacity: 0.7;
 }
 
+/* ================= FAVORITOS Y CÓDIGO PRODUCTO ================= */
+
+/* El producto debe ser relativo para posicionar el corazón */
+.product {
+  position: relative;
+}
+
+/* ❤️ Corazón funcional */
+.fav-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.4rem;
+  color: #bbb;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.fav-icon:hover {
+  transform: scale(1.15);
+}
+
+.fav-icon.active {
+  color: #e63946; /* rojo cuando está marcado */
+}
+
+/* 🆔 Código del producto */
+.product-code {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b6b6b;
+  margin-bottom: 8px;
+}
+
+/* Precio con aire */
+.product .price {
+  margin-bottom: 12px;
+}
+
+
