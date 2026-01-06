@@ -69,12 +69,12 @@ const allProducts = [
     tipo: "mascara"
   },
   {
-    nombre: "Labial Mate",
-    precio: 9,
-    imagen: "img/productos/labial.jpg",
+    nombre: "Full Blast Mascara",
+    precio: 36.50,
+    imagen: "productos/fullblastmascara.jpg",
     categoria: "maquillaje",
-    subcategoria: "labios",
-    tipo: "labial"
+    subcategoria: "ojos",
+    tipo: "mascara"
   },
   {
     nombre: "Proteína Whey",
