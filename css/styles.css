@@ -265,9 +265,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 25px;
+  justify-items: center; /* centramos cada producto en su celda */
 }
 
-/* PRODUCTO INDIVIDUAL */
 .product {
   background: #F3CCDE;
   padding: 15px;
@@ -277,17 +277,19 @@ body {
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
   border: 1px solid #ddd;
+  width: 100%;
+  max-width: 220px; /* esto asegura que no se estire más del ancho deseado */
 }
 
 .product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(-5px); /* hover intacto */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* hover intacto */
 }
 
 .product img {
-  display: block;           
-  margin: 0 auto;           
-  max-width: 100%;          
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
