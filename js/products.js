@@ -61,12 +61,12 @@ const allProducts = [
     tipo: "mascara"
   },
   {
-    nombre: "Delineador Negro",
-    precio: 10,
-    imagen: "img/productos/delineador.jpg",
+    nombre: "Eyebrow & Lash Serum",
+    precio: 37.00,
+    imagen: "productos/eyebrow&lashserum.jpg",
     categoria: "maquillaje",
     subcategoria: "ojos",
-    tipo: "eyeliner"
+    tipo: "mascara"
   },
   {
     nombre: "Labial Mate",
