@@ -10,25 +10,28 @@
 
 <div class="layout">
 
-  <!-- HEADER -->
+  <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header-flex">
+
       <div class="brand">
         <img src="img/FarmaFitv3.png" alt="FarmaFit logo" class="logo">
       </div>
+
       <nav>
         <a href="#" id="nav-inicio">Inicio</a>
         <a href="#" id="nav-productos">Productos</a>
         <a href="#" id="nav-cuenta">Cuenta</a>
         <a href="#" id="nav-compras">Compras</a>
       </nav>
+
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- ================= MAIN ================= -->
   <div class="main-content">
 
-    <!-- SECCIÓN INICIO -->
+    <!-- ================= SECCIÓN INICIO ================= -->
     <section id="seccion-inicio">
 
       <!-- HERO -->
@@ -36,12 +39,17 @@
         <div class="container">
           <h2>Suplementos nutricionales para tu bienestar</h2>
           <p>Vitaminas y suplementos de calidad para apoyar tu salud día a día.</p>
-          <a href="#" class="btn" id="btn-ver-productos">Ver suplementos</a>
+
+          <!-- Botón funcional -->
+          <a href="#" class="btn" id="btn-ver-productos">
+            Ver suplementos
+          </a>
         </div>
       </section>
 
       <!-- PROMOCIONALES -->
       <section class="promocionales container">
+
         <div class="promo-card video-promo">
           <video loop playsinline controls>
             <source src="video/publicidad.mp4" type="video/mp4">
@@ -51,19 +59,40 @@
         <div class="promo-card image-promo">
           <img src="img/publicidad.jpeg" alt="Oferta">
         </div>
+
       </section>
 
-      <!-- CATEGORÍAS -->
+      <!-- ================= CATEGORÍAS ================= -->
+      <!-- 🔑 data-category es CLAVE -->
       <section id="categorias" class="categories container">
-        <div class="category"><h4>Maquillaje</h4></div>
-        <div class="category"><h4>Skincare</h4></div>
-        <div class="category"><h4>Cuidado del Cabello</h4></div>
-        <div class="category"><h4>Cuidados Personales</h4></div>
-        <div class="category"><h4>Hombres</h4></div>
-        <div class="category"><h4>Nutrición</h4></div>
+
+        <div class="category" data-category="maquillaje">
+          <h4>Maquillaje</h4>
+        </div>
+
+        <div class="category" data-category="skincare">
+          <h4>Skincare</h4>
+        </div>
+
+        <div class="category" data-category="cabello">
+          <h4>Cuidado del Cabello</h4>
+        </div>
+
+        <div class="category" data-category="personal">
+          <h4>Cuidados Personales</h4>
+        </div>
+
+        <div class="category" data-category="hombres">
+          <h4>Hombres</h4>
+        </div>
+
+        <div class="category" data-category="nutricion">
+          <h4>Nutrición</h4>
+        </div>
+
       </section>
 
-      <!-- INFO -->
+      <!-- ================= INFO ================= -->
       <section class="info">
         <div class="container info-grid">
 
@@ -73,9 +102,11 @@
           </div>
 
           <div class="placeholder">
-            <img src="img/fotodelamarcav3.png"
-                 class="brand-img"
-                 alt="FarmaFit">
+            <img
+              src="img/fotodelamarcav3.png"
+              class="brand-img"
+              alt="FarmaFit"
+            >
           </div>
 
         </div>
@@ -83,65 +114,68 @@
 
     </section>
 
+    <!-- ================= SECCIÓN PRODUCTOS ================= -->
     <section id="seccion-productos" style="display:none;">
-  <div class="productos-layout">
+      <div class="productos-layout">
 
-    <!-- FILTROS -->
-    <aside class="filtros">
-      <h3>Filtrar productos</h3>
+        <!-- FILTROS -->
+        <aside class="filtros">
+          <h3>Filtrar productos</h3>
 
-      <div class="filtro-grupo">
-        <label>Precio mínimo</label>
-        <input type="number" id="min-price" min="0" step="1" placeholder="0">
+          <div class="filtro-grupo">
+            <label>Precio mínimo</label>
+            <input type="number" id="min-price" min="0" step="1" placeholder="0">
+          </div>
+
+          <div class="filtro-grupo">
+            <label>Precio máximo</label>
+            <input type="number" id="max-price" min="0" step="1" placeholder="999">
+          </div>
+
+          <div class="filtro-grupo">
+            <label>Categoría</label>
+            <select id="filter-category">
+              <option value="all">Todas</option>
+              <option value="maquillaje">Maquillaje</option>
+              <option value="nutricion">Nutrición</option>
+            </select>
+          </div>
+
+          <div class="filtro-grupo">
+            <label>Subcategoría</label>
+            <select id="filter-subcategory">
+              <option value="all">Todas</option>
+              <option value="ojos">Ojos</option>
+              <option value="labios">Labios</option>
+              <option value="proteinas">Proteínas</option>
+            </select>
+          </div>
+
+          <div class="filtro-grupo">
+            <label>Tipo</label>
+            <select id="filter-type">
+              <option value="all">Todos</option>
+              <option value="mascara">Máscara</option>
+              <option value="eyeliner">Delineador</option>
+              <option value="labial">Labial</option>
+              <option value="whey">Whey</option>
+            </select>
+          </div>
+
+          <button id="filter-btn" class="btn">
+            Aplicar filtros
+          </button>
+        </aside>
+
+        <!-- PRODUCTOS -->
+        <section class="productos">
+          <div id="products-container" class="products-grid"></div>
+        </section>
+
       </div>
-
-      <div class="filtro-grupo">
-        <label>Precio máximo</label>
-        <input type="number" id="max-price" min="0" step="1" placeholder="999">
-      </div>
-
-      <div class="filtro-grupo">
-        <label>Categoría</label>
-        <select id="filter-category">
-          <option value="all">Todas</option>
-          <option value="maquillaje">Maquillaje</option>
-          <option value="nutricion">Nutrición</option>
-        </select>
-      </div>
-
-      <div class="filtro-grupo">
-        <label>Subcategoría</label>
-        <select id="filter-subcategory">
-          <option value="all">Todas</option>
-          <option value="ojos">Ojos</option>
-          <option value="labios">Labios</option>
-          <option value="proteinas">Proteínas</option>
-        </select>
-      </div>
-
-      <div class="filtro-grupo">
-        <label>Tipo</label>
-        <select id="filter-type">
-          <option value="all">Todos</option>
-          <option value="mascara">Máscara</option>
-          <option value="eyeliner">Delineador</option>
-          <option value="labial">Labial</option>
-          <option value="whey">Whey</option>
-        </select>
-      </div>
-
-      <button id="filter-btn" class="btn">Aplicar filtros</button>
-    </aside>
-
-    <!-- PRODUCTOS -->
-    <section class="productos">
-      <div id="products-container" class="products-grid"></div>
     </section>
 
-  </div>
-</section>
-
-    <!-- CUENTA -->
+    <!-- ================= CUENTA ================= -->
     <section id="seccion-cuenta" style="display:none;">
       <div class="container">
         <h2>Mi cuenta</h2>
@@ -149,7 +183,7 @@
       </div>
     </section>
 
-    <!-- COMPRAS -->
+    <!-- ================= COMPRAS ================= -->
     <section id="seccion-compras" style="display:none;">
       <div class="container">
         <h2>Mis compras</h2>
@@ -159,25 +193,15 @@
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <p>© 2025 FarmaFit · Suplementos Nutricionales</p>
   </footer>
 
 </div>
 
-<!-- JS -->
+<!-- ================= JS ================= -->
 <script src="js/products.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
