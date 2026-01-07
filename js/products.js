@@ -12,16 +12,16 @@ function mostrarSeccion(nombre) {
   Object.values(secciones).forEach(sec => sec.style.display = "none");
   secciones[nombre].style.display = "block";
 
-  // Si entra a productos, cargar todos
+  // Si entra a productos, cargar todos mezclados
   if (nombre === "productos") {
-    mostrarProductos(allProducts);
+    mostrarProductos(mezclarProductos(allProducts));
   }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // ===============================
-// MEZCLAR PRODUCTOS (SHUFFLE)
+// FUNCION MEZCLAR (SHUFFLE)
 // ===============================
 function mezclarProductos(array) {
   return array.sort(() => Math.random() - 0.5);
