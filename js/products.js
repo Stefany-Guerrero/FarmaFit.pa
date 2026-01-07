@@ -122,7 +122,7 @@ const allProducts = [
   },
   {
     id: "FF-MK-007",
-    nombre: "Eye Liner Pencil - 01 Black",
+    nombre: "Eye Liner Pencil - Black",
     precio:17.50,
     imagen: "productos/eyelinerpencil-01black.png",
     categoria: "maquillaje",
@@ -131,16 +131,16 @@ const allProducts = [
     favorito: false,
     variantes: [
       {
-        color: "Black",
+        color: "Eye Liner Pencil - 01 Black",
         codigo: "FF-MK-007-01",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-01black.png",
       },
       {
-        color: "Brown",
+        color: "Eye Liner Pencil - 02 Deep Brown",
         codigo: "FF-MK-007-02",
-        precio: 30.90,
-        imagen: "productos/infinilashmascara_brown.jpg"
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-02deepbrown.png"
       },
       {
         color: "Blue",
