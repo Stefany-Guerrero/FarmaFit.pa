@@ -124,8 +124,8 @@ const allProducts = [
     id: "FF-MK-007",
     nombre: "Eye Liner Pencil - 01 Black",
     precio:17.50,
-    categoria: "Maquillaje",
-    subcategoria: "Para ojos",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
     tipo: "Delineador de ojos/Dipliner",
     favorito: false,
     variantes: [
