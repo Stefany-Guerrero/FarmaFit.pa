@@ -56,7 +56,7 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
 });
 
 // ===============================
-// PRODUCTOS (DATA)
+// PRODUCTOS (DATA) CON PRODUCTO 7
 // ===============================
 const allProducts = [
   {
@@ -99,7 +99,7 @@ const allProducts = [
     tipo: "mascara",
     favorito: false
   },
-    {
+  {
     id: "FF-NT-005",
     nombre: "Infinilash Mascara - Brown",
     precio: 30.90,
@@ -109,7 +109,7 @@ const allProducts = [
     tipo: "mascara",
     favorito: false
   },
-      {
+  {
     id: "FF-NT-006",
     nombre: "Zen Extension Lash Mascara",
     precio: 15.50,
@@ -119,6 +119,35 @@ const allProducts = [
     tipo: "mascara",
     favorito: false
   },
+  
+  {
+    id: "FF-MK-007",
+    nombre: "Eye Liner Pencil - 01 Black",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara",
+    favorito: false,
+    variantes: [
+      {
+        color: "Black",
+        codigo: "FF-MK-007-01",
+        precio: 33.50,
+        imagen: "productos/infinilashmascara.jpg"
+      },
+      {
+        color: "Brown",
+        codigo: "FF-MK-007-02",
+        precio: 30.90,
+        imagen: "productos/infinilashmascara_brown.jpg"
+      },
+      {
+        color: "Blue",
+        codigo: "FF-MK-007-03",
+        precio: 34.50,
+        imagen: "productos/infinilashmascara_blue.jpg"
+      }
+    ]
+  }
 ];
 
 // ===============================
