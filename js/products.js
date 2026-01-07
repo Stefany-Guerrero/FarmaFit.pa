@@ -21,6 +21,13 @@ function mostrarSeccion(nombre) {
 }
 
 // ===============================
+// MEZCLAR PRODUCTOS (SHUFFLE)
+// ===============================
+function mezclarProductos(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+// ===============================
 // EVENTOS DEL NAV
 // ===============================
 document.getElementById("nav-inicio").addEventListener("click", e => {
