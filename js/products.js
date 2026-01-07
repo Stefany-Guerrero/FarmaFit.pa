@@ -127,7 +127,7 @@ const allProducts = [
     imagen: "productos/eyelinerpencil-01black.png",
     categoria: "maquillaje",
     subcategoria: "ojos",
-    tipo: "Delineador de ojos/Dipliner",
+    tipo: "delineador",
     favorito: false,
     variantes: [
       {
