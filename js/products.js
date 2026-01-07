@@ -143,10 +143,10 @@ const allProducts = [
         imagen: "productos/eyelinerpencil-02deepbrown.png"
       },
       {
-        color: "Blue",
+        color: "Eye Liner Pencil - 03 Bronze",
         codigo: "FF-MK-007-03",
-        precio: 34.50,
-        imagen: "productos/infinilashmascara_blue.jpg"
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-03bronze.jpg"
       }
     ]
   }
