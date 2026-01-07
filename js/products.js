@@ -155,6 +155,18 @@ const allProducts = [
         imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
       },
         {
+        color: "Eye Liner Pencil - 05 Nude",
+        codigo: "FF-MK-007-05",
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-05nude.jpg"
+      },
+              {
+        color: "Eye Liner Pencil - 06 Purple",
+        codigo: "FF-MK-007-06",
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-06purple.jpg"
+      },
+              {
         color: "Eye Liner Pencil - 04 Glitz Brown",
         codigo: "FF-MK-007-04",
         precio: 17.50,
