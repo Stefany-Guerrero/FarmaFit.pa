@@ -123,15 +123,15 @@ const allProducts = [
   {
     id: "FF-MK-007",
     nombre: "Eye Liner Pencil - 01 Black",
-    categoria: "maquillaje",
-    subcategoria: "ojos",
-    tipo: "mascara",
+    categoria: "Maquillaje",
+    subcategoria: "Para ojos",
+    tipo: "Delineador de ojos/Dipliner",
     favorito: false,
     variantes: [
       {
         color: "Black",
         codigo: "FF-MK-007-01",
-        precio: 33.50,
+        precio: 17.50,
         imagen: "productos/infinilashmascara.jpg"
       },
       {
