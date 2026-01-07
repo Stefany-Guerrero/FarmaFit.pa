@@ -5,7 +5,8 @@ const secciones = {
   inicio: document.getElementById("seccion-inicio"),
   productos: document.getElementById("seccion-productos"),
   cuenta: document.getElementById("seccion-cuenta"),
-  compras: document.getElementById("seccion-compras")
+  compras: document.getElementById("seccion-compras"),
+  detalle: document.getElementById("seccion-detalle") // NUEVO: sección detalle producto
 };
 
 function mostrarSeccion(nombre) {
@@ -119,7 +120,6 @@ const allProducts = [
     tipo: "mascara",
     favorito: false
   },
-  
   {
     id: "FF-MK-007",
     nombre: "Eye Liner Pencil - 01 Black",
@@ -163,14 +163,12 @@ const filtrosPorCategoria = {
       rostro: ["base", "rubor"]
     }
   },
-
   nutricion: {
     subcategorias: {
       suplementos: ["proteina", "whey", "creatina"],
       vitaminas: ["vitamina c", "multivitaminico"]
     }
   },
-
   piel: {
     subcategorias: {
       limpieza: ["gel", "espuma"],
@@ -215,7 +213,7 @@ function mostrarProductos(productos) {
     // ❤️ FAVORITOS (FUNCIONAL)
     const favBtn = card.querySelector(".product-fav");
     favBtn.addEventListener("click", e => {
-      e.stopPropagation(); // evita conflictos de click
+      e.stopPropagation();
       p.favorito = !p.favorito;
       favBtn.classList.toggle("active");
     });
@@ -226,11 +224,76 @@ function mostrarProductos(productos) {
       alert(`Agregaste ${p.nombre} al carrito`);
     });
 
-    // AGREGAR AL CONTENEDOR
+    // NUEVO: al hacer clic en la tarjeta se abre detalle
+    card.addEventListener("click", () => {
+      mostrarDetalleProducto(p);
+      mostrarSeccion("detalle");
+    });
+
     productsContainer.appendChild(card);
   });
 }
 
+// ===============================
+// MOSTRAR DETALLE DEL PRODUCTO CON VARIANTES
+// ===============================
+function mostrarDetalleProducto(producto) {
+  const detalleContainer = document.getElementById("detalle-producto");
+  detalleContainer.innerHTML = "";
+
+  // Imagen principal
+  const img = document.createElement("img");
+  img.src = producto.imagen;
+  img.alt = producto.nombre;
+  img.id = "detalle-img";
+
+  // Nombre y precio
+  const nombre = document.createElement("h2");
+  nombre.textContent = producto.nombre;
+
+  const precio = document.createElement("p");
+  precio.classList.add("price");
+  precio.textContent = `$${producto.precio.toFixed(2)}`;
+
+  detalleContainer.appendChild(img);
+  detalleContainer.appendChild(nombre);
+  detalleContainer.appendChild(precio);
+
+  // Botón agregar
+  const btnAgregar = document.createElement("button");
+  btnAgregar.textContent = "Agregar";
+  btnAgregar.classList.add("btn");
+  btnAgregar.addEventListener("click", () => {
+    alert(`Agregaste ${producto.nombre} al carrito`);
+  });
+  detalleContainer.appendChild(btnAgregar);
+
+  // Si el producto tiene variantes
+  if (producto.variantes && producto.variantes.length > 0) {
+    const variantesContainer = document.createElement("div");
+    variantesContainer.id = "variantes-container";
+
+    producto.variantes.forEach(variant => {
+      const btnVar = document.createElement("button");
+      btnVar.textContent = variant.color;
+      btnVar.classList.add("btn-variant");
+
+      btnVar.addEventListener("click", () => {
+        // Actualiza imagen y precio
+        img.src = variant.imagen;
+        precio.textContent = `$${variant.precio.toFixed(2)}`;
+      });
+
+      variantesContainer.appendChild(btnVar);
+    });
+
+    detalleContainer.appendChild(variantesContainer);
+  }
+}
+
+// ===============================
+// FILTROS
+// ===============================
 function actualizarSubcategoriasYTipos() {
   const categoriaSelect = document.getElementById("filter-category");
   const subSelect = document.getElementById("filter-subcategory");
@@ -238,7 +301,6 @@ function actualizarSubcategoriasYTipos() {
 
   const categoria = categoriaSelect.value;
 
-  // Reset
   subSelect.innerHTML = `<option value="all">Todas</option>`;
   tipoSelect.innerHTML = `<option value="all">Todos</option>`;
 
@@ -246,7 +308,6 @@ function actualizarSubcategoriasYTipos() {
 
   const subcategorias = filtrosPorCategoria[categoria].subcategorias;
 
-  // Cargar subcategorías
   Object.keys(subcategorias).forEach(sub => {
     const opt = document.createElement("option");
     opt.value = sub;
@@ -254,10 +315,8 @@ function actualizarSubcategoriasYTipos() {
     subSelect.appendChild(opt);
   });
 
-  // Cuando cambia subcategoría → cargar tipos
   subSelect.onchange = () => {
     tipoSelect.innerHTML = `<option value="all">Todos</option>`;
-
     const sub = subSelect.value;
     if (sub === "all") return;
 
@@ -270,14 +329,8 @@ function actualizarSubcategoriasYTipos() {
   };
 }
 
+document.getElementById("filter-category").addEventListener("change", actualizarSubcategoriasYTipos);
 
-  document
-  .getElementById("filter-category")
-  .addEventListener("change", actualizarSubcategoriasYTipos);
-
-// ===============================
-// FILTROS
-// ===============================
 document.getElementById("filter-btn").addEventListener("click", e => {
   e.preventDefault();
 
@@ -304,5 +357,4 @@ document.getElementById("filter-btn").addEventListener("click", e => {
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
-
 
