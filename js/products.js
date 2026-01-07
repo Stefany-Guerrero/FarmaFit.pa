@@ -283,54 +283,73 @@ function mostrarDetalleProducto(producto) {
   const detalleContainer = document.getElementById("detalle-producto");
   detalleContainer.innerHTML = "";
 
-  // Imagen principal
+  // CONTENEDOR PRINCIPAL
+  const card = document.createElement("div");
+  card.classList.add("detalle-card");
+
+  // IMAGEN (IZQUIERDA)
   const img = document.createElement("img");
   img.src = producto.imagen;
   img.alt = producto.nombre;
   img.id = "detalle-img";
 
-  // Nombre y precio
+  // INFO (DERECHA)
+  const info = document.createElement("div");
+  info.classList.add("detalle-info");
+
   const nombre = document.createElement("h2");
   nombre.textContent = producto.nombre;
+
+  const codigo = document.createElement("p");
+  codigo.classList.add("product-code");
+  codigo.textContent = producto.id;
 
   const precio = document.createElement("p");
   precio.classList.add("price");
   precio.textContent = `$${producto.precio.toFixed(2)}`;
 
-  detalleContainer.appendChild(img);
-  detalleContainer.appendChild(nombre);
-  detalleContainer.appendChild(precio);
-
-  // Botón agregar
+  // BOTÓN AGREGAR
   const btnAgregar = document.createElement("button");
   btnAgregar.textContent = "Agregar";
   btnAgregar.classList.add("btn");
   btnAgregar.addEventListener("click", () => {
     alert(`Agregaste ${producto.nombre} al carrito`);
   });
-  detalleContainer.appendChild(btnAgregar);
 
-  // Si el producto tiene variantes
+  // AÑADIR INFO
+  info.appendChild(nombre);
+  info.appendChild(precio);
+  info.appendChild(codigo);
+
+  // VARIANTES (COLORES)
   if (producto.variantes && producto.variantes.length > 0) {
     const variantesContainer = document.createElement("div");
-    variantesContainer.id = "variantes-container";
+    variantesContainer.classList.add("variantes");
 
     producto.variantes.forEach(variant => {
       const btnVar = document.createElement("button");
       btnVar.textContent = variant.color;
-      btnVar.classList.add("btn-variant");
+      btnVar.classList.add("variante-btn");
 
       btnVar.addEventListener("click", () => {
-        // Actualiza imagen y precio
         img.src = variant.imagen;
         precio.textContent = `$${variant.precio.toFixed(2)}`;
+        codigo.textContent = variant.codigo;
       });
 
       variantesContainer.appendChild(btnVar);
     });
 
-    detalleContainer.appendChild(variantesContainer);
+    info.appendChild(variantesContainer);
   }
+
+  info.appendChild(btnAgregar);
+
+  // ARMAR CARD
+  card.appendChild(img);
+  card.appendChild(info);
+
+  detalleContainer.appendChild(card);
 }
 
 // ===============================
