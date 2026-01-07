@@ -167,11 +167,29 @@ const allProducts = [
         imagen: "productos/eyelinerpencil-06purple.jpg"
       },
               {
-        color: "Eye Liner Pencil - 04 Glitz Brown",
-        codigo: "FF-MK-007-04",
+        color: "Eye Liner Pencil - 07 Dark Blue",
+        codigo: "FF-MK-007-07",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
       },
+                    {
+        color: "Eye Liner Pencil - 08 Metal Green",
+        codigo: "FF-MK-007-08",
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
+      },
+                    {
+        color: "Eye Liner Pencil - 09 Burgundy",
+        codigo: "FF-MK-007-09",
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
+      },
+                    {
+        color: "Eye Liner Pencil - 10 Glitz Grey",
+        codigo: "FF-MK-007-010",
+        precio: 17.50,
+        imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
+      }
     ]
   }
 ];
