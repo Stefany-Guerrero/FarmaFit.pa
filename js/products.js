@@ -179,7 +179,6 @@ const filtrosPorCategoria = {
   }
 };
 
-
 // ===============================
 // RENDER PRODUCTOS
 // ===============================
@@ -208,8 +207,7 @@ function mostrarProductos(productos) {
       <h4>${p.nombre}</h4>
       <span class="product-code">${p.id}</span>
 
-     class="price">$${p.precio.toFixed(2)}</p>
-
+      <p class="price">$${p.precio.toFixed(2)}</p>
 
       <button class="btn">Agregar</button>
     `;
