@@ -208,7 +208,8 @@ function mostrarProductos(productos) {
       <h4>${p.nombre}</h4>
       <span class="product-code">${p.id}</span>
 
-      <p class="price">$${p.precio}</p>
+     class="price">$${p.precio.toFixed(2)}</p>
+
 
       <button class="btn">Agregar</button>
     `;
