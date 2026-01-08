@@ -648,27 +648,31 @@ left: 12px;
   margin-bottom: 20px;
 }
 
-/* Variantes (colores) */
+/* ================= VARIANTES DE COLOR FLEX ================= */
 .variantes {
   margin-bottom: 20px;
+  display: flex;       /* pone los colores en fila */
+  flex-wrap: wrap;     /* baja a la siguiente línea si no caben */
+  gap: 8px;            /* espacio entre círculos */
 }
 
-.variante-btn {
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid #5B3765;
-  background: #ffffff;
-  color: #5B3765;
-  font-weight: bold;
+.color-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #5B3765;
   cursor: pointer;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  transition: all 0.25s ease;
+  transition: transform 0.25s, border-color 0.25s;
 }
 
-.variante-btn:hover {
-  background: #5B3765;
-  color: #ffffff;
+.color-btn:hover {
+  transform: scale(1.2);
+  border-color: #333;
+}
+
+.color-btn.activo {
+  border: 2px solid #5B3765;
+  box-shadow: 0 0 0 3px #fdeaf2; /* resalta el color seleccionado */
 }
 
 /* Botón dentro del detalle */
