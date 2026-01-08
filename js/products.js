@@ -179,70 +179,70 @@ const allProducts = [
     favorito: false,
     variantes: [
       {
-        color: "Black",
+        color: "Eye Liner Pencil - 01 Black",
         codigo: "FF-MK-007-01",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-01black.png",
         colorHex: "#000000"
       },
       {
-        color: "Deep Brown",
+        color: "Eye Liner Pencil - 02 Deep Brown",
         codigo: "FF-MK-007-02",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-02deepbrown.png",
         colorHex: "#654321"
       },
       {
-        color: "Bronze",
+        color: "Eye Liner Pencil - 03 Bronze",
         codigo: "FF-MK-007-03",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-03bronze.jpg",
         colorHex: "#cd7f32"
       },
       {
-        color: "Glitz Brown",
+        color: "Eye Liner Pencil - 04 Glitz Brown",
         codigo: "FF-MK-007-04",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-04glitzbrown.jpg",
         colorHex: "#8b4513"
       },
       {
-        color: "Nude",
+        color: "Eye Liner Pencil - 05 Nude",
         codigo: "FF-MK-007-05",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-05nude.jpg",
         colorHex: "#d2b48c"
       },
       {
-        color: "Purple",
+        color: "Eye Liner Pencil - 06 Purple",
         codigo: "FF-MK-007-06",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-06purple.jpg",
         colorHex: "#800080"
       },
       {
-        color: "Dark Blue",
+        color: "Eye Liner Pencil - 07 Dark Blue",
         codigo: "FF-MK-007-07",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-07darkblue.jpg",
         colorHex: "#00008b"
       },
       {
-        color: "Metal Green",
+        color: "Eye Liner Pencil - 08 Metal Green",
         codigo: "FF-MK-007-08",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-08metalgreen.jpg",
         colorHex: "#008000"
       },
       {
-        color: "Burgundy",
+        color: "Eye Liner Pencil - 09 Burgundy",
         codigo: "FF-MK-007-09",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-09burgundy.png",
         colorHex: "#800020"
       },
       {
-        color: "Glitz Grey",
+        color: "Eye Liner Pencil - 10 Glitz Grey",
         codigo: "FF-MK-007-010",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-10glitzgrey.jpg",
