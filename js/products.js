@@ -378,12 +378,19 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
       ${
   producto.variantes
     ? `<div class="variantes">
-        ${producto.variantes.map(v => `
-          <div class="color-item" style="display:flex; align-items:center; margin-bottom:5px;">
-            <button class="color-btn ${v.color === varianteSeleccionada?.color ? "activo" : ""}" style="background-color:${v.colorHex}; margin-right:6px;"></button>
-            <span class="color-nombre">${v.color}</span>
-          </div>
-        `).join("")}
+          ${producto.variantes.map(v => `
+  <div class="color-item" style="display:flex; align-items:center; margin-bottom:6px;">
+    <button
+      class="color-btn ${v.color === varianteSeleccionada?.color ? "activo" : ""}"
+      style="background-color:${v.colorHex}; margin-right:8px;">
+    </button>
+
+    <div style="display:flex; flex-direction:column; line-height:1.1;">
+      <span class="color-nombre">${v.color}</span>
+      <span class="color-code">${v.codigo}</span>
+    </div>
+  </div>
+`).join("")}
       </div>`
     : ""
 }
