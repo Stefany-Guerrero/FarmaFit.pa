@@ -639,20 +639,6 @@ left: 12px;
   gap: 8px;            /* espacio entre círculos */
 }
 
-.color-btn {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid #5B3765;
-  cursor: pointer;
-  transition: transform 0.25s, border-color 0.25s;
-}
-
-.color-btn:hover {
-  transform: scale(1.2);
-  border-color: #333;
-}
-
 .color-btn.activo {
   border: 2px solid #5B3765;
   box-shadow: 0 0 0 3px #fdeaf2; /* resalta el color seleccionado */
