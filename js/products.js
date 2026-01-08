@@ -88,11 +88,11 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Sérum para fortalecer cejas y pestañas.",
-      beneficios: "Estimula el crecimiento y brillo natural.",
-      uso: "Aplicar en raíces diariamente.",
-      ingredientes: "Vitaminas, extractos naturales.",
-      advertencias: "Evitar contacto con los ojos.",
+      descripcion: "Sérum fortalecedor para cejas y pestañas.",
+      beneficios: "Estimula crecimiento y densidad.",
+      uso: "Aplicar por la noche en cejas y pestañas limpias.",
+      ingredientes: "Extractos naturales y vitaminas.",
+      advertencias: "Evitar contacto directo con los ojos.",
       envio: "Envíos en 24–48 horas."
     }
   },
@@ -106,10 +106,10 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara de volumen intenso.",
-      beneficios: "Rizo y volumen todo el día.",
-      uso: "Aplicar desde la raíz hacia la punta.",
-      ingredientes: "Cera natural, aceites vegetales.",
+      descripcion: "Máscara de volumen extremo para pestañas.",
+      beneficios: "Volumen y definición instantánea.",
+      uso: "Aplicar de raíz a punta con movimientos zig-zag.",
+      ingredientes: "Cera natural y pigmentos intensos.",
       advertencias: "Evitar contacto con los ojos.",
       envio: "Envíos en 24–48 horas."
     }
@@ -124,11 +124,11 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara de larga duración.",
-      beneficios: "No se corre, waterproof.",
-      uso: "Aplicar en pestañas limpias.",
-      ingredientes: "Cera, pigmentos minerales.",
-      advertencias: "Evitar contacto con ojos sensibles.",
+      descripcion: "Máscara que alarga y da definición intensa.",
+      beneficios: "Resistente al agua y de larga duración.",
+      uso: "Aplicar desde la raíz hasta la punta.",
+      ingredientes: "Cera y pigmentos especiales.",
+      advertencias: "Evitar contacto con los ojos.",
       envio: "Envíos en 24–48 horas."
     }
   },
@@ -143,10 +143,10 @@ const allProducts = [
     favorito: false,
     info: {
       descripcion: "Máscara marrón para un look natural.",
-      beneficios: "Definición sin exceso de color.",
-      uso: "Aplicar en pestañas limpias.",
-      ingredientes: "Cera, pigmentos marrón.",
-      advertencias: "Evitar contacto con ojos sensibles.",
+      beneficios: "No se corre y de larga duración.",
+      uso: "Aplicar de raíz a punta.",
+      ingredientes: "Cera natural y pigmentos marrón.",
+      advertencias: "Evitar contacto con los ojos.",
       envio: "Envíos en 24–48 horas."
     }
   },
@@ -160,93 +160,103 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara ligera para uso diario.",
-      beneficios: "No apelmaza, suavidad y volumen moderado.",
-      uso: "Aplicar de manera uniforme.",
-      ingredientes: "Cera, aceites naturales.",
+      descripcion: "Máscara ligera para un look natural.",
+      beneficios: "Fácil de aplicar y resistente.",
+      uso: "Aplicar suavemente de raíz a punta.",
+      ingredientes: "Cera ligera y pigmentos suaves.",
       advertencias: "Evitar contacto con los ojos.",
       envio: "Envíos en 24–48 horas."
     }
   },
   {
     id: "FF-MK-007",
-    nombre: "Eye Liner Pencil - Black",
-    precio: 17.50,
+    nombre: "Eye Liner Pencil",
+    precio:17.50,
     imagen: "productos/eyelinerpencil-01black.png",
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "delineador",
     favorito: false,
-    info: {
-      descripcion: "Delineador de alta precisión y larga duración.",
-      beneficios: "No se corre, resistente al agua.",
-      uso: "Aplicar suavemente sobre el párpado.",
-      ingredientes: "Pigmentos minerales.",
-      advertencias: "Uso externo.",
-      envio: "Entrega en 24–48 horas."
-    },
     variantes: [
       {
-        color: "Eye Liner Pencil - 01 Black",
+        color: "Black",
         codigo: "FF-MK-007-01",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-01black.png",
+        colorHex: "#000000"
       },
       {
-        color: "Eye Liner Pencil - 02 Deep Brown",
+        color: "Deep Brown",
         codigo: "FF-MK-007-02",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-02deepbrown.png"
+        imagen: "productos/eyelinerpencil-02deepbrown.png",
+        colorHex: "#654321"
       },
       {
-        color: "Eye Liner Pencil - 03 Bronze",
+        color: "Bronze",
         codigo: "FF-MK-007-03",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-03bronze.jpg"
+        imagen: "productos/eyelinerpencil-03bronze.jpg",
+        colorHex: "#cd7f32"
       },
       {
-        color: "Eye Liner Pencil - 04 Glitz Brown",
+        color: "Glitz Brown",
         codigo: "FF-MK-007-04",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
+        imagen: "productos/eyelinerpencil-04glitzbrown.jpg",
+        colorHex: "#8b4513"
       },
       {
-        color: "Eye Liner Pencil - 05 Nude",
+        color: "Nude",
         codigo: "FF-MK-007-05",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-05nude.jpg"
+        imagen: "productos/eyelinerpencil-05nude.jpg",
+        colorHex: "#d2b48c"
       },
       {
-        color: "Eye Liner Pencil - 06 Purple",
+        color: "Purple",
         codigo: "FF-MK-007-06",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-06purple.jpg"
+        imagen: "productos/eyelinerpencil-06purple.jpg",
+        colorHex: "#800080"
       },
       {
-        color: "Eye Liner Pencil - 07 Dark Blue",
+        color: "Dark Blue",
         codigo: "FF-MK-007-07",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-07darkblue.jpg"
+        imagen: "productos/eyelinerpencil-07darkblue.jpg",
+        colorHex: "#00008b"
       },
       {
-        color: "Eye Liner Pencil - 08 Metal Green",
+        color: "Metal Green",
         codigo: "FF-MK-007-08",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-08metalgreen.jpg"
+        imagen: "productos/eyelinerpencil-08metalgreen.jpg",
+        colorHex: "#008000"
       },
       {
-        color: "Eye Liner Pencil - 09 Burgundy",
+        color: "Burgundy",
         codigo: "FF-MK-007-09",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-09burgundy.png"
+        imagen: "productos/eyelinerpencil-09burgundy.png",
+        colorHex: "#800020"
       },
       {
-        color: "Eye Liner Pencil - 10 Glitz Grey",
+        color: "Glitz Grey",
         codigo: "FF-MK-007-010",
         precio: 17.50,
-        imagen: "productos/eyelinerpencil-10glitzgrey.jpg"
+        imagen: "productos/eyelinerpencil-10glitzgrey.jpg",
+        colorHex: "#808080"
       }
-    ]
+    ],
+    info: {
+      descripcion: "Lápiz delineador de ojos de alta precisión.",
+      beneficios: "Resistente, fácil de aplicar, larga duración.",
+      uso: "Aplicar cerca de las pestañas según el estilo deseado.",
+      ingredientes: "Pigmentos, ceras y aceites naturales.",
+      advertencias: "Evitar contacto con los ojos.",
+      envio: "Envíos en 24–48 horas."
+    }
   }
 ];
 
@@ -332,10 +342,15 @@ function mostrarProductos(productos) {
   });
 }
 
-function mostrarDetalleProducto(producto) {
+// ===============================
+// MOSTRAR DETALLE PRODUCTO
+// ===============================
+function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
   const detalleContainer = document.getElementById("detalle-producto");
 
-  const info = producto.info || {};
+  const info = varianteSeleccionada?.info || producto.info || {};
+  const precio = varianteSeleccionada?.precio || producto.precio;
+  const imagen = varianteSeleccionada?.imagen || producto.imagen;
 
   const secciones = [
     { titulo: "Descripción", contenido: info.descripcion },
@@ -351,20 +366,20 @@ function mostrarDetalleProducto(producto) {
 
       <!-- IZQUIERDA -->
       <div class="detalle-img">
-        <img src="${producto.imagen}" alt="${producto.nombre}">
+        <img src="${imagen}" alt="${producto.nombre}">
       </div>
 
       <!-- DERECHA -->
       <div class="detalle-info">
         <h2>${producto.nombre}</h2>
-        <p class="price">$${producto.precio.toFixed(2)}</p>
+        <p class="price">$${precio.toFixed(2)}</p>
 
         ${
           producto.variantes
             ? `<div class="variantes">
                 ${producto.variantes.map(v => `
-                  <button class="color-btn"
-                    onclick="cambiarImagen('${v.imagen}', ${v.precio}, '${v.codigo}')">
+                  <button class="color-btn" style="background-color:${v.colorHex};"
+                    onclick="mostrarDetalleProducto(${JSON.stringify(producto)}, ${JSON.stringify(v)})">
                   </button>
                 `).join("")}
               </div>`
@@ -452,7 +467,6 @@ document.getElementById("filter-btn").addEventListener("click", e => {
 
 function cambiarImagen(src, precio, codigo) {
   document.querySelector(".detalle-img img").src = src;
-  document.querySelector(".detalle-info .price").textContent = `$${precio.toFixed(2)}`;
 }
 
 function toggleAcordeon(titulo) {
@@ -471,3 +485,4 @@ function toggleAcordeon(titulo) {
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
+
