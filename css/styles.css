@@ -784,5 +784,13 @@ left: 12px;
   }
 }
 
+/* PANEL ROSADO DETRÁS DE LA INFO (SEPARADO) */
+.detalle-info-wrap {
+  background: #F3CCDE;      /* mismo rosado */
+  padding: 25px;
+  border-radius: 28px;
+}
+
+
 
 
