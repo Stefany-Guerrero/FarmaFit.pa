@@ -791,6 +791,18 @@ left: 12px;
   border-radius: 28px;
 }
 
+.color-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.color-code {
+  font-size: 11px;
+  color: #777;
+}
+
+
 
 
 
