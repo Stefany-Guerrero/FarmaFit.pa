@@ -483,14 +483,16 @@ function cambiarImagen(src, precio, codigo) {
 
 function toggleAcordeon(titulo) {
   const contenido = titulo.nextElementSibling;
+  const estaActivo = titulo.classList.contains("active");
 
-  document.querySelectorAll(".acordeon .contenido").forEach(c => {
-    if (c !== contenido) c.style.maxHeight = null;
-  });
+  // Cierra todos
+  document.querySelectorAll(".acordeon h4").forEach(h => h.classList.remove("active"));
+  document.querySelectorAll(".acordeon .contenido").forEach(c => c.style.maxHeight = null);
 
-  contenido.style.maxHeight
-    ? contenido.style.maxHeight = null
-    : contenido.style.maxHeight = contenido.scrollHeight + "px";
+  if (!estaActivo) {
+    titulo.classList.add("active");
+    contenido.style.maxHeight = contenido.scrollHeight + "px";
+  }
 }
 
 // ===============================
