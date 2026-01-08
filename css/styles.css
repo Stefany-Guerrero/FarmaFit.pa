@@ -564,19 +564,6 @@ left: 12px;
   margin-bottom: 12px;
 }
 
-/* 🆔 Código del producto */
-.product-code {
-  display: block;
-  font-size: 0.8rem;
-  color: #6b6b6b;
-  margin-bottom: 8px;
-}
-
-/* Precio con aire */
-.product .price {
-  margin-bottom: 12px;
-}
-
 /* ================= DETALLE PRODUCTO – PANELES SEPARADOS (IZQ / DER) ================= */
 .detalle-card {
   display: flex;
