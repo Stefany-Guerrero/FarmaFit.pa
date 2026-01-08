@@ -71,11 +71,11 @@ const allProducts = [
     favorito: false,
     info: {
       descripcion: "Máscara de pestañas con cepillo doble de silicón que aporta volumen y definición desde la raíz hasta la punta, logrando una mirada intensa y duradera.",
-      beneficios: "No se corre, larga duración.",
-      uso: "Aplicar desde la raíz hasta la punta.",
-      ingredientes: "Cera natural, pigmentos.",
-      advertencias: "Evitar contacto con los ojos.",
-      envio: "Envíos en 24–48 horas."
+      uso: "Peina las pestañas desde la raíz hasta las puntas como primer paso para un efecto de alargamiento Aplicar desde la raíz hasta las puntas en movimiento zigzag. Repetir para un look más dramático.",
+      detalles: "Agua/aguamarina, estireno/acrilatos/copolímero de metacrilato de amonio, cera de abejas, aceite de ricino/aceite de semilla de Ricinus communis, butilenglicol, ácido esteárico, poliuretano-35, polimetilsilsesquioxano, estearato de glicerilo, VP/copolímero de eicoseno, goma arábiga Senegal, PVP, fluorflogopita sintética , cera de carnauba/Copernicia Cerifera Cera, alcohol polivinílico, estearato de PEG-100, cera de Candellila/Cera de Euphorbia Cerifera, trietanolamina, fenoxietanol, sílice, goma de xantano, etilhexilglicerina, EDTA tetrasódico, hidroxihidrocinamato de pentaeritritil tetra-di-t-butilo, óxido de hierro/ CI 77499.",
+      advertencias: "Creado para uso personal. Manipule y aplique siempre de manera cuidadosa e higiénica. Tratar el aplicador con el debido cuidado higiénico. Nunca aplicar este producto en un vehículo en movimiento. No diluir con agua, saliva o cualquier otra sustancia. Siempre cerrar después de su uso. Suspender el uso si se produce un cambio en el olor o apariencia. No usar este ni ningún otro cosmético para ojos si se tiene una lesión, irritación o infección. Consulte a su médico. Mantener fuera del alcance de los niños.",
+      sostentibilidad: "Fórmula vegana y libre de crueldad animal.",
+      resultados: "Pestañas más largas, densas y definidas con acabado intenso."
     }
   },
   {
@@ -353,12 +353,12 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
   const imagen = varianteSeleccionada?.imagen || producto.imagen;
 
   const secciones = [
-    { titulo: "Descripción", contenido: info.descripcion },
-    { titulo: "Beneficios", contenido: info.beneficios },
-    { titulo: "Modo de uso", contenido: info.uso },
-    { titulo: "Ingredientes", contenido: info.ingredientes },
-    { titulo: "Advertencias", contenido: info.advertencias },
-    { titulo: "Envíos y devoluciones", contenido: info.envio }
+    { titulo: "Descripción de Producto", contenido: info.descripcion },
+    { titulo: "Como usarlo", contenido: info.uso },
+    { titulo: "Detalles técnicos del producto", contenido: info.detalles },
+    { titulo: "Precausiones", contenido: info.advertencias },
+    { titulo: "Sostentibilidad", contenido: info.sostentibilidad },
+    { titulo: "Resultados Comprobados", contenido: info.resultados }
   ];
 
   // Render detalle
