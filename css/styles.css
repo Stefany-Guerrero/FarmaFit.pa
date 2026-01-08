@@ -751,31 +751,54 @@ left: 12px;
   color: #5B3765;
 }
 
-/* ================= ACORDEONES ================= */
+/* ================= ACORDEONES MODERNOS ================= */
 .acordeones {
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
+/* Título del acordeón */
 .acordeon h4 {
   cursor: pointer;
-  padding: 10px;
-  background: #fdeaf2;
-  border-radius: 8px;
-  margin-bottom: 4px;
-  transition: background 0.3s;
+  padding: 14px 18px;
+  background: linear-gradient(90deg, #fdeaf2, #f3ccde);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+  font-size: 1rem;
 }
 
+/* Flecha que gira */
+.acordeon h4::after {
+  content: "▼";
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+.acordeon h4.active::after {
+  transform: rotate(-180deg);
+}
+
+/* Hover del título */
 .acordeon h4:hover {
-  background: #f3ccde;
+  background: linear-gradient(90deg, #f3ccde, #fdeaf2);
 }
 
+/* Contenido del acordeón */
 .acordeon .contenido {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
-  padding: 0 10px;
-  background: #fff0f5;
-  border-radius: 0 0 8px 8px;
-  margin-bottom: 10px;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 18px;
+  background: #ffffff;
+  border-radius: 0 0 12px 12px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+  margin-bottom: 15px;
 }
+
 
