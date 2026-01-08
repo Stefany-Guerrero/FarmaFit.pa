@@ -68,7 +68,15 @@ const allProducts = [
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "mascara",
-    favorito: false
+    favorito: false,
+    info: {
+      descripcion: "Máscara que alarga y define las pestañas.",
+      beneficios: "No se corre, larga duración.",
+      uso: "Aplicar desde la raíz hasta la punta.",
+      ingredientes: "Cera natural, pigmentos.",
+      advertencias: "Evitar contacto con los ojos.",
+      envio: "Envíos en 24–48 horas."
+    }
   },
   {
     id: "FF-MK-002",
@@ -78,7 +86,15 @@ const allProducts = [
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "mascara",
-    favorito: false
+    favorito: false,
+    info: {
+      descripcion: "Sérum para fortalecer cejas y pestañas.",
+      beneficios: "Estimula el crecimiento y brillo natural.",
+      uso: "Aplicar en raíces diariamente.",
+      ingredientes: "Vitaminas, extractos naturales.",
+      advertencias: "Evitar contacto con los ojos.",
+      envio: "Envíos en 24–48 horas."
+    }
   },
   {
     id: "FF-MK-003",
@@ -88,7 +104,15 @@ const allProducts = [
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "mascara",
-    favorito: false
+    favorito: false,
+    info: {
+      descripcion: "Máscara de volumen intenso.",
+      beneficios: "Rizo y volumen todo el día.",
+      uso: "Aplicar desde la raíz hacia la punta.",
+      ingredientes: "Cera natural, aceites vegetales.",
+      advertencias: "Evitar contacto con los ojos.",
+      envio: "Envíos en 24–48 horas."
+    }
   },
   {
     id: "FF-NT-004",
@@ -98,7 +122,15 @@ const allProducts = [
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "mascara",
-    favorito: false
+    favorito: false,
+    info: {
+      descripcion: "Máscara de larga duración.",
+      beneficios: "No se corre, waterproof.",
+      uso: "Aplicar en pestañas limpias.",
+      ingredientes: "Cera, pigmentos minerales.",
+      advertencias: "Evitar contacto con ojos sensibles.",
+      envio: "Envíos en 24–48 horas."
+    }
   },
   {
     id: "FF-NT-005",
@@ -108,7 +140,15 @@ const allProducts = [
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "mascara",
-    favorito: false
+    favorito: false,
+    info: {
+      descripcion: "Máscara marrón para un look natural.",
+      beneficios: "Definición sin exceso de color.",
+      uso: "Aplicar en pestañas limpias.",
+      ingredientes: "Cera, pigmentos marrón.",
+      advertencias: "Evitar contacto con ojos sensibles.",
+      envio: "Envíos en 24–48 horas."
+    }
   },
   {
     id: "FF-NT-006",
@@ -118,17 +158,33 @@ const allProducts = [
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "mascara",
-    favorito: false
+    favorito: false,
+    info: {
+      descripcion: "Máscara ligera para uso diario.",
+      beneficios: "No apelmaza, suavidad y volumen moderado.",
+      uso: "Aplicar de manera uniforme.",
+      ingredientes: "Cera, aceites naturales.",
+      advertencias: "Evitar contacto con los ojos.",
+      envio: "Envíos en 24–48 horas."
+    }
   },
   {
     id: "FF-MK-007",
     nombre: "Eye Liner Pencil - Black",
-    precio:17.50,
+    precio: 17.50,
     imagen: "productos/eyelinerpencil-01black.png",
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "delineador",
     favorito: false,
+    info: {
+      descripcion: "Delineador de alta precisión y larga duración.",
+      beneficios: "No se corre, resistente al agua.",
+      uso: "Aplicar suavemente sobre el párpado.",
+      ingredientes: "Pigmentos minerales.",
+      advertencias: "Uso externo.",
+      envio: "Entrega en 24–48 horas."
+    },
     variantes: [
       {
         color: "Eye Liner Pencil - 01 Black",
@@ -148,43 +204,43 @@ const allProducts = [
         precio: 17.50,
         imagen: "productos/eyelinerpencil-03bronze.jpg"
       },
-        {
+      {
         color: "Eye Liner Pencil - 04 Glitz Brown",
         codigo: "FF-MK-007-04",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-04glitzbrown.jpg"
       },
-        {
+      {
         color: "Eye Liner Pencil - 05 Nude",
         codigo: "FF-MK-007-05",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-05nude.jpg"
       },
-              {
+      {
         color: "Eye Liner Pencil - 06 Purple",
         codigo: "FF-MK-007-06",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-06purple.jpg"
       },
-              {
+      {
         color: "Eye Liner Pencil - 07 Dark Blue",
         codigo: "FF-MK-007-07",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-07darkblue.jpg"
       },
-                    {
+      {
         color: "Eye Liner Pencil - 08 Metal Green",
         codigo: "FF-MK-007-08",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-08metalgreen.jpg"
       },
-                    {
+      {
         color: "Eye Liner Pencil - 09 Burgundy",
         codigo: "FF-MK-007-09",
         precio: 17.50,
         imagen: "productos/eyelinerpencil-09burgundy.png"
       },
-                    {
+      {
         color: "Eye Liner Pencil - 10 Glitz Grey",
         codigo: "FF-MK-007-010",
         precio: 17.50,
@@ -276,80 +332,60 @@ function mostrarProductos(productos) {
   });
 }
 
-// ===============================
-// MOSTRAR DETALLE DEL PRODUCTO CON VARIANTES
-// ===============================
 function mostrarDetalleProducto(producto) {
   const detalleContainer = document.getElementById("detalle-producto");
-  detalleContainer.innerHTML = "";
 
-  // CONTENEDOR PRINCIPAL
-  const card = document.createElement("div");
-  card.classList.add("detalle-card");
+  const info = producto.info || {};
 
-  // IMAGEN (IZQUIERDA)
-  const img = document.createElement("img");
-  img.src = producto.imagen;
-  img.alt = producto.nombre;
-  img.id = "detalle-img";
+  const secciones = [
+    { titulo: "Descripción", contenido: info.descripcion },
+    { titulo: "Beneficios", contenido: info.beneficios },
+    { titulo: "Modo de uso", contenido: info.uso },
+    { titulo: "Ingredientes", contenido: info.ingredientes },
+    { titulo: "Advertencias", contenido: info.advertencias },
+    { titulo: "Envíos y devoluciones", contenido: info.envio }
+  ];
 
-  // INFO (DERECHA)
-  const info = document.createElement("div");
-  info.classList.add("detalle-info");
+  detalleContainer.innerHTML = `
+    <div class="detalle-card">
 
-  const nombre = document.createElement("h2");
-  nombre.textContent = producto.nombre;
+      <!-- IZQUIERDA -->
+      <div class="detalle-img">
+        <img src="${producto.imagen}" alt="${producto.nombre}">
+      </div>
 
-  const codigo = document.createElement("p");
-  codigo.classList.add("product-code");
-  codigo.textContent = producto.id;
+      <!-- DERECHA -->
+      <div class="detalle-info">
+        <h2>${producto.nombre}</h2>
+        <p class="price">$${producto.precio.toFixed(2)}</p>
 
-  const precio = document.createElement("p");
-  precio.classList.add("price");
-  precio.textContent = `$${producto.precio.toFixed(2)}`;
+        ${
+          producto.variantes
+            ? `<div class="variantes">
+                ${producto.variantes.map(v => `
+                  <button class="color-btn"
+                    onclick="cambiarImagen('${v.imagen}', ${v.precio}, '${v.codigo}')">
+                  </button>
+                `).join("")}
+              </div>`
+            : ""
+        }
 
-  // BOTÓN AGREGAR
-  const btnAgregar = document.createElement("button");
-  btnAgregar.textContent = "Agregar";
-  btnAgregar.classList.add("btn");
-  btnAgregar.addEventListener("click", () => {
-    alert(`Agregaste ${producto.nombre} al carrito`);
-  });
+        <div class="acordeones">
+          ${secciones
+            .filter(sec => sec.contenido)
+            .map(sec => `
+              <div class="acordeon">
+                <h4 onclick="toggleAcordeon(this)">${sec.titulo}</h4>
+                <div class="contenido">${sec.contenido}</div>
+              </div>
+            `).join("")}
+        </div>
 
-  // AÑADIR INFO
-  info.appendChild(nombre);
-  info.appendChild(precio);
-  info.appendChild(codigo);
-
-  // VARIANTES (COLORES)
-  if (producto.variantes && producto.variantes.length > 0) {
-    const variantesContainer = document.createElement("div");
-    variantesContainer.classList.add("variantes");
-
-    producto.variantes.forEach(variant => {
-      const btnVar = document.createElement("button");
-      btnVar.textContent = variant.color;
-      btnVar.classList.add("variante-btn");
-
-      btnVar.addEventListener("click", () => {
-        img.src = variant.imagen;
-        precio.textContent = `$${variant.precio.toFixed(2)}`;
-        codigo.textContent = variant.codigo;
-      });
-
-      variantesContainer.appendChild(btnVar);
-    });
-
-    info.appendChild(variantesContainer);
-  }
-
-  info.appendChild(btnAgregar);
-
-  // ARMAR CARD
-  card.appendChild(img);
-  card.appendChild(info);
-
-  detalleContainer.appendChild(card);
+        <button class="btn">Agregar</button>
+      </div>
+    </div>
+  `;
 }
 
 // ===============================
@@ -414,8 +450,24 @@ document.getElementById("filter-btn").addEventListener("click", e => {
   mostrarProductos(filtrados);
 });
 
+function cambiarImagen(src, precio, codigo) {
+  document.querySelector(".detalle-img img").src = src;
+  document.querySelector(".detalle-info .price").textContent = `$${precio.toFixed(2)}`;
+}
+
+function toggleAcordeon(titulo) {
+  const contenido = titulo.nextElementSibling;
+
+  document.querySelectorAll(".acordeon .contenido").forEach(c => {
+    if (c !== contenido) c.style.maxHeight = null;
+  });
+
+  contenido.style.maxHeight
+    ? contenido.style.maxHeight = null
+    : contenido.style.maxHeight = contenido.scrollHeight + "px";
+}
+
 // ===============================
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
-
