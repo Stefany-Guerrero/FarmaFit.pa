@@ -603,6 +603,27 @@ left: 12px;
   border-radius: 18px;
 }
 
+/* ================= DETALLE PRODUCTO: IMAGEN IZQUIERDA + INFO DERECHA ================= */
+.detalle-card {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Para que en móvil la imagen baje */
+}
+
+.detalle-img {
+  flex: 0 0 360px; /* ancho fijo para imagen */
+  max-width: 100%;
+}
+
+.detalle-info {
+  flex: 1; /* ocupa el resto */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
 /* Información del producto (derecha) */
 .detalle-info {
   flex: 1;
@@ -715,6 +736,19 @@ left: 12px;
 .color-btn:hover {
   transform: scale(1.2);
   border-color: #333;
+}
+
+/* Nombre al lado del círculo */
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* espacio entre círculo y nombre */
+  margin-bottom: 8px;
+}
+
+.color-nombre {
+  font-size: 0.85rem;
+  color: #5B3765;
 }
 
 /* ================= ACORDEONES ================= */
