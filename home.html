@@ -118,62 +118,56 @@
     <section id="seccion-productos" style="display:none;">
       <div class="productos-layout">
 
-        <!-- FILTROS -->
-        <aside class="filtros">
-          <h3>Filtrar productos</h3>
+<!-- FILTROS -->
+<aside class="filtros">
+  <h3>Filtrar productos</h3>
 
-          <div class="filtro-grupo">
-            <label>Precio mínimo</label>
-            <input type="number" id="min-price" min="0" step="1" placeholder="0">
-          </div>
+  <div class="filtro-grupo">
+    <label>Precio mínimo</label>
+    <input type="number" id="min-price" min="0" step="1" placeholder="0">
+  </div>
 
-          <div class="filtro-grupo">
-            <label>Precio máximo</label>
-            <input type="number" id="max-price" min="0" step="1" placeholder="999">
-          </div>
+  <div class="filtro-grupo">
+    <label>Precio máximo</label>
+    <input type="number" id="max-price" min="0" step="1" placeholder="999">
+  </div>
 
-          <div class="filtro-grupo">
-            <label>Categoría</label>
-            <select id="filter-category">
-              <option value="all">Todas</option>
-              <option value="maquillaje">Maquillaje</option>
-              <option value="nutricion">Cuidado de la Piel</option>
-            </select>
-          </div>
+  <div class="filtro-grupo">
+    <label>Categoría</label>
+    <select id="filter-category">
+      <option value="all">Todas</option>
+      <option value="maquillaje">Maquillaje</option>
+      <option value="nutricion">Cuidado de la Piel</option>
+    </select>
+  </div>
 
-          <div class="filtro-grupo">
-            <label>Subcategoría</label>
-            <select id="filter-subcategory">
-              <option value="all">Todas</option>
-              <option value="Para los ojos">Para los Ojos</option>
-              <option value="Para los labios">Para los labios</option>
-              <option value="Para la cara">Para la cara</option>
-              <option value="Accesorios">Accesorios</option>
-            </select>
-          </div>
+  <div class="filtro-grupo">
+    <label>Subcategoría</label>
+    <select id="filter-subcategory">
+      <option value="all">Todas</option>
+      <option value="Para los ojos">Para los Ojos</option>
+      <option value="Para los labios">Para los labios</option>
+      <option value="Para la cara">Para la cara</option>
+      <option value="Accesorios">Accesorios</option>
+    </select>
+  </div>
 
-<div class="filtro-grupo">
-  <label>Tipo</label>
- <select id="filter-type">
-  <option value="all">Todos</option>
+  <div class="filtro-grupo">
+    <label>Tipo</label>
+    <select id="filter-type">
+      <option value="all">Todos</option>
+      <option value="mascara">Máscara</option>
+      <option value="delineador">Delineador / Dipliner</option>
+      <option value="sombras">Paletas de Sombras</option>
+      <option value="difuminador">Difuminador</option>
+      <option value="cejas">Productos para Cejas</option>
+    </select>
+  </div>
 
-  <option value="mascara">Máscara</option>
-
-  <option value="delineador">Delineador / Dipliner</option>
-
-  <option value="sombras">Paletas de Sombras</option>
-
-  <option value="difuminador">Difuminador</option>
-
-  <option value="cejas">Productos para Cejas</option>
-</select>
-
-</div>
-
-          <button id="filter-btn" class="btn">
-            Aplicar filtros
-          </button>
-        </aside>
+  <button id="filter-btn" class="btn">
+    Aplicar filtros
+  </button>
+</aside>
 
             <!-- PRODUCTOS -->
     <section class="productos">
