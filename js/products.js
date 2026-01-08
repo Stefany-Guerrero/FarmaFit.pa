@@ -343,12 +343,12 @@ function mostrarProductos(productos) {
 }
 
 // ===============================
-// MOSTRAR DETALLE PRODUCTO
+// MOSTRAR DETALLE PRODUCTO CON VARIANTES Y ACORDEÓN
 // ===============================
 function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
   const detalleContainer = document.getElementById("detalle-producto");
 
-  const info = varianteSeleccionada?.info || producto.info || {};
+  const info = producto.info;
   const precio = varianteSeleccionada?.precio || producto.precio;
   const imagen = varianteSeleccionada?.imagen || producto.imagen;
 
@@ -361,6 +361,7 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
     { titulo: "Envíos y devoluciones", contenido: info.envio }
   ];
 
+  // Render detalle
   detalleContainer.innerHTML = `
     <div class="detalle-card">
 
@@ -378,9 +379,7 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
           producto.variantes
             ? `<div class="variantes">
                 ${producto.variantes.map(v => `
-                  <button class="color-btn" style="background-color:${v.colorHex};"
-                    onclick="mostrarDetalleProducto(${JSON.stringify(producto)}, ${JSON.stringify(v)})">
-                  </button>
+                  <button class="color-btn ${v.color === varianteSeleccionada?.color ? "activo" : ""}" style="background-color:${v.colorHex};"></button>
                 `).join("")}
               </div>`
             : ""
@@ -401,6 +400,16 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
       </div>
     </div>
   `;
+
+  // Evento para variantes
+  if (producto.variantes) {
+    const botones = detalleContainer.querySelectorAll(".color-btn");
+    botones.forEach((btn, idx) => {
+      btn.addEventListener("click", () => {
+        mostrarDetalleProducto(producto, producto.variantes[idx]);
+      });
+    });
+  }
 }
 
 // ===============================
@@ -485,4 +494,3 @@ function toggleAcordeon(titulo) {
 // CARGA INICIAL
 // ===============================
 mostrarSeccion("inicio");
-
