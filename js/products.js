@@ -375,15 +375,18 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
         <h2>${producto.nombre}</h2>
         <p class="price">$${precio.toFixed(2)}</p>
 
-        ${
-          producto.variantes
-            ? `<div class="variantes">
-                ${producto.variantes.map(v => `
-                  <button class="color-btn ${v.color === varianteSeleccionada?.color ? "activo" : ""}" style="background-color:${v.colorHex};"></button>
-                `).join("")}
-              </div>`
-            : ""
-        }
+      ${
+  producto.variantes
+    ? `<div class="variantes">
+        ${producto.variantes.map(v => `
+          <div class="color-item" style="display:flex; align-items:center; margin-bottom:5px;">
+            <button class="color-btn ${v.color === varianteSeleccionada?.color ? "activo" : ""}" style="background-color:${v.colorHex}; margin-right:6px;"></button>
+            <span class="color-nombre">${v.color}</span>
+          </div>
+        `).join("")}
+      </div>`
+    : ""
+}
 
         <div class="acordeones">
           ${secciones
