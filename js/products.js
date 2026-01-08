@@ -70,7 +70,7 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara que alarga y define las pestañas.",
+      descripcion: "Máscara de pestañas con cepillo doble de silicón que aporta volumen y definición desde la raíz hasta la punta, logrando una mirada intensa y duradera.",
       beneficios: "No se corre, larga duración.",
       uso: "Aplicar desde la raíz hasta la punta.",
       ingredientes: "Cera natural, pigmentos.",
