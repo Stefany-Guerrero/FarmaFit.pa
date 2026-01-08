@@ -588,6 +588,7 @@ left: 12px;
   border-radius: 24px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   align-items: flex-start;
+  flex-direction: row; /* 👈 fuerza imagen izquierda en desktop */
 }
 
 /* PANEL IMAGEN – IZQUIERDA */
@@ -651,26 +652,32 @@ left: 12px;
 /* ===============================
    RESPONSIVE – DETALLE PRODUCTO
 ================================ */
-
 @media (max-width: 768px) {
   .detalle-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* 👈 imagen arriba */
+    align-items: stretch;
+    text-align: left;
   }
 
-  .detalle-card img {
+  .detalle-img {
     width: 100%;
-    max-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .detalle-img img {
+    width: 100%;
+    max-width: 320px;
   }
 
   .detalle-info {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .detalle-info .btn {
-    align-self: center;
+    align-self: stretch;
+    text-align: center;
   }
 }
 
