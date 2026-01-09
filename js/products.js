@@ -93,7 +93,7 @@ const allProducts = [
       detalles: "Aqua (agua), butilenglicol, dextrano, acetil tetrapéptido-3, extracto de flor de trifolium pratense (trébol), fenoxietanol, etilhexilglicerina, carbómero, trietanolamina.",
       advertencia: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de contacto, enjuaga con abundante agua. Suspende su uso si se presenta irritación o enrojecimiento. Mantener fuera del alcance de los niños. Conservar en un lugar fresco y seco, alejado de la luz directa.",
       sostentibilidad: "No testado en animales. Sin parabenos.",
-      resultado: "Pestañas y cejas más fuertes, densas y con apariencia saludable."
+      resultados: "Pestañas y cejas más fuertes, densas y con apariencia saludable."
     }
   },
   {
@@ -106,12 +106,12 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara de volumen extremo para pestañas.",
-      beneficios: "Volumen y definición instantánea.",
-      uso: "Aplicar de raíz a punta con movimientos zig-zag.",
-      ingredientes: "Cera natural y pigmentos intensos.",
-      advertencias: "Evitar contacto con los ojos.",
-      envio: "Envíos en 24–48 horas."
+      descripcion: "Máscara de pestañas que brinda un volumen explosivo, ideal para quienes buscan un look dramático y llamativo desde la primera aplicación.",
+      uso: "Aplica cubriendo las pestañas desde la raíz hasta las puntas y para separarlas aplica con un movimiento en zigzag. Puedes poner una segunda capa si lo prefieres. Farmasi Pro tips: Para mejores resultados prepara tus pestañas aplicando antes de la Mascara , el lash primer.",
+      detalles: "Ceras naturales, polímeros fijadores, pigmentos negros intensos.",
+      advertencia: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de ocurrir, enjuaga con abundante agua. Mantén el envase bien cerrado y en un lugar fresco, lejos de la luz solar directa. No compartir el aplicador para evitar contaminación. Suspende su uso si presentas irritación o enrojecimiento. Mantener fuera del alcance de los niños.",
+      sostentibilidad: "Fórmula vegana y libre de crueldad animal.",
+      resultados: "Aporta volumen intenso y una mirada de alto impacto."
     }
   },
   {
@@ -124,12 +124,12 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara que alarga y da definición intensa.",
-      beneficios: "Resistente al agua y de larga duración.",
-      uso: "Aplicar desde la raíz hasta la punta.",
-      ingredientes: "Cera y pigmentos especiales.",
-      advertencias: "Evitar contacto con los ojos.",
-      envio: "Envíos en 24–48 horas."
+      descripcion: "Máscara de pestañas de fórmula flexible que ofrece alargamiento y definición natural, disponible en negro y café para looks versátiles.",
+      uso: "Aplica el rímel desde la raíz hasta las puntas de las pestañas con movimientos en zigzag para lograr mayor definición y volumen. Repite las capas necesarias según la intensidad deseada. Para un efecto más dramático, aplica también en las pestañas inferiores.",
+      detalles: "Pigmentos intensos, polímeros de fijación ligera, ceras vegetales.",
+      advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de ocurrir, enjuaga con abundante agua. Mantén el envase bien cerrado y en un lugar fresco, lejos de la luz solar directa. No compartir el aplicador para evitar contaminación. Suspende su uso si presentas irritación o enrojecimiento. Mantener fuera del alcance de los niños.",
+      sostentibilidad: "No testado en animales. Sin parabenos.",
+      resultados: "Pestañas alargadas, definidas y con acabado natural"
     }
   },
   {
@@ -142,12 +142,12 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara marrón para un look natural.",
-      beneficios: "No se corre y de larga duración.",
-      uso: "Aplicar de raíz a punta.",
-      ingredientes: "Cera natural y pigmentos marrón.",
-      advertencias: "Evitar contacto con los ojos.",
-      envio: "Envíos en 24–48 horas."
+      descripcion: "El secreto para unas pestañas infinitas, ahora en tono marrón suave. INFINILASH MASCARA – BROWN es una edición limitada de nuestra fórmula alargadora más vendida, con un tono marrón intenso que realza tus pestañas con una definición suave y natural.",
+      uso: "Esta fórmula cremosa y ligera ofrece un alargamiento espectacular con un acabado suave y fácil de llevar. Perfecta para definir tus ojos sin la intensidad del negro, ideal para looks de día, maquillaje ligero o quienes buscan un efecto más suave pero impactante.",
+      detalles: "Por qué la amamos: alarga y da volumen al instante. Resistente a manchas y de larga duración. Ofrece elevación y separación precisas con el cepillo Twin-Vortex.",
+      advertencias: "Ingredientes clave: Aceite de ricino – nutre y reduce la rotura de las pestañas. Agente gelificante natural – crea una base suave y adaptable. Cera de cáscara de naranja – aporta volumen y brillo. Goma de acacia de Senegal – mejora la fijación y proporciona elevación.",
+      sostentibiidad: "No testado en animales. Sin parabenos.",
+      resultados: "Un imprescindible para una belleza natural y sin esfuerzo."
     }
   },
   {
@@ -160,12 +160,12 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Máscara ligera para un look natural.",
-      beneficios: "Fácil de aplicar y resistente.",
-      uso: "Aplicar suavemente de raíz a punta.",
-      ingredientes: "Cera ligera y pigmentos suaves.",
-      advertencias: "Evitar contacto con los ojos.",
-      envio: "Envíos en 24–48 horas."
+      descripcion: "Máscara de pestañas que combina definición y volumen ligero con un cepillo ergonómico para una aplicación uniforme.",
+      uso: "No se corre y de larga duración.",
+      detalles: "Aplicar de raíz a punta.",
+      advertencias: "Cera natural y pigmentos marrón.",
+      sostentibiidad: "Evitar contacto con los ojos.",
+      resultados: "Envíos en 24–48 horas."
     }
   },
   {
@@ -250,12 +250,12 @@ const allProducts = [
       }
     ],
     info: {
-      descripcion: "Lápiz delineador de ojos de alta precisión.",
-      beneficios: "Resistente, fácil de aplicar, larga duración.",
-      uso: "Aplicar cerca de las pestañas según el estilo deseado.",
-      ingredientes: "Pigmentos, ceras y aceites naturales.",
-      advertencias: "Evitar contacto con los ojos.",
-      envio: "Envíos en 24–48 horas."
+            descripcion: "Máscara marrón para un look natural.",
+      uso: "No se corre y de larga duración.",
+      detalles: "Aplicar de raíz a punta.",
+      advertencias: "Cera natural y pigmentos marrón.",
+      sostentibiidad: "Evitar contacto con los ojos.",
+      resultados: "Envíos en 24–48 horas."
     }
   }
 ];
