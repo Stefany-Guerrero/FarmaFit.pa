@@ -296,7 +296,31 @@ Matte Liquid Lipstick 08 Rose Dream: color intenso con una textura mate cómoda.
     advertencias: `Ideal para ocasiones especiales o para elevar tu estilo diario.
 El bolso compacto hace que sea fácil llevar tus esenciales del día a la noche.`
   }
-}
+},
+    {
+    id: "FF-MK-009",
+    nombre: "Midnight Glam Set",
+    precio: 65.00,
+    imagen: "productos/fullblastmascara.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "mascara",
+    favorito: false,
+    info: {
+      descripcion: `Definición, longitud y color intenso — tus esenciales para un glamour festivo.
+
+Descubre una sofisticación sin esfuerzo con el set Midnight Glam, un trío de maquillaje cuidadosamente seleccionado para esculpir, definir y realzar tu belleza natural.
+Incluye el Stick Bronzer Smize para un contorno bronceado y un brillo radiante, la Infinilash Length Mascara para pestañas dramáticas y alargadas, y el Latina Lip Lacquer 10 Valiente para un color vibrante y de larga duración — todo presentado en un lujoso bolso de terciopelo azul oscuro.
+Perfecto para regalar o para elevar tu propia rutina de belleza, este set ofrece todo lo que necesitas para un look pulido y glamuroso.`,
+      uso: `Bronzer: Aplica el Stick Bronzer Smize sobre los pómulos, sienes y mandíbula, luego difumina para lograr un contorno natural con efecto bronceado.
+
+Máscara: Aplica la Infinilash Length Mascara desde la raíz hasta las puntas, aplicando capas según se desee para pestañas más largas y definidas.
+
+Color de labios: Finaliza con el Latina Lip Lacquer 10 Valiente, aplicándolo directamente sobre los labios para un color intenso, audaz y un acabado suave.`,
+      advertencias: "Perfecto para una elegancia diaria, ocasiones especiales o para experimentar con looks de ojos creativos y audaces.",
+      resultados: "Un maquillaje pulido con mejillas luminosas, rasgos definidos y combinaciones de color que atraen miradas — glamour sin esfuerzo de día a noche."
+    }
+  },
 ];
 
 // ===============================
