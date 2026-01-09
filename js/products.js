@@ -88,12 +88,12 @@ const allProducts = [
     tipo: "mascara",
     favorito: false,
     info: {
-      descripcion: "Sérum fortalecedor para cejas y pestañas.",
-      beneficios: "Estimula crecimiento y densidad.",
-      uso: "Aplicar por la noche en cejas y pestañas limpias.",
-      ingredientes: "Extractos naturales y vitaminas.",
-      advertencias: "Evitar contacto directo con los ojos.",
-      envio: "Envíos en 24–48 horas."
+      descripcion: "Un suero intensivo diseñado para nutrir y fortalecer tus cejas y pestañas, promoviendo un crecimiento más saludable y un aspecto más denso y definido. Su fórmula ligera se absorbe rápidamente, dejando un acabado suave y sin sensación grasosa.",
+      uso: "Aplica una fina capa del suero sobre las cejas y la línea de las pestañas limpias y secas, preferiblemente por la noche. Utiliza el aplicador como si fuera un delineador, trazando suavemente desde la raíz hasta las puntas. Deja que se absorba completamente antes de aplicar otros productos. Usa de manera constante para mejores resultados",
+      detalles: "Aqua (agua), butilenglicol, dextrano, acetil tetrapéptido-3, extracto de flor de trifolium pratense (trébol), fenoxietanol, etilhexilglicerina, carbómero, trietanolamina.",
+      advertencia: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de contacto, enjuaga con abundante agua. Suspende su uso si se presenta irritación o enrojecimiento. Mantener fuera del alcance de los niños. Conservar en un lugar fresco y seco, alejado de la luz directa.",
+      sostentibilidad: "No testado en animales. Sin parabenos.",
+      resultado: "Pestañas y cejas más fuertes, densas y con apariencia saludable."
     }
   },
   {
