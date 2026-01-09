@@ -434,9 +434,10 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
       </div>
 
       <!-- DERECHA -->
-      <div class="detalle-info">
-        <h2>${producto.nombre}</h2>
-        <p class="price">$${precio.toFixed(2)}</p>
+<div class="detalle-info">
+  <h2>${producto.nombre}</h2>
+  <span class="product-code">Código: ${varianteSeleccionada?.codigo || producto.id}</span>
+  <p class="price">$${precio.toFixed(2)}</p>
 
       ${
   producto.variantes
