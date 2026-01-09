@@ -321,6 +321,45 @@ Color de labios: Finaliza con el Latina Lip Lacquer 10 Valiente, aplicándolo di
       resultados: "Un maquillaje pulido con mejillas luminosas, rasgos definidos y combinaciones de color que atraen miradas — glamour sin esfuerzo de día a noche."
     }
   },
+    {
+    id: "FF-MK-010",
+    nombre: "Glam Up Eyeshadow Palette",
+    precio: 37.50,
+    imagen: "productos/eyebrow&lashserum.jpg",
+    categoria: "maquillaje",
+    subcategoria: "ojos",
+    tipo: "sombras",
+    favorito: false,
+    info: {
+      descripcion: `Conoce la nueva Glam Up Palette
+12 tonos icónicos (8 mate + 4 brillantes), ahora con nuestra fórmula suave y libre de talco.
+
+Desde un look chic de día hasta un glam audaz de noche, esta paleta ofrece estilos infinitos con pigmentación intensa que ama tu piel tanto como tú.
+
+Tu esencial de maquillaje—porque el glam siempre debe ser seguro.`,
+      uso: `1.     Aplica un tono mate como base.
+
+2.     Define la cuenca y el extremo externo con tonos mates más oscuros.
+
+3.     Ilumina el centro del párpado o lagrimal con tonos brillantes.
+
+4.     Difumina bien para un acabado uniforme.
+
+5.     Crea capas según el look deseado, de natural a intenso.`,
+      detalles: `Mica: aporta brillo sedoso y un acabado luminoso.
+Pigmentos minerales: ofrecen intensidad y duración.
+Antioxidantes: cuidan la delicada piel de los ojos.
+Conservantes seguros: mantienen la paleta fresca y estable por más tiempo.
+Ingredientes:
+Mica, Magnesium Stearate, Polyethylene, Silica, Boron Nitride, Kaolin, Mineral Oil,
+2-Ethylhexyl Palmitate, Dimethicone, Hydrogenated Polyisobutene, Dipentaerythrityl Pentaisononanoate, Octyldodecanol, Tridecyl Trimellitate, Microcrystalline Wax, Dimethicone Crosspolymer, Phenyl, Trimethicone, Triethoxycaprylylsilane, Aluminum Hydroxide, Calcium Aluminum Borosilicate, Synthetic Fluorphlogopite, Tocopheryl Acetate, Pentaerythrityl Tetra-di-t-butyl Hydroxyhydrocinnamate, Phenoxyethanol, Ethylhexylglycerin, Tin Oxide, Tocopherol, Fragrance (Parfum).
+
+Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499), Ultramarines (CI 77007), D&C Black No. 2 (CI 77266), Manganese Violet (CI 77742), FD&C Red No. 40 Aluminum Lake (CI 16035), FD&C Yellow No. 5 Aluminum Lake (CI 19140).`,
+      advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de contacto, enjuaga con abundante agua. Suspende su uso si se presenta irritación o enrojecimiento. Mantener fuera del alcance de los niños. Conservar en un lugar fresco y seco, alejado de la luz directa.",
+      sostenibilidad: "No testado en animales. Sin parabenos.",
+      resultados: "Pestañas y cejas más fuertes, densas y con apariencia saludable."
+    }
+  },
 ];
 
 // ===============================
