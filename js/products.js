@@ -161,11 +161,11 @@ const allProducts = [
     favorito: false,
     info: {
       descripcion: "Máscara de pestañas que combina definición y volumen ligero con un cepillo ergonómico para una aplicación uniforme.",
-      uso: "No se corre y de larga duración.",
-      detalles: "Aplicar de raíz a punta.",
-      advertencias: "Cera natural y pigmentos marrón.",
-      sostentibiidad: "Evitar contacto con los ojos.",
-      resultados: "Envíos en 24–48 horas."
+      uso: "Aplica el rímel desde la raíz hasta las puntas de las pestañas con movimientos en zigzag para lograr mayor definición y volumen. Repite las capas necesarias según la intensidad deseada. Para un efecto más dramático, aplica también en las pestañas inferiores.",
+      detalles: "Agua (Aqua), Copolímero de estireno/acrilatos/metacrilato de amonio, cera de abejas, aceite de ricino (aceite de semilla de Ricinus communis), butilenglicol, ácido esteárico, poliuretano-35, polimetilsilsesquioxano, estearato de glicerilo, copolímero de VP/eicoseno, goma Acacia Senegal, PVP , fluorflogopita sintética, cera de carnauba (Copernicia Cerifera Cera), alcohol polivinílico, estearato de PEG-100, cera de candelilla (Euphorbia Cerifera Cera), trietanolamina, fenoxietanol, sílice, goma xantana, alantoína, etilhexilglicerina, EDTA tetrasódico, BHT, óxido de hierro (CI 77499).",
+      advertencias: "Creado para uso personal. Manipule y aplique siempre de manera cuidadosa e higiénica. Tratar el aplicador con el debido cuidado higiénico. Nunca aplicar este producto en un vehículo en movimiento. No diluir con agua, saliva o cualquier otra sustancia. Siempre cerrar después de su uso. Suspender el uso si se produce un cambio en el olor o apariencia. No usar este ni ningún otro cosmético para ojos si se tiene una lesión, irritación o infección. Consulte a su médico. Mantener fuera del alcance de los niños.",
+      sostentibiidad: "No testado en animales. Sin parabenos.",
+      resultados: "Mirada definida con pestañas naturales y ligeras."
     }
   },
   {
