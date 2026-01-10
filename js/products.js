@@ -325,7 +325,7 @@ Color de labios: Finaliza con el Latina Lip Lacquer 10 Valiente, aplicándolo di
     id: "FF-MK-010",
     nombre: "Glam Up Eyeshadow Palette",
     precio: 37.50,
-    imagen: "productos/eyebrow&lashserum.jpg",
+    imagen: "productos/glamupeyeshadowpalette.jpg",
     categoria: "maquillaje",
     subcategoria: "ojos",
     tipo: "sombras",
@@ -355,9 +355,8 @@ Mica, Magnesium Stearate, Polyethylene, Silica, Boron Nitride, Kaolin, Mineral O
 2-Ethylhexyl Palmitate, Dimethicone, Hydrogenated Polyisobutene, Dipentaerythrityl Pentaisononanoate, Octyldodecanol, Tridecyl Trimellitate, Microcrystalline Wax, Dimethicone Crosspolymer, Phenyl, Trimethicone, Triethoxycaprylylsilane, Aluminum Hydroxide, Calcium Aluminum Borosilicate, Synthetic Fluorphlogopite, Tocopheryl Acetate, Pentaerythrityl Tetra-di-t-butyl Hydroxyhydrocinnamate, Phenoxyethanol, Ethylhexylglycerin, Tin Oxide, Tocopherol, Fragrance (Parfum).
 
 Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499), Ultramarines (CI 77007), D&C Black No. 2 (CI 77266), Manganese Violet (CI 77742), FD&C Red No. 40 Aluminum Lake (CI 16035), FD&C Yellow No. 5 Aluminum Lake (CI 19140).`,
-      advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de contacto, enjuaga con abundante agua. Suspende su uso si se presenta irritación o enrojecimiento. Mantener fuera del alcance de los niños. Conservar en un lugar fresco y seco, alejado de la luz directa.",
-      sostenibilidad: "No testado en animales. Sin parabenos.",
-      resultados: "Pestañas y cejas más fuertes, densas y con apariencia saludable."
+      advertencias: "Usa los mates para definir y los brillantes para resaltar. Mezcla y difumina como quieras para un look de día o de noche.",
+      sostenibilidad: "La Glam Up Palette está formulada con ingredientes veganos y libres de talco, desarrollada bajo principios de belleza consciente. Además, es cruelty-free, cuidando tu piel y respetando el planeta.",
     }
   },
 ];
