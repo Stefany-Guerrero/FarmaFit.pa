@@ -388,8 +388,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
       uso: "Aplique en el área de los ojos, difuminando y combinando los tonos según el look deseado.",
       detalles: "Talco, Mica, Estearato de Magnesio, Polietileno, Aceite Mineral, Palmitato de Etilhexilo, Sílice, Dimeticona, Poliisobuteno Hidrogenado, Malato de Diisosteárilo, Cera Microcristalina, Trimelitato de Tridecilo, Octildodecanol, Nitruro de Boro, Copolímero de Dimeticona, Fluorflogopita Sintética, Borosilicato de Aluminio y Calcio, Poliisobuteno, Tereftalato de Polietileno, Ácido Hidroxiestearico, Aluminio, Copolímero de Acrilatos, Aceite Vegetal Hidrogenado, Cera Sintética, Hidróxido de Aluminio, Trietoxicaprillisilano, Fenoxietanol, Etilhexilglicerina, Fragancia. Puede contener: Mica (CI 77019), Óxido de Estaño (CI 77861), Óxidos de Hierro Sintéticos (CI 77492, CI 77499, CI 77491), Dióxido de Titanio (CI 77891), Ultramarinos (CI 77007), Violeta de Manganeso (CI 77742), Lago de Aluminio Amarillo N°5 (CI 19140), Lago de Aluminio Rojo N°40 (CI 16035), Negro D&C 2 (CI 77266).",
       advertencias: "Solo para uso externo. En caso de irritación o reacción, suspenda el uso inmediatamente y consulte a su médico. Mantenga fuera del alcance de los niños.",
-    },
-        
+    }   
 ];
 
 // ===============================
