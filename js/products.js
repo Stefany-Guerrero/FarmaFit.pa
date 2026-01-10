@@ -374,6 +374,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
   advertencias: "Para uso externo únicamente. Evite el contacto con los ojos. Si se produce irritación, suspenda su uso. Mantener fuera del alcance de los niños.",
   sostenibilidad: "Vegana, libre de crueldad animal y formulada con ingredientes de alta calidad. Empaque reciclable.",
   resultados: "Una paleta que honra tu belleza y celebra nuestra historia, empoderando tu confianza a través del color."
+    }
   },
       {
     id: "FF-MK-012",
@@ -390,6 +391,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
       detalles: "Talco, Mica, Estearato de Magnesio, Polietileno, Aceite Mineral, Palmitato de Etilhexilo, Sílice, Dimeticona, Poliisobuteno Hidrogenado, Malato de Diisosteárilo, Cera Microcristalina, Trimelitato de Tridecilo, Octildodecanol, Nitruro de Boro, Copolímero de Dimeticona, Fluorflogopita Sintética, Borosilicato de Aluminio y Calcio, Poliisobuteno, Tereftalato de Polietileno, Ácido Hidroxiestearico, Aluminio, Copolímero de Acrilatos, Aceite Vegetal Hidrogenado, Cera Sintética, Hidróxido de Aluminio, Trietoxicaprillisilano, Fenoxietanol, Etilhexilglicerina, Fragancia. Puede contener: Mica (CI 77019), Óxido de Estaño (CI 77861), Óxidos de Hierro Sintéticos (CI 77492, CI 77499, CI 77491), Dióxido de Titanio (CI 77891), Ultramarinos (CI 77007), Violeta de Manganeso (CI 77742), Lago de Aluminio Amarillo N°5 (CI 19140), Lago de Aluminio Rojo N°40 (CI 16035), Negro D&C 2 (CI 77266).",
       advertencias: "Solo para uso externo. En caso de irritación o reacción, suspenda el uso inmediatamente y consulte a su médico. Mantenga fuera del alcance de los niños.",
     }   
+      },
 ];
 
 // ===============================
