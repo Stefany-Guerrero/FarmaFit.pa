@@ -367,6 +367,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
   categoria: "maquillaje",
   subcategoria: "ojos",
   tipo: "sombras",
+  favorito: false,
     info: {
   descripcion: "FARMASI cumple 75 años, ¡y lo celebramos a todo color! La paleta de sombras No.75 Anniversary es una edición limitada con 28 tonos atemporales y sofisticados inspirados en 75 años de belleza, fuerza y estilo. Cada tono rinde homenaje a las mujeres que hicieron posible este recorrido: un verdadero tributo al legado femenino.",
   uso: "Aplicar sobre el rostro limpio por la mañana y noche.",
