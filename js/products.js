@@ -359,6 +359,21 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
       sostenibilidad: "La Glam Up Palette está formulada con ingredientes veganos y libres de talco, desarrollada bajo principios de belleza consciente. Además, es cruelty-free, cuidando tu piel y respetando el planeta.",
     }
   },
+  {
+  id: "FF-MK-011",
+  nombre: "No. 75 Anniversary Eyeshadow Palette",
+  precio: 75.00,
+  imagen: "productos/no.75anniversaryeyeshadowpalette.jpg",
+  categoria: "maquillaje",
+  subcategoria: "ojos",
+  tipo: "sombras",
+  descripcion: "FARMASI cumple 75 años, ¡y lo celebramos a todo color! La paleta de sombras No.75 Anniversary es una edición limitada con 28 tonos atemporales y sofisticados inspirados en 75 años de belleza, fuerza y estilo. Cada tono rinde homenaje a las mujeres que hicieron posible este recorrido: un verdadero tributo al legado femenino.",
+  uso: "Aplicar sobre el rostro limpio por la mañana y noche.",
+  detalles: "Contiene 12 tonos mate, 6 satinados y 10 ultra-brillantes para una creatividad sin límites. Los pigmentos de calidad profesional ofrecen una aplicación suave y colores de alto impacto para cualquier ocasión.",
+  advertencias: "Para uso externo únicamente. Evite el contacto con los ojos. Si se produce irritación, suspenda su uso. Mantener fuera del alcance de los niños.",
+  sostenibilidad: "Vegana, libre de crueldad animal y formulada con ingredientes de alta calidad. Empaque reciclable.",
+  resultados: "Una paleta que honra tu belleza y celebra nuestra historia, empoderando tu confianza a través del color."
+  }
 ];
 
 // ===============================
