@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 // ===============================
 // SECCIONES (DECLARACIÓN)
 // ===============================
@@ -817,4 +818,5 @@ safeClick("btn-logout", () => {
 
 // Ejecutar al cargar
 renderCuenta();
+});
 
