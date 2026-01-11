@@ -1,28 +1,29 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".login-form");
-  const emailInput = form.querySelector('input[type="email"]');
-  const passwordInput = form.querySelector('input[type="password"]');
+// ===============================
+// LOGIN SIMPLE (LOCAL)
+// ===============================
 
-  form.addEventListener("submit", (e) => {
+const form = document.getElementById("login-form");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
 
+    // Validación básica
     if (!email || !password) {
-      alert("Por favor completa todos los campos");
+      alert("Completa todos los campos");
       return;
     }
 
-    // Guardar usuario (lo que el usuario escribió)
-    const usuario = {
-      nombre: email.split("@")[0],
+    // Guardar sesión (simulada)
+    localStorage.setItem("usuario", JSON.stringify({
       email: email
-    };
-
-    localStorage.setItem("usuario", JSON.stringify(usuario));
+    }));
 
     // Ir al home
     window.location.href = "home.html";
   });
-});
+}
+
