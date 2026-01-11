@@ -527,12 +527,12 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
   const precio = varianteSeleccionada?.precio || producto.precio;
   const imagen = varianteSeleccionada?.imagen || producto.imagen;
 
-  const secciones = [
+  const acordeonSecciones = [
     { titulo: "Descripción de Producto", contenido: info.descripcion },
     { titulo: "Como usarlo", contenido: info.uso },
     { titulo: "Detalles técnicos del producto", contenido: info.detalles },
     { titulo: "Precausiones", contenido: info.advertencias },
-    { titulo: "Sostenibilidad", contenido: info.sostentibilidad || info.sostentibiidad },
+    { titulo: "Sostenibilidad", contenido: info.sostenibilidad || info.sostentibiidad },
     { titulo: "Resultados Comprobados", contenido: info.resultados }
   ];
 
@@ -572,7 +572,7 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
 }
 
         <div class="acordeones">
-          ${secciones
+          ${acordeonSecciones
             .filter(sec => sec.contenido)
             .map(sec => `
               <div class="acordeon">
@@ -586,6 +586,25 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
       </div>
     </div>
   `;
+
+  const btnAgregar = detalleContainer.querySelector(".btn");
+
+btnAgregar.addEventListener("click", () => {
+  const productoCarrito = {
+    id: producto.id,
+    nombre: producto.nombre,
+    precio: precio,
+    imagen: imagen,
+    codigo: varianteSeleccionada?.codigo || producto.id,
+    color: varianteSeleccionada?.color || null
+  };
+
+  carrito.push(productoCarrito);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  alert(`Agregaste ${producto.nombre} al carrito`);
+});
+
 
   // Evento para variantes
   if (producto.variantes) {
