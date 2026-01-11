@@ -180,81 +180,7 @@
        <!-- ================= SECCIÓN DETALLES DEL PRODUCTO ================= -->
 <section id="seccion-detalle" style="display:none;">
   <div id="detalle-producto" class="container">
-
-    <div class="detalle-card">
-
-      <!-- PANEL IZQUIERDO: imagen -->
-      <div class="detalle-img">
-        <img src="img/producto-ejemplo.jpg" alt="Nombre del producto">
-      </div>
-
-      <!-- PANEL DERECHO: FONDO ROSADO (SOLO INFO) -->
-      <div class="detalle-info-bg">
-
-        <!-- PANEL BLANCO -->
-        <div class="detalle-info">
-
-          <h2>Nombre del producto</h2>
-          <span class="product-code">Código: XYZ123</span>
-          <div class="price">$49.99</div>
-
-          <div class="variantes">
-  <!-- Aquí JS agregará los botones de color dinámicamente -->
-</div>
-
-          <!-- ACORDEÓN DE INFORMACIÓN ADICIONAL -->
-          <div class="acordeon">
-
-            <div class="acordeon-item">
-              <button class="acordeon-btn">Descripción del Producto</button>
-              <div class="acordeon-content">
-                <p>Esta es la descripción completa del producto.</p>
-              </div>
-            </div>
-
-            <div class="acordeon-item">
-              <button class="acordeon-btn">Como Usarlo</button>
-              <div class="acordeon-content">
-                <p>Detalles de los ingredientes aquí.</p>
-              </div>
-            </div>
-
-            <div class="acordeon-item">
-              <button class="acordeon-btn">Detalles técnicos del producto</button>
-              <div class="acordeon-content">
-                <p>Instrucciones de uso.</p>
-              </div>
-            </div>
-
-            <div class="acordeon-item">
-              <button class="acordeon-btn">Precauciones</button>
-              <div class="acordeon-content">
-                <p>Beneficios del producto.</p>
-              </div>
-            </div>
-
-            <div class="acordeon-item">
-              <button class="acordeon-btn">Sostenibilidad</button>
-              <div class="acordeon-content">
-                <p>Precauciones y advertencias.</p>
-              </div>
-            </div>
-
-            <div class="acordeon-item">
-              <button class="acordeon-btn">Resultados comprobados</button>
-              <div class="acordeon-content">
-                <p>Información del fabricante.</p>
-              </div>
-            </div>
-
-          </div>
-
-          <button class="btn">Agregar al carrito</button>
-
-        </div>
-      </div>
-
-    </div>
+    <!-- El contenido aquí será generado por JavaScript -->
   </div>
 </section>
 
@@ -288,7 +214,7 @@
 
     <h3 id="cart-total">Total: $0.00</h3>
 
-    <button class="btn">Finalizar compra</button>
+    <button class="btn" id="btn-finalizar">Finalizar compra</button>
   </div>
 </section>
 
@@ -301,6 +227,7 @@
 
   <!-- ================= JS ================= -->
 <script src="js/products.js"></script>
+<script src="js/login.js"></script>
 
 <!-- Evitar volver al login con el botón atrás -->
 <script>
@@ -308,8 +235,6 @@
     window.history.replaceState(null, null, window.location.href);
   }
 </script>
-
-  <script src="js/login.js"></script>
 
 </body>
 </html>
