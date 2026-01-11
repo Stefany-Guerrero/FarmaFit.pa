@@ -1,7 +1,4 @@
 // ===============================
-// SECCIONES
-// ===============================
-// ===============================
 // SECCIONES (DECLARACIÓN)
 // ===============================
 const secciones = {
@@ -11,6 +8,12 @@ const secciones = {
   compras: document.getElementById("seccion-compras"),
   detalle: document.getElementById("seccion-detalle")
 };
+
+// ===============================
+// CARRITO (GLOBAL)
+// ===============================
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 
 function mostrarSeccion(nombre) {
   Object.values(secciones).forEach(sec => {
