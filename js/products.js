@@ -681,48 +681,6 @@ function toggleAcordeon(titulo) {
 mostrarSeccion("inicio");
 
 // ===============================
-// CUENTA (SIMULADA)
-// ===============================
-let usuario = JSON.parse(localStorage.getItem("usuario")) || null;
-
-function renderCuenta() {
-  const name = document.getElementById("user-name");
-  const email = document.getElementById("user-email");
-  const loginBtn = document.getElementById("btn-login");
-  const logoutBtn = document.getElementById("btn-logout");
-
-  if (usuario) {
-    name.textContent = usuario.nombre;
-    email.textContent = usuario.email;
-    loginBtn.style.display = "none";
-    logoutBtn.style.display = "inline-block";
-  } else {
-    name.textContent = "Invitado";
-    email.textContent = "—";
-    loginBtn.style.display = "inline-block";
-    logoutBtn.style.display = "none";
-  }
-}
-
-document.getElementById("btn-login").addEventListener("click", () => {
-  usuario = {
-    nombre: "Stef Guerrero",
-    email: "stef@email.com"
-  };
-  localStorage.setItem("usuario", JSON.stringify(usuario));
-  renderCuenta();
-});
-
-document.getElementById("btn-logout").addEventListener("click", () => {
-  localStorage.removeItem("usuario");
-  usuario = null;
-  renderCuenta();
-});
-
-// Render inicial
-renderCuenta();
-
-// ===============================
 // CARRITO
 // ===============================
 function renderCarrito() {
