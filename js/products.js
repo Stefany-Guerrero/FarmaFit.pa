@@ -94,7 +94,7 @@ const allProducts = [
       uso: "Peina las pestañas desde la raíz hasta las puntas como primer paso para un efecto de alargamiento Aplicar desde la raíz hasta las puntas en movimiento zigzag. Repetir para un look más dramático.",
       detalles: "Agua/aguamarina, estireno/acrilatos/copolímero de metacrilato de amonio, cera de abejas, aceite de ricino/aceite de semilla de Ricinus communis, butilenglicol, ácido esteárico, poliuretano-35, polimetilsilsesquioxano, estearato de glicerilo, VP/copolímero de eicoseno, goma arábiga Senegal, PVP, fluorflogopita sintética, cera de carnauba/Copernicia Cerifera Cera, alcohol polivinílico, estearato de PEG-100, cera de Candellila/Cera de Euphorbia Cerifera, trietanolamina, fenoxietanol, sílice, goma de xantano, etilhexilglicerina, EDTA tetrasódico, hidroxihidrocinamato de pentaeritritil tetra-di-t-butilo, óxido de hierro/ CI 77499.",
       advertencias: "Creado para uso personal. Manipule y aplique siempre de manera cuidadosa e higiénica. Tratar el aplicador con el debido cuidado higiénico. Nunca aplicar este producto en un vehículo en movimiento. No diluir con agua, saliva o cualquier otra sustancia. Siempre cerrar después de su uso. Suspender el uso si se produce un cambio en el olor o apariencia. No usar este ni ningún otro cosmético para ojos si se tiene una lesión, irritación o infección. Consulte a su médico. Mantener fuera del alcance de los niños.",
-      sostentibiidad: "Fórmula vegana y libre de crueldad animal.",
+      sostenibilidad: "Fórmula vegana y libre de crueldad animal.",
       resultados: "Pestañas más largas, densas y definidas con acabado intenso."
     }
   },
@@ -113,7 +113,7 @@ const allProducts = [
       uso: "Aplica una fina capa del suero sobre las cejas y la línea de las pestañas limpias y secas, preferiblemente por la noche. Utiliza el aplicador como si fuera un delineador, trazando suavemente desde la raíz hasta las puntas. Deja que se absorba completamente antes de aplicar otros productos. Usa de manera constante para mejores resultados",
       detalles: "Aqua (agua), butilenglicol, dextrano, acetil tetrapéptido-3, extracto de flor de trifolium pratense (trébol), fenoxietanol, etilhexilglicerina, carbómero, trietanolamina.",
       advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de contacto, enjuaga con abundante agua. Suspende su uso si se presenta irritación o enrojecimiento. Mantener fuera del alcance de los niños. Conservar en un lugar fresco y seco, alejado de la luz directa.",
-      sostentibiidad: "No testado en animales. Sin parabenos.",
+      sostenibilidad: "No testado en animales. Sin parabenos.",
       resultados: "Pestañas y cejas más fuertes, densas y con apariencia saludable."
     }
   },
@@ -132,7 +132,7 @@ const allProducts = [
       uso: "Aplica cubriendo las pestañas desde la raíz hasta las puntas y para separarlas aplica con un movimiento en zigzag. Puedes poner una segunda capa si lo prefieres. Farmasi Pro tips: Para mejores resultados prepara tus pestañas aplicando antes de la Mascara , el lash primer.",
       detalles: "Ceras naturales, polímeros fijadores, pigmentos negros intensos.",
       advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de ocurrir, enjuaga con abundante agua. Mantén el envase bien cerrado y en un lugar fresco, lejos de la luz solar directa. No compartir el aplicador para evitar contaminación. Suspende su uso si presentas irritación o enrojecimiento. Mantener fuera del alcance de los niños.",
-      sostentibiidad: "Fórmula vegana y libre de crueldad animal.",
+      sostenibilidad: "Fórmula vegana y libre de crueldad animal.",
       resultados: "Aporta volumen intenso y una mirada de alto impacto."
     }
   },
@@ -151,7 +151,7 @@ const allProducts = [
       uso: "Aplica el rímel desde la raíz hasta las puntas de las pestañas con movimientos en zigzag para lograr mayor definición y volumen. Repite las capas necesarias según la intensidad deseada. Para un efecto más dramático, aplica también en las pestañas inferiores.",
       detalles: "Pigmentos intensos, polímeros de fijación ligera, ceras vegetales.",
       advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de ocurrir, enjuaga con abundante agua. Mantén el envase bien cerrado y en un lugar fresco, lejos de la luz solar directa. No compartir el aplicador para evitar contaminación. Suspende su uso si presentas irritación o enrojecimiento. Mantener fuera del alcance de los niños.",
-      sostentibiidad: "No testado en animales. Sin parabenos.",
+      sostenibilidad: "No testado en animales. Sin parabenos.",
       resultados: "Pestañas alargadas, definidas y con acabado natural"
     }
   },
@@ -170,7 +170,7 @@ const allProducts = [
       uso: "Esta fórmula cremosa y ligera ofrece un alargamiento espectacular con un acabado suave y fácil de llevar. Perfecta para definir tus ojos sin la intensidad del negro, ideal para looks de día, maquillaje ligero o quienes buscan un efecto más suave pero impactante.",
       detalles: "Por qué la amamos: alarga y da volumen al instante. Resistente a manchas y de larga duración. Ofrece elevación y separación precisas con el cepillo Twin-Vortex.",
       advertencias: "Ingredientes clave: Aceite de ricino – nutre y reduce la rotura de las pestañas. Agente gelificante natural – crea una base suave y adaptable. Cera de cáscara de naranja – aporta volumen y brillo. Goma de acacia de Senegal – mejora la fijación y proporciona elevación.",
-      sostentibiidad: "No testado en animales. Sin parabenos.",
+      sostenibilidad: "No testado en animales. Sin parabenos.",
       resultados: "Un imprescindible para una belleza natural y sin esfuerzo."
     }
   },
@@ -189,7 +189,7 @@ const allProducts = [
       uso: "Aplica el rímel desde la raíz hasta las puntas de las pestañas con movimientos en zigzag para lograr mayor definición y volumen. Repite las capas necesarias según la intensidad deseada. Para un efecto más dramático, aplica también en las pestañas inferiores.",
       detalles: "Agua (Aqua), Copolímero de estireno/acrilatos/metacrilato de amonio, cera de abejas, aceite de ricino (aceite de semilla de Ricinus communis), butilenglicol, ácido esteárico, poliuretano-35, polimetilsilsesquioxano, estearato de glicerilo, copolímero de VP/eicoseno, goma Acacia Senegal, PVP, fluorflogopita sintética, cera de carnauba (Copernicia Cerifera Cera), alcohol polivinílico, estearato de PEG-100, cera de candelilla (Euphorbia Cerifera Cera), trietanolamina, fenoxietanol, sílice, goma xantana, alantoína, etilhexilglicerina, EDTA tetrasódico, BHT, óxido de hierro (CI 77499).",
       advertencias: "Creado para uso personal. Manipule y aplique siempre de manera cuidadosa e higiénica. Tratar el aplicador con el debido cuidado higiénico. Nunca aplicar este producto en un vehículo en movimiento. No diluir con agua, saliva o cualquier otra sustancia. Siempre cerrar después de su uso. Suspender el uso si se produce un cambio en el olor o apariencia. No usar este ni ningún otro cosmético para ojos si se tiene una lesión, irritación o infección. Consulte a su médico. Mantener fuera del alcance de los niños.",
-      sostentibiidad: "No testado en animales. Sin parabenos.",
+      sostenibilidad: "No testado en animales. Sin parabenos.",
       resultados: "Mirada definida con pestañas naturales y ligeras."
     }
   },
@@ -280,7 +280,7 @@ const allProducts = [
       uso: "Aplica directamente sobre la línea de las pestañas superiores o inferiores. Para un look más intenso, repite la aplicación hasta lograr la definición deseada. También puedes difuminar con un pincel para un efecto ahumado.",
       detalles: "Trimetilsiloxisilicato, Cera Microcristallina, Trisiloxano, Dimeticona, Mica, Copolímero de acrilatos/acrilato de estearilo/metacrilato de dimeticona, Cera sintética, Polibuteno, Cera microcristalina hidrogenada, Fluorflogopita sintética, Polipropilsesquioxano, triglicérido caprílico/cáprico, ácido polihidroxiesteárico, sílice, copolímero Vp/hexadeceno, ácido isosteárico, tocoferol, caolín, aceite de semilla de Helianthus annuus, lecitina, óxido de estaño, poligliceril-3 polirricinoleato, tetra-di-t-butil hidroxihidrocinamato de pentaeritritilo [+/- Puede contener: CI 77742, CI 77007, CI 16035, CI 77891, CI 77499, CI 77510, CI 77491, CI 77492, CI 77288].",
       advertencias: "Solo para uso externo. Evita el contacto directo con los ojos; en caso de contacto, enjuaga con abundante agua. Suspende su uso si se presenta irritación o enrojecimiento. Mantener fuera del alcance de los niños.",
-      sostentibiidad: "Producto cruelty free, vegano y libre de parabenos, desarrollado bajo principios de belleza consciente.",
+      sostenibilidad: "Producto cruelty free, vegano y libre de parabenos, desarrollado bajo principios de belleza consciente.",
       resultados: "Líneas definidas, de larga duración y con la posibilidad de looks versátiles."
     }
   },
@@ -376,7 +376,7 @@ Mica, Magnesium Stearate, Polyethylene, Silica, Boron Nitride, Kaolin, Mineral O
 
 Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499), Ultramarines (CI 77007), D&C Black No. 2 (CI 77266), Manganese Violet (CI 77742), FD&C Red No. 40 Aluminum Lake (CI 16035), FD&C Yellow No. 5 Aluminum Lake (CI 19140).`,
       advertencias: "Usa los mates para definir y los brillantes para resaltar. Mezcla y difumina como quieras para un look de día o de noche.",
-      sostentibiidad: "La Glam Up Palette está formulada con ingredientes veganos y libres de talco, desarrollada bajo principios de belleza consciente. Además, es cruelty-free, cuidando tu piel y respetando el planeta.",
+      sostenibilidad: "La Glam Up Palette está formulada con ingredientes veganos y libres de talco, desarrollada bajo principios de belleza consciente. Además, es cruelty-free, cuidando tu piel y respetando el planeta.",
     }
   },
   {
@@ -393,7 +393,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
   uso: "Aplicar sobre el rostro limpio por la mañana y noche.",
   detalles: "Contiene 12 tonos mate, 6 satinados y 10 ultra-brillantes para una creatividad sin límites. Los pigmentos de calidad profesional ofrecen una aplicación suave y colores de alto impacto para cualquier ocasión.",
   advertencias: "Para uso externo únicamente. Evite el contacto con los ojos. Si se produce irritación, suspenda su uso. Mantener fuera del alcance de los niños.",
-  sostentibiidad: "Vegana, libre de crueldad animal y formulada con ingredientes de alta calidad. Empaque reciclable.",
+  sostenibilidad: "Vegana, libre de crueldad animal y formulada con ingredientes de alta calidad. Empaque reciclable.",
   resultados: "Una paleta que honra tu belleza y celebra nuestra historia, empoderando tu confianza a través del color."
     }
   },
