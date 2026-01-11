@@ -14,15 +14,9 @@ const secciones = {
 // ===============================
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-
 function mostrarSeccion(nombre) {
-  Object.values(secciones).forEach(sec => {
-    if (sec) sec.style.display = "none";
-  });
-
-  if (secciones[nombre]) {
-    secciones[nombre].style.display = "block";
-  }
+  Object.values(secciones).forEach(sec => sec.style.display = "none");
+  secciones[nombre].style.display = "block";
 
   if (nombre === "productos") {
     mostrarProductos(mezclarProductos(allProducts));
@@ -32,9 +26,10 @@ function mostrarSeccion(nombre) {
     renderCarrito();
   }
 
+  // 🔑 CLAVE
   if (nombre === "cuenta") {
-  renderCuenta();
-}
+    renderCuenta();
+  }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
