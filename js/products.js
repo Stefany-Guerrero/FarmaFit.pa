@@ -10,17 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
     detalle: document.getElementById("seccion-detalle")
   };
 
-// ===============================
-// CARRITO (GLOBAL)
-// ===============================
- // ===============================
+  // ===============================
   // CARRITO (GLOBAL)
   // ===============================
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+  // ===============================
+  // FUNCIONES DE NAVEGACIÓN
+  // ===============================
   function mostrarSeccion(nombre) {
     Object.values(secciones).forEach(sec => sec.style.display = "none");
-    secciones[nombre].style.display = "block";
+    if (secciones[nombre]) {
+      secciones[nombre].style.display = "block";
+    }
 
     if (nombre === "productos") {
       mostrarProductos(mezclarProductos(allProducts));
@@ -28,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (nombre === "compras") {
       renderCarrito();
+    }
+
+    if (nombre === "cuenta") {
+      renderCuenta();
     }
 
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -38,22 +44,22 @@ document.addEventListener("DOMContentLoaded", () => {
     if (el) el.addEventListener("click", callback);
   }
 
-// ===============================
-// FUNCION MEZCLAR (SHUFFLE)
-// ===============================
+  // ===============================
+  // FUNCION MEZCLAR (SHUFFLE)
+  // ===============================
   function mezclarProductos(array) {
     return array.sort(() => Math.random() - 0.5);
   }
 
-// ===============================
-// EVENTOS DEL NAV
-// ===============================
+  // ===============================
+  // EVENTOS DEL NAV
+  // ===============================
   safeClick("nav-inicio", e => { e.preventDefault(); mostrarSeccion("inicio"); });
   safeClick("nav-productos", e => { e.preventDefault(); mostrarSeccion("productos"); });
   safeClick("nav-cuenta", e => { e.preventDefault(); mostrarSeccion("cuenta"); });
   safeClick("nav-compras", e => { e.preventDefault(); mostrarSeccion("compras"); });
   safeClick("btn-ver-productos", e => { e.preventDefault(); mostrarSeccion("productos"); });
-
+  
 // ===============================
 // PRODUCTOS (DATA) CORREGIDOS
 // ===============================
@@ -409,37 +415,39 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
       },
 ];
 
-// ===============================
-// RELACIÓN CATEGORÍA → SUBCATEGORÍA → TIPO
-// ===============================
-const filtrosPorCategoria = {
-  maquillaje: {
-    subcategorias: {
-      ojos: ["mascara", "delineador", "sombras"],
-      labios: ["labial", "gloss"],
-      rostro: ["base", "rubor"]
+  // ===============================
+  // RELACIÓN CATEGORÍA → SUBCATEGORÍA → TIPO
+  // ===============================
+  const filtrosPorCategoria = {
+    maquillaje: {
+      subcategorias: {
+        ojos: ["mascara", "delineador", "sombras"],
+        labios: ["labial", "gloss"],
+        rostro: ["base", "rubor"]
+      }
+    },
+    nutricion: {
+      subcategorias: {
+        suplementos: ["proteina", "whey", "creatina"],
+        vitaminas: ["vitamina c", "multivitaminico"]
+      }
+    },
+    piel: {
+      subcategorias: {
+        limpieza: ["gel", "espuma"],
+        hidratacion: ["crema", "serum"]
+      }
     }
-  },
-  nutricion: {
-    subcategorias: {
-      suplementos: ["proteina", "whey", "creatina"],
-      vitaminas: ["vitamina c", "multivitaminico"]
-    }
-  },
-  piel: {
-    subcategorias: {
-      limpieza: ["gel", "espuma"],
-      hidratacion: ["crema", "serum"]
-    }
-  }
-};
+  };
 
-// ===============================
-// RENDER PRODUCTOS
-// ===============================
- const productsContainer = document.getElementById("products-container");
+  // ===============================
+  // RENDER PRODUCTOS
+  // ===============================
+  const productsContainer = document.getElementById("products-container");
 
   function mostrarProductos(productos) {
+    if (!productsContainer) return;
+    
     productsContainer.innerHTML = "";
 
     if (productos.length === 0) {
@@ -453,7 +461,7 @@ const filtrosPorCategoria = {
 
       card.innerHTML = `
         <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">❤</div>
-        <img src="${p.imagen}" alt="${p.nombre}">
+        <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='img/producto-ejemplo.jpg'">
         <h4>${p.nombre}</h4>
         <span class="product-code">${p.id}</span>
         <p class="price">$${p.precio.toFixed(2)}</p>
@@ -492,11 +500,12 @@ const filtrosPorCategoria = {
     });
   }
 
-// ===============================
-// MOSTRAR DETALLE PRODUCTO CON VARIANTES Y ACORDEÓN
-// ===============================
- function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
+  // ===============================
+  // MOSTRAR DETALLE PRODUCTO
+  // ===============================
+  function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
     const detalleContainer = document.getElementById("detalle-producto");
+    if (!detalleContainer) return;
 
     const info = producto.info;
     const precio = varianteSeleccionada?.precio || producto.precio;
@@ -513,7 +522,7 @@ const filtrosPorCategoria = {
 
     detalleContainer.innerHTML = `
       <div class="detalle-card">
-        <div class="detalle-img"><img src="${imagen}" alt="${producto.nombre}"></div>
+        <div class="detalle-img"><img src="${imagen}" alt="${producto.nombre}" onerror="this.src='img/producto-ejemplo.jpg'"></div>
         <div class="detalle-info">
           <h2>${producto.nombre}</h2>
           <span class="product-code">Código: ${varianteSeleccionada?.codigo || producto.id}</span>
@@ -538,23 +547,26 @@ const filtrosPorCategoria = {
               </div>
             `).join("")}
           </div>
-          <button class="btn">Agregar</button>
+          <button class="btn" id="btn-agregar-detalle">Agregar al carrito</button>
         </div>
       </div>
     `;
 
     // Agregar al carrito desde detalle
-    detalleContainer.querySelector(".btn").addEventListener("click", () => {
-      agregarAlCarrito({
-        id: producto.id,
-        nombre: producto.nombre,
-        precio: precio,
-        imagen: imagen,
-        codigo: varianteSeleccionada?.codigo || producto.id,
-        color: varianteSeleccionada?.color || null
+    const btnAgregar = document.getElementById("btn-agregar-detalle");
+    if (btnAgregar) {
+      btnAgregar.addEventListener("click", () => {
+        agregarAlCarrito({
+          id: producto.id,
+          nombre: producto.nombre,
+          precio: precio,
+          imagen: imagen,
+          codigo: varianteSeleccionada?.codigo || producto.id,
+          color: varianteSeleccionada?.color || null
+        });
+        alert(`Agregaste ${producto.nombre} al carrito`);
       });
-      alert(`Agregaste ${producto.nombre} al carrito`);
-    });
+    }
 
     // Eventos variantes
     if (producto.variantes) {
@@ -566,18 +578,21 @@ const filtrosPorCategoria = {
       });
     }
   }
-  
-// ===============================
-// FILTROS
-// ===============================
-function actualizarSubcategoriasYTipos() {
+
+  // ===============================
+  // FILTROS
+  // ===============================
+  function actualizarSubcategoriasYTipos() {
     const categoriaSelect = document.getElementById("filter-category");
     const subSelect = document.getElementById("filter-subcategory");
     const tipoSelect = document.getElementById("filter-type");
 
+    if (!categoriaSelect || !subSelect || !tipoSelect) return;
+
     const categoria = categoriaSelect.value;
     subSelect.innerHTML = `<option value="all">Todas</option>`;
     tipoSelect.innerHTML = `<option value="all">Todos</option>`;
+    
     if (categoria === "all" || !filtrosPorCategoria[categoria]) return;
 
     const subcategorias = filtrosPorCategoria[categoria].subcategorias;
@@ -591,7 +606,8 @@ function actualizarSubcategoriasYTipos() {
     subSelect.onchange = () => {
       tipoSelect.innerHTML = `<option value="all">Todos</option>`;
       const sub = subSelect.value;
-      if (sub === "all") return;
+      if (sub === "all" || !subcategorias[sub]) return;
+      
       subcategorias[sub].forEach(tipo => {
         const opt = document.createElement("option");
         opt.value = tipo;
@@ -601,48 +617,58 @@ function actualizarSubcategoriasYTipos() {
     };
   }
 
-  document.getElementById("filter-category").addEventListener("change", actualizarSubcategoriasYTipos);
+  // Inicializar filtros
+  const filterCategory = document.getElementById("filter-category");
+  if (filterCategory) {
+    filterCategory.addEventListener("change", actualizarSubcategoriasYTipos);
+  }
 
-  document.getElementById("filter-btn").addEventListener("click", e => {
-    e.preventDefault();
-    const min = parseFloat(document.getElementById("min-price").value) || 0;
-    const max = parseFloat(document.getElementById("max-price").value) || Infinity;
-    const cat = document.getElementById("filter-category").value;
-    const sub = document.getElementById("filter-subcategory").value;
-    const tipo = document.getElementById("filter-type").value;
+  const filterBtn = document.getElementById("filter-btn");
+  if (filterBtn) {
+    filterBtn.addEventListener("click", e => {
+      e.preventDefault();
+      const min = parseFloat(document.getElementById("min-price").value) || 0;
+      const max = parseFloat(document.getElementById("max-price").value) || Infinity;
+      const cat = document.getElementById("filter-category").value;
+      const sub = document.getElementById("filter-subcategory").value;
+      const tipo = document.getElementById("filter-type").value;
 
-    const filtrados = allProducts.filter(p => 
-      p.precio >= min &&
-      p.precio <= max &&
-      (cat === "all" || p.categoria === cat) &&
-      (sub === "all" || p.subcategoria === sub) &&
-      (tipo === "all" || p.tipo === tipo)
-    );
+      const filtrados = allProducts.filter(p => 
+        p.precio >= min &&
+        p.precio <= max &&
+        (cat === "all" || p.categoria === cat) &&
+        (sub === "all" || p.subcategoria === sub) &&
+        (tipo === "all" || p.tipo === tipo)
+      );
 
-    mostrarProductos(filtrados);
-  });
+      mostrarProductos(filtrados);
+    });
+  }
 
-    // ===============================
+  // ===============================
   // FUNCIONES GENERALES
   // ===============================
   window.toggleAcordeon = function(titulo) {
     const contenido = titulo.nextElementSibling;
     const estaActivo = titulo.classList.contains("active");
+    
     document.querySelectorAll(".acordeon h4").forEach(h => h.classList.remove("active"));
     document.querySelectorAll(".acordeon .contenido").forEach(c => c.style.maxHeight = null);
+    
     if (!estaActivo) {
       titulo.classList.add("active");
       contenido.style.maxHeight = contenido.scrollHeight + "px";
     }
   };
 
-   // ===============================
+  // ===============================
   // CARRITO
   // ===============================
   function agregarAlCarrito(producto) {
     const existente = carrito.find(p => p.id === producto.id && p.codigo === producto.codigo);
     if (existente) existente.cantidad++;
     else carrito.push({ ...producto, cantidad: 1 });
+    
     localStorage.setItem("carrito", JSON.stringify(carrito));
     renderCarrito();
   }
@@ -650,6 +676,7 @@ function actualizarSubcategoriasYTipos() {
   function renderCarrito() {
     const cont = document.getElementById("cart-container");
     const totalTxt = document.getElementById("cart-total");
+    
     if (!cont || !totalTxt) return;
 
     cont.innerHTML = "";
@@ -660,16 +687,16 @@ function actualizarSubcategoriasYTipos() {
       const div = document.createElement("div");
       div.className = "cart-item";
       div.innerHTML = `
-        <img src="${p.imagen}" width="60">
+        <img src="${p.imagen}" width="60" onerror="this.src='img/producto-ejemplo.jpg'">
         <div>
           <strong>${p.nombre}</strong><br>
           ${p.color ? `<small>${p.color}</small><br>` : ""}
           $${p.precio.toFixed(2)} x ${p.cantidad}
         </div>
         <div>
-          <button onclick="cambiarCantidad(${i}, -1)">−</button>
-          <button onclick="cambiarCantidad(${i}, 1)">+</button>
-          <button onclick="eliminarItem(${i})">❌</button>
+          <button class="btn-cantidad" onclick="cambiarCantidad(${i}, -1)">−</button>
+          <button class="btn-cantidad" onclick="cambiarCantidad(${i}, 1)">+</button>
+          <button class="btn-eliminar" onclick="eliminarItem(${i})">❌</button>
         </div>
       `;
       cont.appendChild(div);
@@ -679,55 +706,68 @@ function actualizarSubcategoriasYTipos() {
   }
 
   window.cambiarCantidad = function(index, delta) {
-    carrito[index].cantidad += delta;
-    if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    renderCarrito();
+    if (carrito[index]) {
+      carrito[index].cantidad += delta;
+      if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      renderCarrito();
+    }
   };
 
   window.eliminarItem = function(index) {
-    carrito.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    renderCarrito();
+    if (carrito[index]) {
+      carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      renderCarrito();
+    }
   };
-  }); 
 
   // ===============================
-// BLOQUE 6: CUENTA / SESIÓN
-// ===============================
-function renderCuenta() {
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  // CUENTA / SESIÓN
+  // ===============================
+  function renderCuenta() {
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-  const nameEl = document.getElementById("user-name");
-  const emailEl = document.getElementById("user-email");
-  const btnLogin = document.getElementById("btn-login");
-  const btnLogout = document.getElementById("btn-logout");
+    const nameEl = document.getElementById("user-name");
+    const emailEl = document.getElementById("user-email");
+    const btnLogin = document.getElementById("btn-login");
+    const btnLogout = document.getElementById("btn-logout");
 
-  if (!nameEl || !emailEl || !btnLogin || !btnLogout) return;
+    if (!nameEl || !emailEl || !btnLogin || !btnLogout) return;
 
-  if (usuario) {
-    nameEl.textContent = usuario.nombre || "Usuario";
-    emailEl.textContent = usuario.email;
-    btnLogin.style.display = "none";
-    btnLogout.style.display = "inline-block";
-  } else {
-    nameEl.textContent = "Invitado";
-    emailEl.textContent = "—";
-    btnLogin.style.display = "inline-block";
-    btnLogout.style.display = "none";
+    if (usuario) {
+      nameEl.textContent = usuario.nombre || "Usuario";
+      emailEl.textContent = usuario.email;
+      btnLogin.style.display = "none";
+      btnLogout.style.display = "inline-block";
+    } else {
+      nameEl.textContent = "Invitado";
+      emailEl.textContent = "—";
+      btnLogin.style.display = "inline-block";
+      btnLogout.style.display = "none";
+    }
   }
-}
 
-// Logout seguro
-safeClick("btn-logout", () => {
-  localStorage.removeItem("usuario");
-  renderCuenta();
-  mostrarSeccion("inicio");
-});
+  // Evento logout
+  const btnLogout = document.getElementById("btn-logout");
+  if (btnLogout) {
+    btnLogout.addEventListener("click", () => {
+      localStorage.removeItem("usuario");
+      renderCuenta();
+      mostrarSeccion("inicio");
+    });
+  }
 
   // ===============================
-          //CARGA INICIAL
-// ===============================
-renderCuenta();
-mostrarSeccion("inicio");
-});
+  // CARGA INICIAL
+  // ===============================
+  // Inicializar filtros
+  actualizarSubcategoriasYTipos();
+  
+  // Inicializar cuenta
+  renderCuenta();
+  
+  // Mostrar sección inicial
+  mostrarSeccion("inicio");
+
+}); 
