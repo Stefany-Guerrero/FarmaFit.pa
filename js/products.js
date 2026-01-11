@@ -537,7 +537,7 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
     { titulo: "Descripción de Producto", contenido: info.descripcion },
     { titulo: "Como usarlo", contenido: info.uso },
     { titulo: "Detalles técnicos del producto", contenido: info.detalles },
-    { titulo: "Precausiones", contenido: info.advertencias },
+    { titulo: "Precauciones", contenido: info.advertencias },
     { titulo: "Sostenibilidad", contenido: info.sostenibilidad || info.sostentibiidad },
     { titulo: "Resultados Comprobados", contenido: info.resultados }
   ];
