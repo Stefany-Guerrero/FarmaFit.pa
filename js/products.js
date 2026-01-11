@@ -469,59 +469,58 @@ function mostrarProductos(productos) {
     return;
   }
 
-  productos.forEach(p => {
-    const card = document.createElement("div");
-    card.classList.add("product");
+ productos.forEach(p => {
+  const card = document.createElement("div");
+  card.classList.add("product");
 
-    // CONTENIDO DEL PRODUCTO
-    card.innerHTML = `
-      <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
-        ❤
-      </div>
+  // CONTENIDO DEL PRODUCTO
+  card.innerHTML = `
+    <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">
+      ❤
+    </div>
 
-      <img src="${p.imagen}" alt="${p.nombre}">
+    <img src="${p.imagen}" alt="${p.nombre}">
 
-      <h4>${p.nombre}</h4>
-      <span class="product-code">${p.id}</span>
+    <h4>${p.nombre}</h4>
+    <span class="product-code">${p.id}</span>
 
-      <p class="price">$${p.precio.toFixed(2)}</p>
+    <p class="price">$${p.precio.toFixed(2)}</p>
 
-      <button class="btn">Agregar</button>
-    `;
+    <button class="btn">Agregar</button>
+  `;
 
-    // ❤️ FAVORITOS (FUNCIONAL)
-    const favBtn = card.querySelector(".product-fav");
-    favBtn.addEventListener("click", e => {
-      e.stopPropagation();
-      p.favorito = !p.favorito;
-      favBtn.classList.toggle("active");
-    });
-
-    // 🛒 BOTÓN AGREGAR
-    card.querySelector("button").addEventListener("click", e => {
-  e.stopPropagation();
-
-  const productoCarrito = {
-    id: p.id,
-    nombre: p.nombre,
-    precio: p.precio,
-    imagen: p.imagen,
-    codigo: p.id,
-    color: null
-  };
-
-  agregarAlCarrito(productoCarrito);
-alert(`Agregaste ${p.nombre} al carrito`);
-
-    // NUEVO: al hacer clic en la tarjeta se abre detalle
-    card.addEventListener("click", () => {
-      mostrarDetalleProducto(p);
-      mostrarSeccion("detalle");
-    });
-
-    productsContainer.appendChild(card);
+  // ❤️ FAVORITOS
+  const favBtn = card.querySelector(".product-fav");
+  favBtn.addEventListener("click", e => {
+    e.stopPropagation();
+    p.favorito = !p.favorito;
+    favBtn.classList.toggle("active");
   });
-}
+
+  // 🛒 AGREGAR AL CARRITO
+  card.querySelector("button").addEventListener("click", e => {
+    e.stopPropagation();
+
+    agregarAlCarrito({
+      id: p.id,
+      nombre: p.nombre,
+      precio: p.precio,
+      imagen: p.imagen,
+      codigo: p.id,
+      color: null
+    });
+
+    alert(`Agregaste ${p.nombre} al carrito`);
+  });
+
+  // 👉 ABRIR DETALLE DEL PRODUCTO
+  card.addEventListener("click", () => {
+    mostrarDetalleProducto(p);
+    mostrarSeccion("detalle");
+  });
+
+  productsContainer.appendChild(card);
+});
 
 // ===============================
 // MOSTRAR DETALLE PRODUCTO CON VARIANTES Y ACORDEÓN
@@ -781,39 +780,6 @@ function eliminarItem(index) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   renderCarrito();
 }
-
-// ===============================
-// CUENTA (VERSIÓN FINAL)
-// ===============================
-let usuario = JSON.parse(localStorage.getItem("usuario"));
-
-function renderCuenta() {
-  const nameEl = document.getElementById("user-name");
-  const emailEl = document.getElementById("user-email");
-  const btnLogin = document.getElementById("btn-login");
-  const btnLogout = document.getElementById("btn-logout");
-
-  if (!nameEl || !emailEl || !btnLogin || !btnLogout) return;
-
-  if (usuario) {
-    nameEl.textContent = usuario.nombre;
-    emailEl.textContent = usuario.email;
-    btnLogin.style.display = "none";
-    btnLogout.style.display = "inline-block";
-  } else {
-    nameEl.textContent = "Invitado";
-    emailEl.textContent = "—";
-    btnLogin.style.display = "inline-block";
-    btnLogout.style.display = "none";
-  }
-}
-
-// botones
-safeClick("btn-logout", () => {
-  usuario = null;
-  localStorage.removeItem("usuario");
-  renderCuenta();
-});
 
   // ===============================
 // CUENTA / SESIÓN (ÚNICA FUENTE)
