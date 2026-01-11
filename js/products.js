@@ -729,3 +729,4 @@ safeClick("btn-logout", () => {
 // ===============================
 renderCuenta();
 mostrarSeccion("inicio");
+});
