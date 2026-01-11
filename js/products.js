@@ -23,12 +23,12 @@ function mostrarSeccion(nombre) {
   }
 
   if (nombre === "compras") {
-    renderCarrito();
+    //renderCarrito();
   }
 
   // 🔑 CLAVE
   if (nombre === "cuenta") {
-    renderCuenta();
+    //renderCuenta();
   }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
