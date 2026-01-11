@@ -13,9 +13,12 @@ function mostrarSeccion(nombre) {
   Object.values(secciones).forEach(sec => sec.style.display = "none");
   secciones[nombre].style.display = "block";
 
-  // Si entra a productos, cargar todos mezclados
   if (nombre === "productos") {
     mostrarProductos(mezclarProductos(allProducts));
+  }
+
+  if (nombre === "compras") {
+    renderCarrito();
   }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,6 +58,8 @@ document.getElementById("btn-ver-productos").addEventListener("click", e => {
   e.preventDefault();
   mostrarSeccion("productos");
 });
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // ===============================
 // PRODUCTOS (DATA) CORREGIDOS
@@ -707,8 +712,6 @@ renderCuenta();
 // ===============================
 // CARRITO
 // ===============================
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
 function renderCarrito() {
   const cont = document.getElementById("cart-container");
   const totalTxt = document.getElementById("cart-total");
