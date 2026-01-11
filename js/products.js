@@ -690,6 +690,7 @@ function actualizarSubcategoriasYTipos() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
     renderCarrito();
   };
+  }); 
 
   // ===============================
 // BLOQUE 6: CUENTA / SESIÓN
