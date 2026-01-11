@@ -814,15 +814,6 @@ function renderCuenta() {
 }
 
 // botones
-safeClick("btn-login", () => {
-  usuario = {
-    nombre: "Stef",
-    email: "stef@email.com"
-  };
-  localStorage.setItem("usuario", JSON.stringify(usuario));
-  renderCuenta();
-});
-
 safeClick("btn-logout", () => {
   usuario = null;
   localStorage.removeItem("usuario");
