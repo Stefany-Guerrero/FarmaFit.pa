@@ -1,6 +1,17 @@
 // ===============================
 // SECCIONES
 // ===============================
+// ===============================
+// SECCIONES (DECLARACIÓN)
+// ===============================
+const secciones = {
+  inicio: document.getElementById("seccion-inicio"),
+  productos: document.getElementById("seccion-productos"),
+  cuenta: document.getElementById("seccion-cuenta"),
+  compras: document.getElementById("seccion-compras"),
+  detalle: document.getElementById("seccion-detalle")
+};
+
 function mostrarSeccion(nombre) {
   Object.values(secciones).forEach(sec => {
     if (sec) sec.style.display = "none";
@@ -38,32 +49,30 @@ function mezclarProductos(array) {
 // ===============================
 // EVENTOS DEL NAV
 // ===============================
-document.getElementById("nav-inicio").addEventListener("click", e => {
+safeClick("nav-inicio", e => {
   e.preventDefault();
   mostrarSeccion("inicio");
 });
 
-document.getElementById("nav-productos").addEventListener("click", e => {
+safeClick("nav-productos", e => {
   e.preventDefault();
   mostrarSeccion("productos");
 });
 
-document.getElementById("nav-cuenta").addEventListener("click", e => {
+safeClick("nav-cuenta", e => {
   e.preventDefault();
   mostrarSeccion("cuenta");
 });
 
-document.getElementById("nav-compras").addEventListener("click", e => {
+safeClick("nav-compras", e => {
   e.preventDefault();
   mostrarSeccion("compras");
 });
 
-document.getElementById("btn-ver-productos").addEventListener("click", e => {
+safeClick("btn-ver-productos", e => {
   e.preventDefault();
   mostrarSeccion("productos");
 });
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // ===============================
 // PRODUCTOS (DATA) CORREGIDOS
@@ -520,7 +529,7 @@ function mostrarDetalleProducto(producto, varianteSeleccionada = null) {
     { titulo: "Como usarlo", contenido: info.uso },
     { titulo: "Detalles técnicos del producto", contenido: info.detalles },
     { titulo: "Precausiones", contenido: info.advertencias },
-    { titulo: "Sostentibilidad", contenido: info.sostentibilidad },
+    { titulo: "Sostenibilidad", contenido: info.sostentibilidad || info.sostentibiidad },
     { titulo: "Resultados Comprobados", contenido: info.resultados }
   ];
 
