@@ -521,6 +521,7 @@ function mostrarProductos(productos) {
 
   productsContainer.appendChild(card);
 });
+}
 
 // ===============================
 // MOSTRAR DETALLE PRODUCTO CON VARIANTES Y ACORDEÓN
