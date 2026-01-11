@@ -821,48 +821,38 @@ safeClick("btn-logout", () => {
 });
 
   // ===============================
-// MOSTRAR USUARIO EN CUENTA
+// CUENTA / SESIÓN (ÚNICA FUENTE)
 // ===============================
-const userData = localStorage.getItem("usuario");
+function renderCuenta() {
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-if (userData) {
-  const user = JSON.parse(userData);
+  const nameEl = document.getElementById("user-name");
+  const emailEl = document.getElementById("user-email");
+  const btnLogin = document.getElementById("btn-login");
+  const btnLogout = document.getElementById("btn-logout");
 
-  const nameSpan = document.getElementById("user-name");
-  const emailSpan = document.getElementById("user-email");
+  if (!nameEl || !emailEl || !btnLogin || !btnLogout) return;
 
-  if (nameSpan && emailSpan) {
-    nameSpan.textContent = "Usuario";
-    emailSpan.textContent = user.email;
+  if (usuario) {
+    nameEl.textContent = usuario.nombre || "Usuario";
+    emailEl.textContent = usuario.email;
+    btnLogin.style.display = "none";
+    btnLogout.style.display = "inline-block";
+  } else {
+    nameEl.textContent = "Invitado";
+    emailEl.textContent = "—";
+    btnLogin.style.display = "inline-block";
+    btnLogout.style.display = "none";
   }
 }
 
-  // ===============================
-// CONTROL DE SESIÓN (LOGIN)
-// ===============================
-const user = JSON.parse(localStorage.getItem("usuario"));
+// Logout
+safeClick("btn-logout", () => {
+  localStorage.removeItem("usuario");
+  renderCuenta();
+  mostrarSeccion("inicio");
+});
 
-const loginBtn = document.getElementById("btn-login");
-const logoutBtn = document.getElementById("btn-logout");
-const userName = document.getElementById("user-name");
-const userEmail = document.getElementById("user-email");
+// Ejecutar al cargar
+renderCuenta();
 
-if (user) {
-  // Usuario logueado
-  if (userName) userName.textContent = "Usuario";
-  if (userEmail) userEmail.textContent = user.email;
-
-  if (loginBtn) loginBtn.style.display = "none";
-  if (logoutBtn) logoutBtn.style.display = "inline-block";
-} else {
-  // Invitado
-  if (loginBtn) loginBtn.style.display = "inline-block";
-  if (logoutBtn) logoutBtn.style.display = "none";
-}
-
-  if (logoutBtn) {
-  logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem("usuario");
-    window.location.href = "login.html";
-  });
-}
