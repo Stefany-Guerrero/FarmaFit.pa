@@ -479,9 +479,12 @@ function mostrarProductos(productos) {
 
     // 🛒 BOTÓN AGREGAR
     card.querySelector("button").addEventListener("click", e => {
-      e.stopPropagation();
-      alert(`Agregaste ${p.nombre} al carrito`);
-    });
+  e.stopPropagation();
+  carrito.push(p);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderCarrito();
+  alert(`Agregaste ${p.nombre} al carrito`);
+});
 
     // NUEVO: al hacer clic en la tarjeta se abre detalle
     card.addEventListener("click", () => {
@@ -700,4 +703,38 @@ document.getElementById("btn-logout").addEventListener("click", () => {
 
 // Render inicial
 renderCuenta();
+
+// ===============================
+// CARRITO
+// ===============================
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function renderCarrito() {
+  const cont = document.getElementById("cart-container");
+  const totalTxt = document.getElementById("cart-total");
+
+  cont.innerHTML = "";
+
+  let total = 0;
+
+  carrito.forEach((p, i) => {
+    total += p.precio;
+
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <p>${p.nombre} - $${p.precio.toFixed(2)}
+        <button onclick="eliminarDelCarrito(${i})">❌</button>
+      </p>
+    `;
+    cont.appendChild(div);
+  });
+
+  totalTxt.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+function eliminarDelCarrito(index) {
+  carrito.splice(index, 1);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  renderCarrito();
+}
 
