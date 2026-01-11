@@ -1,17 +1,14 @@
 // ===============================
 // SECCIONES
 // ===============================
-const secciones = {
-  inicio: document.getElementById("seccion-inicio"),
-  productos: document.getElementById("seccion-productos"),
-  cuenta: document.getElementById("seccion-cuenta"),
-  compras: document.getElementById("seccion-compras"),
-  detalle: document.getElementById("seccion-detalle") // NUEVO: sección detalle producto
-};
-
 function mostrarSeccion(nombre) {
-  Object.values(secciones).forEach(sec => sec.style.display = "none");
-  secciones[nombre].style.display = "block";
+  Object.values(secciones).forEach(sec => {
+    if (sec) sec.style.display = "none";
+  });
+
+  if (secciones[nombre]) {
+    secciones[nombre].style.display = "block";
+  }
 
   if (nombre === "productos") {
     mostrarProductos(mezclarProductos(allProducts));
@@ -22,6 +19,13 @@ function mostrarSeccion(nombre) {
   }
 
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function safeClick(id, callback) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener("click", callback);
+  }
 }
 
 // ===============================
