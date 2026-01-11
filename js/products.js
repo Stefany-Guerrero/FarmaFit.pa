@@ -32,6 +32,10 @@ function mostrarSeccion(nombre) {
     renderCarrito();
   }
 
+  if (nombre === "cuenta") {
+  renderCuenta();
+}
+
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -501,7 +505,17 @@ function mostrarProductos(productos) {
     // 🛒 BOTÓN AGREGAR
     card.querySelector("button").addEventListener("click", e => {
   e.stopPropagation();
-  carrito.push(p);
+
+  const productoCarrito = {
+    id: p.id,
+    nombre: p.nombre,
+    precio: p.precio,
+    imagen: p.imagen,
+    codigo: p.id,
+    color: null
+  };
+
+  carrito.push(productoCarrito);
   localStorage.setItem("carrito", JSON.stringify(carrito));
   renderCarrito();
   alert(`Agregaste ${p.nombre} al carrito`);
@@ -606,15 +620,16 @@ btnAgregar.addEventListener("click", () => {
 });
 
 
-  // Evento para variantes
-  if (producto.variantes) {
-    const botones = detalleContainer.querySelectorAll(".color-btn");
-    botones.forEach((btn, idx) => {
-      btn.addEventListener("click", () => {
-        mostrarDetalleProducto(producto, producto.variantes[idx]);
-      });
+// Evento para variantes
+if (producto.variantes) {
+  const botones = detalleContainer.querySelectorAll(".color-btn");
+
+  botones.forEach((btn, idx) => {
+    btn.addEventListener("click", () => {
+      mostrarDetalleProducto(producto, producto.variantes[idx]);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  }
+  });
 }
 
 // ===============================
