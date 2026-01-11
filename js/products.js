@@ -819,3 +819,50 @@ safeClick("btn-logout", () => {
   localStorage.removeItem("usuario");
   renderCuenta();
 });
+
+  // ===============================
+// MOSTRAR USUARIO EN CUENTA
+// ===============================
+const userData = localStorage.getItem("usuario");
+
+if (userData) {
+  const user = JSON.parse(userData);
+
+  const nameSpan = document.getElementById("user-name");
+  const emailSpan = document.getElementById("user-email");
+
+  if (nameSpan && emailSpan) {
+    nameSpan.textContent = "Usuario";
+    emailSpan.textContent = user.email;
+  }
+}
+
+  // ===============================
+// CONTROL DE SESIÓN (LOGIN)
+// ===============================
+const user = JSON.parse(localStorage.getItem("usuario"));
+
+const loginBtn = document.getElementById("btn-login");
+const logoutBtn = document.getElementById("btn-logout");
+const userName = document.getElementById("user-name");
+const userEmail = document.getElementById("user-email");
+
+if (user) {
+  // Usuario logueado
+  if (userName) userName.textContent = "Usuario";
+  if (userEmail) userEmail.textContent = user.email;
+
+  if (loginBtn) loginBtn.style.display = "none";
+  if (logoutBtn) logoutBtn.style.display = "inline-block";
+} else {
+  // Invitado
+  if (loginBtn) loginBtn.style.display = "inline-block";
+  if (logoutBtn) logoutBtn.style.display = "none";
+}
+
+  if (logoutBtn) {
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("usuario");
+    window.location.href = "login.html";
+  });
+}
