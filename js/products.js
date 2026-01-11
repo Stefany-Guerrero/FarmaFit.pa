@@ -710,7 +710,7 @@ function toggleAcordeon(titulo) {
 mostrarSeccion("inicio");
 
 // ===============================
-// CARRITO (VERSIÓN DEFINITIVA)
+// CARRITO (VERSIÓN DEFINITIVA CORREGIDA)
 // ===============================
 function agregarAlCarrito(producto) {
   const existente = carrito.find(p =>
