@@ -185,16 +185,64 @@
 </section>
 
     <!-- ================= CUENTA ================= -->
-    <section id="seccion-cuenta" style="display:none;">
+<section id="seccion-cuenta" style="display:none;">
   <div class="container cuenta">
-
+    
     <h2>Mi Cuenta</h2>
-
+    
+    <!-- TARJETA DE USUARIO -->
     <div class="cuenta-card">
-      <p><strong>Nombre:</strong> <span id="user-name">Invitado</span></p>
-      <p><strong>Email:</strong> <span id="user-email">—</span></p>
+      <div class="user-avatar">
+        <img src="img/avatar-default.png" alt="Avatar" id="user-avatar">
+        <button class="btn-avatar" id="btn-cambiar-avatar">Cambiar foto</button>
+      </div>
+      
+      <div class="user-info">
+        <p><strong>Nombre:</strong> <span id="user-name">Invitado</span></p>
+        <p><strong>Email:</strong> <span id="user-email">—</span></p>
+        <p><strong>Teléfono:</strong> <span id="user-phone">No registrado</span></p>
+        <p><strong>Miembro desde:</strong> <span id="user-joined">—</span></p>
+        <p><strong>Puntos de fidelidad:</strong> <span id="user-points">0 pts</span></p>
+      </div>
+    </div>
+    
+    <!-- OPCIONES DE CUENTA -->
+    <div class="cuenta-options">
+      <div class="option-card" id="btn-mis-pedidos">
+        <h4>🛍️ Mis Pedidos</h4>
+        <p>Revisa el historial de tus compras</p>
+        <button class="btn-small">Ver pedidos</button>
+      </div>
+      
+      <div class="option-card" id="btn-mis-favoritos">
+        <h4>❤️ Mis Favoritos</h4>
+        <p>Productos que has guardado</p>
+        <button class="btn-small">Ver favoritos</button>
+      </div>
+      
+      <div class="option-card" id="btn-mis-direcciones">
+        <h4>📍 Mis Direcciones</h4>
+        <p>Gestiona tus direcciones de envío</p>
+        <button class="btn-small">Administrar</button>
+      </div>
+    </div>
+    
+    <!-- PREFERENCIAS -->
+    <div class="preferencias">
+      <h3>Preferencias</h3>
+      
+      <div class="pref-item">
+        <label>
+          <select id="select-idioma">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+          </select>
+          Idioma preferido
+        </label>
+      </div>
     </div>
 
+    <!-- ACCIONES DE SESIÓN -->
     <div class="cuenta-actions">
       <button class="btn" id="btn-login">Iniciar sesión</button>
       <button class="btn btn-secondary" id="btn-logout" style="display:none;">
