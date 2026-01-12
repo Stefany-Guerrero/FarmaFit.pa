@@ -802,6 +802,173 @@ left: 12px;
   color: #777;
 }
 
+/* ================= LAYOUT FLEXIBLE PARA FOOTER ABAJO ================= */
+
+/* Asegurar que el layout ocupe toda la altura */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal debe expandirse */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cada sección debe ocupar todo el espacio disponible */
+#seccion-cuenta,
+#seccion-compras,
+#seccion-productos,
+#seccion-detalle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedores dentro de las secciones deben expandirse */
+#seccion-cuenta .container,
+#seccion-compras .container,
+#seccion-detalle .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= ESTILOS ESPECÍFICOS PARA CUENTA ================= */
+.cuenta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 40px 0;
+}
+
+.cuenta-card {
+  background: #F3CCDE;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 100%;
+  align-self: center;
+}
+
+.cuenta-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ================= ESTILOS ESPECÍFICOS PARA CARRITO ================= */
+#seccion-compras .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+#cart-container {
+  flex: 1;
+  background: #F3CCDE;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cart-item div {
+  flex: 1;
+  margin: 0 15px;
+}
+
+.btn-cantidad {
+  padding: 5px 12px;
+  background: #5B3765;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.btn-eliminar {
+  padding: 5px 12px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* ================= ESTILOS ESPECÍFICOS PARA PRODUCTOS ================= */
+#seccion-productos .productos-layout {
+  flex: 1;
+  padding: 40px 0;
+}
+
+/* ================= FOOTER SIEMPRE ABAJO ================= */
+.footer {
+  background: #5B3765;
+  color: #ffffff;
+  text-align: center;
+  padding: 25px;
+  margin-top: auto; /* Esto empuja el footer hacia abajo */
+  width: 100%;
+}
+
+/* ================= RESPONSIVE ADICIONAL ================= */
+@media (max-width: 768px) {
+  .cuenta {
+    min-height: 50vh;
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
+  
+  .cuenta-card {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .cuenta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .cart-item div {
+    margin: 5px 0;
+  }
+}
 
 
 
