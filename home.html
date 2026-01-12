@@ -254,15 +254,115 @@
 </section>
 
     <!-- ================= COMPRAS ================= -->
+<!-- ================= COMPRAS ================= -->
 <section id="seccion-compras" style="display:none;">
   <div class="container">
+    
     <h2>Mi Carrito</h2>
+    
+    <div class="carrito-completo">
+      
+      <!-- PRODUCTOS EN CARRITO -->
+      <div class="carrito-items">
+        <h3 id="cart-title">Tu carrito (0 productos)</h3>
+        <div id="cart-container">
+          <!-- Aquí JS mostrará los productos -->
+          <p class="carrito-vacio" style="text-align: center; padding: 40px;">
+            Tu carrito está vacío. ¡Agrega algunos productos!
+          </p>
+        </div>
+      </div>
+      
+      <!-- RESUMEN DE COMPRA -->
+      <div class="resumen-compra">
+        <h3>Resumen de compra</h3>
+        
+        <div class="resumen-linea">
+          <span>Subtotal</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        
+        <div class="resumen-linea">
+          <span>Envío</span>
+          <span id="envio">$0.00</span>
+        </div>
+        
+        <div class="resumen-linea">
+          <span>Descuento</span>
+          <span id="descuento" class="text-green">$0.00</span>
+        </div>
+        
+        <div class="resumen-linea total">
+          <strong>Total</strong>
+          <strong id="total-final">$0.00</strong>
+        </div>
+        
+        <!-- CUPÓN -->
+        <div class="cupon-section">
+          <input type="text" placeholder="Código de cupón" id="cupon-input">
+          <button id="aplicar-cupon" class="btn-small">Aplicar</button>
+        </div>
+        
+        <!-- MÉTODOS DE PAGO -->
+        <div class="metodos-pago">
+          <h4>Métodos de pago aceptados:</h4>
+          <div class="pago-icons">
+            <span>💳</span>
+            <span>📱</span>
+            <span>💰</span>
+            <span>🏦</span>
+          </div>
+        </div>
+        
+        <button class="btn btn-grande" id="btn-finalizar">Finalizar compra</button>
+        
+        <p class="garantia">✅ Garantía de devolución de 30 días</p>
+      </div>
+    </div>
+    
+    <!-- OPCIONES DE ENVÍO -->
+    <div class="envio-info">
+      <h3>📦 Opciones de envío</h3>
+      
+      <div class="opcion-envio">
+        <label>
+          <input type="radio" name="envio" value="estandar" checked>
+          <div>
+            <strong>Envío estándar</strong>
+            <p>3-5 días hábiles • $5.99</p>
+          </div>
+        </label>
+      </div>
+      
+      <div class="opcion-envio">
+        <label>
+          <input type="radio" name="envio" value="express">
+          <div>
+            <strong>Envío express</strong>
+            <p>1-2 días hábiles • $12.99</p>
+          </div>
+        </label>
+      </div>
+      
+      <div class="opcion-envio">
+        <label>
+          <input type="radio" name="envio" value="recoger">
+          <div>
+            <strong>Recoger en tienda</strong>
+            <p>Gratis • Disponible hoy</p>
+          </div>
+        </label>
+      </div>
+    </div>
+    
+    <!-- PRODUCTOS SUGERIDOS -->
+    <div class="sugerencias-carrito">
+      <h3>También te podría interesar</h3>
+      <div class="sugeridos-grid" id="sugeridos-container">
+        <!-- Aquí JS puede agregar productos sugeridos -->
+      </div>
+    </div>
 
-    <div id="cart-container"></div>
-
-    <h3 id="cart-total">Total: $0.00</h3>
-
-    <button class="btn" id="btn-finalizar">Finalizar compra</button>
   </div>
 </section>
 
