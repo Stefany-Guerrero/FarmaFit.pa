@@ -938,3 +938,165 @@ left: 12px;
     grid-template-columns: 1fr;
   }
 }
+
+/* ================= DETALLES CUENTA ================= */
+.user-avatar {
+  margin-bottom: 20px;
+}
+
+.avatar-instruction {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.user-info {
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.user-info p {
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px dashed #9E6899;
+  display: flex;
+  justify-content: space-between;
+}
+
+.option-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.option-card h4 {
+  color: #5B3765;
+  margin: 10px 0;
+}
+
+.btn-small {
+  padding: 8px 20px;
+  background: #5B3765;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pref-item {
+  margin: 15px 0;
+  padding: 10px;
+  background: #fdeaf2;
+  border-radius: 10px;
+}
+
+/* ================= DETALLES CARRITO ================= */
+.resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.resumen-linea.total {
+  border-top: 2px solid #5B3765;
+  padding-top: 15px;
+  font-size: 1.2rem;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #666;
+  padding: 30px;
+}
+
+.btn-secondary {
+  background: #9E6899;
+}
+
+.btn-secondary:hover {
+  background: #5B3765;
+}
+
+/* ================= DETALLES CUENTA ================= */
+.user-avatar {
+  margin-bottom: 20px;
+}
+
+.avatar-instruction {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.user-info {
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.user-info p {
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px dashed #9E6899;
+  display: flex;
+  justify-content: space-between;
+}
+
+.option-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.option-card h4 {
+  color: #5B3765;
+  margin: 10px 0;
+}
+
+.btn-small {
+  padding: 8px 20px;
+  background: #5B3765;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pref-item {
+  margin: 15px 0;
+  padding: 10px;
+  background: #fdeaf2;
+  border-radius: 10px;
+}
+
+/* ================= DETALLES CARRITO ================= */
+.resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.resumen-linea.total {
+  border-top: 2px solid #5B3765;
+  padding-top: 15px;
+  font-size: 1.2rem;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #666;
+  padding: 30px;
+}
+
+.btn-secondary {
+  background: #9E6899;
+}
+
+.btn-secondary:hover {
+  background: #5B3765;
+}
