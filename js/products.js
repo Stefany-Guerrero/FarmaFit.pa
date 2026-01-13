@@ -418,12 +418,9 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
       detalles: "Paletas inspiradas en los paisajes del desierto, con 9 tonos mate en fórmulas ligeras, libres de talco y respetuosas con la piel.",
       resultados: "Aplicar sobre los párpados y difuminar según el look deseado. Combinar mates, brillos y glitter."
     }
-      },
+      }
 ];
-
-      },
-  ];
-
+  
   // ===============================
   // RELACIÓN CATEGORÍA → SUBCATEGORÍA → TIPO
   // ===============================
