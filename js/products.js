@@ -421,13 +421,16 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
       },
 ];
 
+      },
+  ];
+
   // ===============================
   // RELACIÓN CATEGORÍA → SUBCATEGORÍA → TIPO
   // ===============================
   const filtrosPorCategoria = {
     maquillaje: {
       subcategorias: {
-        ojos: ["mascara", "delineador", "sombras"],
+        ojos: ["mascara", "delineador", "sombras", "serum", "set"],
         labios: ["labial", "gloss"],
         rostro: ["base", "rubor"]
       }
@@ -452,7 +455,12 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
   const productsContainer = document.getElementById("products-container");
 
   function mostrarProductos(productos) {
-    if (!productsContainer) return;
+    if (!productsContainer) {
+      console.error("ERROR: No se encontró #products-container");
+      return;
+    }
+    
+    console.log("Renderizando", productos.length, "productos");
     
     productsContainer.innerHTML = "";
 
@@ -467,7 +475,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
 
       card.innerHTML = `
         <div class="product-fav ${p.favorito ? "active" : ""}" data-id="${p.id}">❤</div>
-        <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='img/producto-ejemplo.jpg'">
+        <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='img/placeholder-producto.jpg'">
         <h4>${p.nombre}</h4>
         <span class="product-code">${p.id}</span>
         <p class="price">$${p.precio.toFixed(2)}</p>
@@ -528,7 +536,7 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
 
     detalleContainer.innerHTML = `
       <div class="detalle-card">
-        <div class="detalle-img"><img src="${imagen}" alt="${producto.nombre}" onerror="this.src='img/producto-ejemplo.jpg'"></div>
+        <div class="detalle-img"><img src="${imagen}" alt="${producto.nombre}" onerror="this.src='img/placeholder-producto.jpg'"></div>
         <div class="detalle-info">
           <h2>${producto.nombre}</h2>
           <span class="product-code">Código: ${varianteSeleccionada?.codigo || producto.id}</span>
@@ -688,25 +696,29 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
     cont.innerHTML = "";
     let total = 0;
 
-    carrito.forEach((p, i) => {
-      total += p.precio * p.cantidad;
-      const div = document.createElement("div");
-      div.className = "cart-item";
-      div.innerHTML = `
-        <img src="${p.imagen}" width="60" onerror="this.src='img/producto-ejemplo.jpg'">
-        <div>
-          <strong>${p.nombre}</strong><br>
-          ${p.color ? `<small>${p.color}</small><br>` : ""}
-          $${p.precio.toFixed(2)} x ${p.cantidad}
-        </div>
-        <div>
-          <button class="btn-cantidad" onclick="cambiarCantidad(${i}, -1)">−</button>
-          <button class="btn-cantidad" onclick="cambiarCantidad(${i}, 1)">+</button>
-          <button class="btn-eliminar" onclick="eliminarItem(${i})">❌</button>
-        </div>
-      `;
-      cont.appendChild(div);
-    });
+    if (carrito.length === 0) {
+      cont.innerHTML = "<p class='carrito-vacio'>Tu carrito está vacío</p>";
+    } else {
+      carrito.forEach((p, i) => {
+        total += p.precio * p.cantidad;
+        const div = document.createElement("div");
+        div.className = "cart-item";
+        div.innerHTML = `
+          <img src="${p.imagen}" width="60" onerror="this.src='img/placeholder-producto.jpg'">
+          <div>
+            <strong>${p.nombre}</strong><br>
+            ${p.color ? `<small>${p.color}</small><br>` : ""}
+            $${p.precio.toFixed(2)} x ${p.cantidad}
+          </div>
+          <div>
+            <button class="btn-cantidad" onclick="cambiarCantidad(${i}, -1)">−</button>
+            <button class="btn-cantidad" onclick="cambiarCantidad(${i}, 1)">+</button>
+            <button class="btn-eliminar" onclick="eliminarItem(${i})">❌</button>
+          </div>
+        `;
+        cont.appendChild(div);
+      });
+    }
 
     totalTxt.textContent = `Total: $${total.toFixed(2)}`;
   }
@@ -773,60 +785,20 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
   // Inicializar cuenta
   renderCuenta();
   
-  // Mostrar sección inicial
-  mostrarSeccion("inicio");
+  // FORZAR: Ocultar todas las secciones excepto inicio
+  Object.values(secciones).forEach(sec => {
+    if (sec && sec.id !== "seccion-inicio") {
+      sec.style.display = "none";
+    }
+  });
+  
+  // Asegurar que inicio se muestre
+  if (secciones.inicio) {
+    secciones.inicio.style.display = "block";
+  }
+
+  // DEBUG: Verificar que los productos se carguen
+  console.log("✅ Productos cargados:", allProducts.length);
+  console.log("📦 Productos disponibles:", allProducts.map(p => p.nombre));
 
 }); 
-
-}); 
-
-// ================= AUTO-CARGA DE PRODUCTOS =================
-
-// Función para cargar productos automáticamente
-function cargarProductosAutomaticamente() {
-  // Verificar si la función mostrarProductos existe
-  if (typeof mostrarProductos === 'function' && typeof allProducts !== 'undefined') {
-    // Mostrar todos los productos mezclados
-    mostrarProductos(mezclarProductos(allProducts));
-  } else {
-    // Si no funciona, intentar simular clic en filtros
-    const filterBtn = document.getElementById('filter-btn');
-    if (filterBtn) {
-      setTimeout(() => filterBtn.click(), 300);
-    }
-  }
-}
-
-// Cargar productos cuando la página termine de cargar
-window.addEventListener('load', function() {
-  // Pequeño retraso para asegurar que todo esté listo
-  setTimeout(() => {
-    // Verificar si ya estamos en la sección de productos
-    const seccionProductos = document.getElementById('seccion-productos');
-    if (seccionProductos && seccionProductos.style.display !== 'none') {
-      cargarProductosAutomaticamente();
-    }
-  }, 500);
-});
-
-// Cargar cuando se haga clic en productos (DEBE estar dentro de DOMContentLoaded)
-document.addEventListener('DOMContentLoaded', function() {
-  // Esta parte DEBE estar dentro del DOMContentLoaded para acceder a los elementos
-  
-  // Detectar clic en navegación de productos
-  const navProductos = document.getElementById('nav-productos');
-  const btnVerProductos = document.getElementById('btn-ver-productos');
-  
-  if (navProductos) {
-    navProductos.addEventListener('click', function(e) {
-      // Esperar a que se cambie la sección
-      setTimeout(cargarProductosAutomaticamente, 300);
-    });
-  }
-  
-  if (btnVerProductos) {
-    btnVerProductos.addEventListener('click', function(e) {
-      setTimeout(cargarProductosAutomaticamente, 300);
-    });
-  }
-});
