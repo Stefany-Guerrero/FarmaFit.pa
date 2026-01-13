@@ -849,7 +849,7 @@ left: 12px;
   color: #5B3765;
 }
 
-/* Avatar */
+/* AVATAR CON CSS PURO - VERSIÓN CORREGIDA */
 .avatar-circle {
   width: 120px;
   height: 120px;
@@ -859,7 +859,36 @@ left: 12px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  background: #F3CCDE;
+  background: linear-gradient(135deg, #F3CCDE, #fdeaf2) !important; /* ← AÑADE !important */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(91, 55, 101, 0.2);
+}
+
+/* EMOJI que aparece por CSS (sin imagen) */
+.avatar-circle::before {
+  content: "👤" !important;  /* ← AQUÍ ESTÁ EL EMOJI */
+  font-size: 3.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+  z-index: 2; /* ← ASEGURA QUE ESTÉ POR ENCIMA */
+}
+
+/* Al pasar el mouse, cambia a cámara */
+.avatar-circle:hover::before {
+  content: "📷" !important;  /* ← CAMBIA AL HACER HOVER */
+  font-size: 3rem;
+}
+
+.avatar-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(91, 55, 101, 0.3);
+  border-color: #9E6899;
 }
 
 .avatar-circle img {
