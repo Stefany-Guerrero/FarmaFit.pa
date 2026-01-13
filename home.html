@@ -184,7 +184,7 @@
   </div>
 </section>
 
-    <!-- ================= CUENTA ================= -->
+<!-- ================= CUENTA ================= -->
 <section id="seccion-cuenta" style="display:none;">
   <div class="container cuenta">
     
@@ -233,6 +233,20 @@
       
       <div class="pref-item">
         <label>
+          <input type="checkbox" id="pref-ofertas" checked>
+          Recibir ofertas por email
+        </label>
+      </div>
+      
+      <div class="pref-item">
+        <label>
+          <input type="checkbox" id="pref-notificaciones">
+          Notificaciones de nuevos productos
+        </label>
+      </div>
+      
+      <div class="pref-item">
+        <label>
           <select id="select-idioma">
             <option value="es">Español</option>
             <option value="en">English</option>
@@ -241,7 +255,15 @@
         </label>
       </div>
     </div>
-
+    
+    <!-- SUSCRIPCIÓN PREMIUM -->
+    <div class="suscripcion-card">
+      <h3>💎 Suscripción Premium</h3>
+      <p>Obtén un 15% de descuento en todos tus pedidos</p>
+      <p class="precio">$9.99/mes</p>
+      <button class="btn" id="btn-suscribirse">Suscribirse</button>
+    </div>
+    
     <!-- ACCIONES DE SESIÓN -->
     <div class="cuenta-actions">
       <button class="btn" id="btn-login">Iniciar sesión</button>
@@ -252,8 +274,7 @@
 
   </div>
 </section>
-
-    <!-- ================= COMPRAS ================= -->
+    
 <!-- ================= COMPRAS ================= -->
 <section id="seccion-compras" style="display:none;">
   <div class="container">
