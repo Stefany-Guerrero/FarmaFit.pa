@@ -188,41 +188,48 @@
 <section id="seccion-cuenta" style="display:none;">
   <div class="container cuenta">
     
+    <!-- TÍTULO CENTRADO -->
     <h2>Mi Cuenta</h2>
     
     <!-- TARJETA DE USUARIO -->
     <div class="cuenta-card">
+      <!-- Avatar circular -->
       <div class="user-avatar">
-        <img src="img/avatar-default.png" alt="Avatar" id="user-avatar">
-        <button class="btn-avatar" id="btn-cambiar-avatar">Cambiar foto</button>
+        <div class="avatar-circle">
+          <img src="img/avatar-default.png" alt="Avatar" id="user-avatar">
+        </div>
+        <p class="avatar-instruction">Haz clic para cambiar tu foto</p>
       </div>
       
+      <!-- Información del usuario -->
       <div class="user-info">
         <p><strong>Nombre:</strong> <span id="user-name">Invitado</span></p>
         <p><strong>Email:</strong> <span id="user-email">—</span></p>
         <p><strong>Teléfono:</strong> <span id="user-phone">No registrado</span></p>
         <p><strong>Miembro desde:</strong> <span id="user-joined">—</span></p>
-        <p><strong>Puntos de fidelidad:</strong> <span id="user-points">0 pts</span></p>
       </div>
     </div>
     
     <!-- OPCIONES DE CUENTA -->
     <div class="cuenta-options">
-      <div class="option-card" id="btn-mis-pedidos">
-        <h4>🛍️ Mis Pedidos</h4>
-        <p>Revisa el historial de tus compras</p>
+      <div class="option-card">
+        <div class="option-icon">🛍️</div>
+        <h4>Mis Pedidos</h4>
+        <p>Revisa tu historial de compras</p>
         <button class="btn-small">Ver pedidos</button>
       </div>
       
-      <div class="option-card" id="btn-mis-favoritos">
-        <h4>❤️ Mis Favoritos</h4>
+      <div class="option-card">
+        <div class="option-icon">❤️</div>
+        <h4>Mis Favoritos</h4>
         <p>Productos que has guardado</p>
         <button class="btn-small">Ver favoritos</button>
       </div>
       
-      <div class="option-card" id="btn-mis-direcciones">
-        <h4>📍 Mis Direcciones</h4>
-        <p>Gestiona tus direcciones de envío</p>
+      <div class="option-card">
+        <div class="option-icon">📍</div>
+        <h4>Mis Direcciones</h4>
+        <p>Gestiona tus direcciones</p>
         <button class="btn-small">Administrar</button>
       </div>
     </div>
@@ -233,35 +240,27 @@
       
       <div class="pref-item">
         <label>
-          <input type="checkbox" id="pref-ofertas" checked>
+          <input type="checkbox" checked>
           Recibir ofertas por email
         </label>
       </div>
       
       <div class="pref-item">
         <label>
-          <input type="checkbox" id="pref-notificaciones">
+          <input type="checkbox">
           Notificaciones de nuevos productos
         </label>
       </div>
       
       <div class="pref-item">
         <label>
-          <select id="select-idioma">
-            <option value="es">Español</option>
-            <option value="en">English</option>
+          Idioma preferido:
+          <select>
+            <option>Español</option>
+            <option>English</option>
           </select>
-          Idioma preferido
         </label>
       </div>
-    </div>
-    
-    <!-- SUSCRIPCIÓN PREMIUM -->
-    <div class="suscripcion-card">
-      <h3>💎 Suscripción Premium</h3>
-      <p>Obtén un 15% de descuento en todos tus pedidos</p>
-      <p class="precio">$9.99/mes</p>
-      <button class="btn" id="btn-suscribirse">Suscribirse</button>
     </div>
     
     <!-- ACCIONES DE SESIÓN -->
@@ -285,18 +284,15 @@
       
       <!-- PRODUCTOS EN CARRITO -->
       <div class="carrito-items">
-        <h3 id="cart-title">Tu carrito (0 productos)</h3>
+        <h3>Tu carrito</h3>
         <div id="cart-container">
-          <!-- Aquí JS mostrará los productos -->
-          <p class="carrito-vacio" style="text-align: center; padding: 40px;">
-            Tu carrito está vacío. ¡Agrega algunos productos!
-          </p>
+          <p class="carrito-vacio">Tu carrito está vacío</p>
         </div>
       </div>
       
       <!-- RESUMEN DE COMPRA -->
       <div class="resumen-compra">
-        <h3>Resumen de compra</h3>
+        <h3>Resumen</h3>
         
         <div class="resumen-linea">
           <span>Subtotal</span>
@@ -308,79 +304,12 @@
           <span id="envio">$0.00</span>
         </div>
         
-        <div class="resumen-linea">
-          <span>Descuento</span>
-          <span id="descuento" class="text-green">$0.00</span>
-        </div>
-        
         <div class="resumen-linea total">
           <strong>Total</strong>
           <strong id="total-final">$0.00</strong>
         </div>
         
-        <!-- CUPÓN -->
-        <div class="cupon-section">
-          <input type="text" placeholder="Código de cupón" id="cupon-input">
-          <button id="aplicar-cupon" class="btn-small">Aplicar</button>
-        </div>
-        
-        <!-- MÉTODOS DE PAGO -->
-        <div class="metodos-pago">
-          <h4>Métodos de pago aceptados:</h4>
-          <div class="pago-icons">
-            <span>💳</span>
-            <span>📱</span>
-            <span>💰</span>
-            <span>🏦</span>
-          </div>
-        </div>
-        
-        <button class="btn btn-grande" id="btn-finalizar">Finalizar compra</button>
-        
-        <p class="garantia">✅ Garantía de devolución de 30 días</p>
-      </div>
-    </div>
-    
-    <!-- OPCIONES DE ENVÍO -->
-    <div class="envio-info">
-      <h3>📦 Opciones de envío</h3>
-      
-      <div class="opcion-envio">
-        <label>
-          <input type="radio" name="envio" value="estandar" checked>
-          <div>
-            <strong>Envío estándar</strong>
-            <p>3-5 días hábiles • $5.99</p>
-          </div>
-        </label>
-      </div>
-      
-      <div class="opcion-envio">
-        <label>
-          <input type="radio" name="envio" value="express">
-          <div>
-            <strong>Envío express</strong>
-            <p>1-2 días hábiles • $12.99</p>
-          </div>
-        </label>
-      </div>
-      
-      <div class="opcion-envio">
-        <label>
-          <input type="radio" name="envio" value="recoger">
-          <div>
-            <strong>Recoger en tienda</strong>
-            <p>Gratis • Disponible hoy</p>
-          </div>
-        </label>
-      </div>
-    </div>
-    
-    <!-- PRODUCTOS SUGERIDOS -->
-    <div class="sugerencias-carrito">
-      <h3>También te podría interesar</h3>
-      <div class="sugeridos-grid" id="sugeridos-container">
-        <!-- Aquí JS puede agregar productos sugeridos -->
+        <button class="btn" id="btn-finalizar">Finalizar compra</button>
       </div>
     </div>
 
