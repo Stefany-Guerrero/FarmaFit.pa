@@ -771,3 +771,35 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
   mostrarSeccion("inicio");
 
 }); 
+
+// ================= AUTO-CARGA DE PRODUCTOS =================
+
+// Cargar productos automáticamente cuando la página cargue
+window.addEventListener('load', function() {
+  // Verificar si estamos en la sección de productos
+  const seccionProductos = document.getElementById('seccion-productos');
+  if (seccionProductos && seccionProductos.style.display !== 'none') {
+    // Ejecutar filtrado automático
+    setTimeout(function() {
+      if (typeof filtrarProductos === 'function') {
+        filtrarProductos();
+      } else if (typeof filterProducts === 'function') {
+        filterProducts();
+      }
+    }, 100);
+  }
+});
+
+// También cargar cuando se navegue a productos
+document.addEventListener('click', function(e) {
+  // Si se hace clic en el enlace de productos
+  if (e.target.id === 'nav-productos' || e.target.id === 'btn-ver-productos') {
+    setTimeout(function() {
+      if (typeof filtrarProductos === 'function') {
+        filtrarProductos();
+      } else if (typeof filterProducts === 'function') {
+        filterProducts();
+      }
+    }, 200);
+  }
+});
