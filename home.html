@@ -436,13 +436,6 @@
 <script src="js/products.js"></script>
 <script src="js/login.js"></script>
 
-<!-- Evitar volver al login con el botón atrás -->
-<script>
-  if (window.history.replaceState) {
-    window.history.replaceState(null, null, window.location.href);
-  }
-</script>
-
 <!-- Navegación entre secciones -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -459,7 +452,67 @@
       // Mostrar la sección solicitada
       if (idSeccion) {
         document.getElementById('seccion-' + idSeccion).style.display = 'block';
+        
+        // CARGAR PRODUCTOS AUTOMÁTICAMENTE si es la sección de productos
+        if (idSeccion === 'productos') {
+          // Esperar un momento para que el DOM se actualice
+          setTimeout(function() {
+            // Verificar si existe la función filtrarProductos
+            if (typeof filtrarProductos === 'function') {
+              filtrarProductos();
+            } else if (typeof filterProducts === 'function') {
+              filterProducts();
+            } else {
+              // Si no existe ninguna función, crear productos manualmente
+              cargarProductosEjemplo();
+            }
+          }, 50);
+        }
       }
+    }
+    
+    // Función de emergencia si no hay products.js
+    function cargarProductosEjemplo() {
+      const container = document.getElementById('products-container');
+      if (!container) return;
+      
+      container.innerHTML = `
+        <div class="product">
+          <span class="product-fav">❤️</span>
+          <span class="product-code">PROD001</span>
+          <img src="img/placeholder-producto.jpg" alt="Producto">
+          <h4>Suplemento Vitamínico A</h4>
+          <p class="price">$29.99</p>
+        </div>
+        <div class="product">
+          <span class="product-fav">❤️</span>
+          <span class="product-code">PROD002</span>
+          <img src="img/placeholder-producto.jpg" alt="Producto">
+          <h4>Proteína en Polvo</h4>
+          <p class="price">$59.98</p>
+        </div>
+        <div class="product">
+          <span class="product-fav">❤️</span>
+          <span class="product-code">PROD003</span>
+          <img src="img/placeholder-producto.jpg" alt="Producto">
+          <h4>Omega 3</h4>
+          <p class="price">$24.99</p>
+        </div>
+        <div class="product">
+          <span class="product-fav">❤️</span>
+          <span class="product-code">PROD004</span>
+          <img src="img/placeholder-producto.jpg" alt="Producto">
+          <h4>Multivitamínico</h4>
+          <p class="price">$19.99</p>
+        </div>
+        <div class="product">
+          <span class="product-fav">❤️</span>
+          <span class="product-code">PROD005</span>
+          <img src="img/placeholder-producto.jpg" alt="Producto">
+          <h4>Colágeno</h4>
+          <p class="price">$34.99</p>
+        </div>
+      `;
     }
     
     // Navegación principal
