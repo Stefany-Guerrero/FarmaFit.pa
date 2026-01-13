@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inicio: document.getElementById("seccion-inicio"),
     productos: document.getElementById("seccion-productos"),
     cuenta: document.getElementById("seccion-cuenta"),
+    carrito: document.getElementById("seccion-carrito"),
     compras: document.getElementById("seccion-compras"),
     detalle: document.getElementById("seccion-detalle")
   };
@@ -18,31 +19,35 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
   // FUNCIONES DE NAVEGACIÓN
   // ===============================
-  function mostrarSeccion(nombre) {
-    Object.values(secciones).forEach(sec => sec.style.display = "none");
-    if (secciones[nombre]) {
-      secciones[nombre].style.display = "block";
-    }
-
-    if (nombre === "productos") {
-      mostrarProductos(mezclarProductos(allProducts));
-    }
-
-    if (nombre === "compras") {
-      renderCarrito();
-    }
-
-    if (nombre === "cuenta") {
-      renderCuenta();
-    }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
+function mostrarSeccion(nombre) {
+  Object.values(secciones).forEach(sec => sec.style.display = "none");
+  if (secciones[nombre]) {
+    secciones[nombre].style.display = "block";
   }
 
-  function safeClick(id, callback) {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener("click", callback);
+  if (nombre === "productos") {
+    mostrarProductos(mezclarProductos(allProducts));
   }
+
+  if (nombre === "carrito") {  // <-- AÑADE ESTE BLOQUE
+    renderCarrito();
+  }
+
+  if (nombre === "compras") {
+    renderCarrito();  // Esto ya está
+  }
+
+  if (nombre === "cuenta") {
+    renderCuenta();
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function safeClick(id, callback) {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener("click", callback);
+}
 
   // ===============================
   // FUNCION MEZCLAR (SHUFFLE)
@@ -51,14 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return array.sort(() => Math.random() - 0.5);
   }
 
-  // ===============================
-  // EVENTOS DEL NAV
-  // ===============================
-  safeClick("nav-inicio", e => { e.preventDefault(); mostrarSeccion("inicio"); });
-  safeClick("nav-productos", e => { e.preventDefault(); mostrarSeccion("productos"); });
-  safeClick("nav-cuenta", e => { e.preventDefault(); mostrarSeccion("cuenta"); });
-  safeClick("nav-compras", e => { e.preventDefault(); mostrarSeccion("compras"); });
-  safeClick("btn-ver-productos", e => { e.preventDefault(); mostrarSeccion("productos"); });
+// ===============================
+// EVENTOS DEL NAV
+// ===============================
+safeClick("nav-inicio", e => { e.preventDefault(); mostrarSeccion("inicio"); });
+safeClick("nav-productos", e => { e.preventDefault(); mostrarSeccion("productos"); });
+safeClick("nav-cuenta", e => { e.preventDefault(); mostrarSeccion("cuenta"); });
+safeClick("nav-carrito", e => { e.preventDefault(); mostrarSeccion("carrito"); }); 
+safeClick("nav-historial", e => { e.preventDefault(); mostrarSeccion("compras"); });  
+safeClick("btn-ver-productos", e => { e.preventDefault(); mostrarSeccion("productos"); });
   
 // ===============================
 // PRODUCTOS (DATA) CORREGIDOS
