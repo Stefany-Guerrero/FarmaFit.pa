@@ -772,34 +772,55 @@ Puede contener: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI
 
 }); 
 
+}); 
+
 // ================= AUTO-CARGA DE PRODUCTOS =================
 
-// Cargar productos automáticamente cuando la página cargue
-window.addEventListener('load', function() {
-  // Verificar si estamos en la sección de productos
-  const seccionProductos = document.getElementById('seccion-productos');
-  if (seccionProductos && seccionProductos.style.display !== 'none') {
-    // Ejecutar filtrado automático
-    setTimeout(function() {
-      if (typeof filtrarProductos === 'function') {
-        filtrarProductos();
-      } else if (typeof filterProducts === 'function') {
-        filterProducts();
-      }
-    }, 100);
+// Función para cargar productos automáticamente
+function cargarProductosAutomaticamente() {
+  // Verificar si la función mostrarProductos existe
+  if (typeof mostrarProductos === 'function' && typeof allProducts !== 'undefined') {
+    // Mostrar todos los productos mezclados
+    mostrarProductos(mezclarProductos(allProducts));
+  } else {
+    // Si no funciona, intentar simular clic en filtros
+    const filterBtn = document.getElementById('filter-btn');
+    if (filterBtn) {
+      setTimeout(() => filterBtn.click(), 300);
+    }
   }
+}
+
+// Cargar productos cuando la página termine de cargar
+window.addEventListener('load', function() {
+  // Pequeño retraso para asegurar que todo esté listo
+  setTimeout(() => {
+    // Verificar si ya estamos en la sección de productos
+    const seccionProductos = document.getElementById('seccion-productos');
+    if (seccionProductos && seccionProductos.style.display !== 'none') {
+      cargarProductosAutomaticamente();
+    }
+  }, 500);
 });
 
-// También cargar cuando se navegue a productos
-document.addEventListener('click', function(e) {
-  // Si se hace clic en el enlace de productos
-  if (e.target.id === 'nav-productos' || e.target.id === 'btn-ver-productos') {
-    setTimeout(function() {
-      if (typeof filtrarProductos === 'function') {
-        filtrarProductos();
-      } else if (typeof filterProducts === 'function') {
-        filterProducts();
-      }
-    }, 200);
+// Cargar cuando se haga clic en productos (DEBE estar dentro de DOMContentLoaded)
+document.addEventListener('DOMContentLoaded', function() {
+  // Esta parte DEBE estar dentro del DOMContentLoaded para acceder a los elementos
+  
+  // Detectar clic en navegación de productos
+  const navProductos = document.getElementById('nav-productos');
+  const btnVerProductos = document.getElementById('btn-ver-productos');
+  
+  if (navProductos) {
+    navProductos.addEventListener('click', function(e) {
+      // Esperar a que se cambie la sección
+      setTimeout(cargarProductosAutomaticamente, 300);
+    });
+  }
+  
+  if (btnVerProductos) {
+    btnVerProductos.addEventListener('click', function(e) {
+      setTimeout(cargarProductosAutomaticamente, 300);
+    });
   }
 });
