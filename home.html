@@ -211,7 +211,7 @@
         <div class="option-icon">🛍️</div>
         <h4>Mis Pedidos</h4>
         <p>Revisa tu historial de compras</p>
-        <button class="btn-small" id="btn-ver-compras">Ver compras</button>
+        <button class="btn-small" id="btn-ver-historial">Ver compras</button>
       </div>
       
       <div class="option-card">
@@ -243,7 +243,7 @@
 <section id="seccion-carrito" style="display:none;">
   <div class="container">
     
-    <h2 class="titulo-centrado">Mi Carrito</h2>
+    <h2>Mi Carrito</h2>
     
     <div class="carrito-completo">
       
@@ -281,7 +281,7 @@
   </div>
 </section>
 
-<!-- ================= COMPRAS (HISTORIAL) ================= -->
+<!-- ================= COMPRAS/HISTORIAL ================= -->
 <section id="seccion-historial" style="display:none;">
   <div class="container">
     
@@ -293,7 +293,8 @@
       <div class="historial-items">
         <h3>Tus pedidos anteriores</h3>
         <div id="historial-container">
-          <!-- Ejemplo de pedido 1 -->
+          
+          <!-- Pedido 1 -->
           <div class="pedido-card">
             <div class="pedido-header">
               <div class="pedido-info">
@@ -304,32 +305,24 @@
             </div>
             <div class="pedido-productos">
               <div class="producto-historial">
-                <img src="https://via.placeholder.com/60x60" alt="Producto">
+                <img src="img/placeholder-producto.jpg" alt="Producto">
                 <div class="producto-detalle">
                   <h4>Suplemento Vitamínico A</h4>
                   <p>Cantidad: 1</p>
                   <p class="precio">$29.99</p>
                 </div>
               </div>
-              <div class="producto-historial">
-                <img src="https://via.placeholder.com/60x60" alt="Producto">
-                <div class="producto-detalle">
-                  <h4>Proteína en Polvo</h4>
-                  <p>Cantidad: 2</p>
-                  <p class="precio">$59.98</p>
-                </div>
-              </div>
             </div>
             <div class="pedido-footer">
               <div class="pedido-total">
                 <span>Total del pedido:</span>
-                <strong>$89.97</strong>
+                <strong>$29.99</strong>
               </div>
               <button class="btn-small">Ver detalles</button>
             </div>
           </div>
           
-          <!-- Ejemplo de pedido 2 -->
+          <!-- Pedido 2 -->
           <div class="pedido-card">
             <div class="pedido-header">
               <div class="pedido-info">
@@ -340,24 +333,24 @@
             </div>
             <div class="pedido-productos">
               <div class="producto-historial">
-                <img src="https://via.placeholder.com/60x60" alt="Producto">
+                <img src="img/placeholder-producto.jpg" alt="Producto">
                 <div class="producto-detalle">
-                  <h4>Omega 3</h4>
-                  <p>Cantidad: 1</p>
-                  <p class="precio">$24.99</p>
+                  <h4>Proteína en Polvo</h4>
+                  <p>Cantidad: 2</p>
+                  <p class="precio">$59.98</p>
                 </div>
               </div>
             </div>
             <div class="pedido-footer">
               <div class="pedido-total">
                 <span>Total del pedido:</span>
-                <strong>$24.99</strong>
+                <strong>$59.98</strong>
               </div>
               <button class="btn-small">Rastrear pedido</button>
             </div>
           </div>
           
-          <!-- Ejemplo de pedido 3 -->
+          <!-- Pedido 3 -->
           <div class="pedido-card">
             <div class="pedido-header">
               <div class="pedido-info">
@@ -368,26 +361,18 @@
             </div>
             <div class="pedido-productos">
               <div class="producto-historial">
-                <img src="https://via.placeholder.com/60x60" alt="Producto">
+                <img src="img/placeholder-producto.jpg" alt="Producto">
                 <div class="producto-detalle">
                   <h4>Multivitamínico</h4>
                   <p>Cantidad: 1</p>
                   <p class="precio">$19.99</p>
                 </div>
               </div>
-              <div class="producto-historial">
-                <img src="https://via.placeholder.com/60x60" alt="Producto">
-                <div class="producto-detalle">
-                  <h4>Colágeno</h4>
-                  <p>Cantidad: 1</p>
-                  <p class="precio">$34.99</p>
-                </div>
-              </div>
             </div>
             <div class="pedido-footer">
               <div class="pedido-total">
                 <span>Total del pedido:</span>
-                <strong>$54.98</strong>
+                <strong>$19.99</strong>
               </div>
               <button class="btn-small">Ver detalles</button>
             </div>
@@ -408,7 +393,7 @@
         
         <div class="resumen-item">
           <span>Total gastado</span>
-          <strong id="total-gastado">$169.94</strong>
+          <strong id="total-gastado">$109.96</strong>
         </div>
         
         <div class="resumen-item">
@@ -418,7 +403,7 @@
         
         <div class="resumen-item">
           <span>Productos comprados</span>
-          <strong id="total-productos">5</strong>
+          <strong id="total-productos">4</strong>
         </div>
         
         <div class="resumen-item">
@@ -458,71 +443,65 @@
   }
 </script>
 
+<!-- Navegación entre secciones -->
 <script>
-  // Navegación entre secciones
   document.addEventListener('DOMContentLoaded', function() {
-    // Obtener todos los enlaces de navegación
-    const navLinks = {
-      inicio: document.getElementById('nav-inicio'),
-      productos: document.getElementById('nav-productos'),
-      cuenta: document.getElementById('nav-cuenta'),
-      carrito: document.getElementById('nav-carrito'),
-      historial: document.getElementById('nav-historial')
-    };
-    
-    // Obtener todas las secciones
-    const sections = {
-      inicio: document.getElementById('seccion-inicio'),
-      productos: document.getElementById('seccion-productos'),
-      cuenta: document.getElementById('seccion-cuenta'),
-      carrito: document.getElementById('seccion-carrito'),
-      historial: document.getElementById('seccion-historial'),
-      detalle: document.getElementById('seccion-detalle')
-    };
-    
     // Función para mostrar una sección
-    function mostrarSeccion(seccionId) {
+    function mostrarSeccion(idSeccion) {
       // Ocultar todas las secciones
-      Object.values(sections).forEach(section => {
-        if (section) section.style.display = 'none';
-      });
+      document.getElementById('seccion-inicio').style.display = 'none';
+      document.getElementById('seccion-productos').style.display = 'none';
+      document.getElementById('seccion-cuenta').style.display = 'none';
+      document.getElementById('seccion-carrito').style.display = 'none';
+      document.getElementById('seccion-historial').style.display = 'none';
+      document.getElementById('seccion-detalle').style.display = 'none';
       
       // Mostrar la sección solicitada
-      if (sections[seccionId]) {
-        sections[seccionId].style.display = 'block';
+      if (idSeccion) {
+        document.getElementById('seccion-' + idSeccion).style.display = 'block';
       }
     }
     
-    // Asignar event listeners a los enlaces
-    Object.keys(navLinks).forEach(key => {
-      if (navLinks[key]) {
-        navLinks[key].addEventListener('click', function(e) {
-          e.preventDefault();
-          mostrarSeccion(key);
-        });
-      }
+    // Navegación principal
+    document.getElementById('nav-inicio').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('inicio');
+    });
+    
+    document.getElementById('nav-productos').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('productos');
+    });
+    
+    document.getElementById('nav-cuenta').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('cuenta');
+    });
+    
+    document.getElementById('nav-carrito').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('carrito');
+    });
+    
+    document.getElementById('nav-historial').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('historial');
     });
     
     // Botones en la sección de cuenta
-    if (document.getElementById('btn-ver-carrito')) {
-      document.getElementById('btn-ver-carrito').addEventListener('click', function() {
-        mostrarSeccion('carrito');
-      });
-    }
+    document.getElementById('btn-ver-carrito').addEventListener('click', function() {
+      mostrarSeccion('carrito');
+    });
     
-    if (document.getElementById('btn-ver-compras')) {
-      document.getElementById('btn-ver-compras').addEventListener('click', function() {
-        mostrarSeccion('historial');
-      });
-    }
+    document.getElementById('btn-ver-historial').addEventListener('click', function() {
+      mostrarSeccion('historial');
+    });
     
     // Botón "Ver suplementos" del inicio
-    if (document.getElementById('btn-ver-productos')) {
-      document.getElementById('btn-ver-productos').addEventListener('click', function(e) {
-        e.preventDefault();
-        mostrarSeccion('productos');
-      });
-    }
+    document.getElementById('btn-ver-productos').addEventListener('click', function(e) {
+      e.preventDefault();
+      mostrarSeccion('productos');
+    });
   });
 </script>
 
