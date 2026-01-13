@@ -116,63 +116,57 @@
     </section>
 
     <!-- ================= SECCIÓN PRODUCTOS ================= -->
-    <section id="seccion-productos" style="display:none;">
-      <div class="productos-layout">
+<section id="seccion-productos" style="display:none;">
+  <div class="productos-layout">
 
-<!-- FILTROS -->
-<aside class="filtros">
-  <h3>Filtrar productos</h3>
+    <!-- FILTROS -->
+    <aside class="filtros">
+      <h3>Filtrar productos</h3>
 
-  <div class="filtro-grupo">
-    <label>Precio mínimo</label>
-    <input type="number" id="min-price" min="0" step="1" placeholder="0">
-  </div>
+      <div class="filtro-grupo">
+        <label>Precio mínimo</label>
+        <input type="number" id="min-price" min="0" step="1" placeholder="0">
+      </div>
 
-  <div class="filtro-grupo">
-    <label>Precio máximo</label>
-    <input type="number" id="max-price" min="0" step="1" placeholder="999">
-  </div>
+      <div class="filtro-grupo">
+        <label>Precio máximo</label>
+        <input type="number" id="max-price" min="0" step="1" placeholder="999">
+      </div>
 
-  <div class="filtro-grupo">
-    <label>Categoría</label>
-    <select id="filter-category">
-      <option value="all">Todas</option>
-      <option value="maquillaje">Maquillaje</option>
-      <option value="cuidado">Cuidado de la Piel</option>
-    </select>
-  </div>
+      <div class="filtro-grupo">
+        <label>Categoría</label>
+        <select id="filter-category">
+          <option value="all">Todas</option>
+          <option value="maquillaje">Maquillaje</option>
+          <option value="nutricion">Nutrición</option>
+          <option value="piel">Piel</option>
+        </select>
+      </div>
 
-<div class="filtro-grupo">
-  <label>Subcategoría</label>
-  <select id="filter-subcategory">
-    <option value="all">Todas</option>
-    <option value="ojos">Para los Ojos</option>
-    <option value="labios">Para los labios</option>
-    <option value="cara">Para la cara</option>
-    <option value="accesorios">Accesorios</option>
-  </select>
-</div>
+      <div class="filtro-grupo">
+        <label>Subcategoría</label>
+        <select id="filter-subcategory">
+          <option value="all">Todas</option>
+        </select>
+      </div>
 
-  <div class="filtro-grupo">
-    <label>Tipo</label>
-    <select id="filter-type">
-      <option value="all">Todos</option>
-      <option value="mascara">Máscara</option>
-      <option value="delineador">Delineador / Dipliner</option>
-      <option value="sombras">Paletas de Sombras</option>
-      <option value="difuminador">Difuminador</option>
-      <option value="cejas">Productos para Cejas</option>
-    </select>
-  </div>
+      <div class="filtro-grupo">
+        <label>Tipo</label>
+        <select id="filter-type">
+          <option value="all">Todos</option>
+        </select>
+      </div>
 
-  <button id="filter-btn" class="btn">
-    Aplicar filtros
-  </button>
-</aside>
+      <button id="filter-btn" class="btn">
+        Aplicar filtros
+      </button>
+    </aside>
 
-            <!-- PRODUCTOS -->
+    <!-- PRODUCTOS (CONTENEDOR VACÍO) -->
     <section class="productos">
-      <div id="products-container" class="products-grid"></div>
+      <div id="products-container" class="products-grid">
+        <!-- Aquí JS cargará los productos -->
+      </div>
     </section>
 
   </div>
@@ -435,128 +429,6 @@
   <!-- ================= JS ================= -->
 <script src="js/products.js"></script>
 <script src="js/login.js"></script>
-
-<!-- Navegación entre secciones -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Función para mostrar una sección
-    function mostrarSeccion(idSeccion) {
-      // Ocultar todas las secciones
-      document.getElementById('seccion-inicio').style.display = 'none';
-      document.getElementById('seccion-productos').style.display = 'none';
-      document.getElementById('seccion-cuenta').style.display = 'none';
-      document.getElementById('seccion-carrito').style.display = 'none';
-      document.getElementById('seccion-historial').style.display = 'none';
-      document.getElementById('seccion-detalle').style.display = 'none';
-      
-      // Mostrar la sección solicitada
-      if (idSeccion) {
-        document.getElementById('seccion-' + idSeccion).style.display = 'block';
-        
-        // CARGAR PRODUCTOS AUTOMÁTICAMENTE si es la sección de productos
-        if (idSeccion === 'productos') {
-          // Esperar un momento para que el DOM se actualice
-          setTimeout(function() {
-            // Verificar si existe la función filtrarProductos
-            if (typeof filtrarProductos === 'function') {
-              filtrarProductos();
-            } else if (typeof filterProducts === 'function') {
-              filterProducts();
-            } else {
-              // Si no existe ninguna función, crear productos manualmente
-              cargarProductosEjemplo();
-            }
-          }, 50);
-        }
-      }
-    }
-    
-    // Función de emergencia si no hay products.js
-    function cargarProductosEjemplo() {
-      const container = document.getElementById('products-container');
-      if (!container) return;
-      
-      container.innerHTML = `
-        <div class="product">
-          <span class="product-fav">❤️</span>
-          <span class="product-code">PROD001</span>
-          <img src="img/placeholder-producto.jpg" alt="Producto">
-          <h4>Suplemento Vitamínico A</h4>
-          <p class="price">$29.99</p>
-        </div>
-        <div class="product">
-          <span class="product-fav">❤️</span>
-          <span class="product-code">PROD002</span>
-          <img src="img/placeholder-producto.jpg" alt="Producto">
-          <h4>Proteína en Polvo</h4>
-          <p class="price">$59.98</p>
-        </div>
-        <div class="product">
-          <span class="product-fav">❤️</span>
-          <span class="product-code">PROD003</span>
-          <img src="img/placeholder-producto.jpg" alt="Producto">
-          <h4>Omega 3</h4>
-          <p class="price">$24.99</p>
-        </div>
-        <div class="product">
-          <span class="product-fav">❤️</span>
-          <span class="product-code">PROD004</span>
-          <img src="img/placeholder-producto.jpg" alt="Producto">
-          <h4>Multivitamínico</h4>
-          <p class="price">$19.99</p>
-        </div>
-        <div class="product">
-          <span class="product-fav">❤️</span>
-          <span class="product-code">PROD005</span>
-          <img src="img/placeholder-producto.jpg" alt="Producto">
-          <h4>Colágeno</h4>
-          <p class="price">$34.99</p>
-        </div>
-      `;
-    }
-    
-    // Navegación principal
-    document.getElementById('nav-inicio').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarSeccion('inicio');
-    });
-    
-    document.getElementById('nav-productos').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarSeccion('productos');
-    });
-    
-    document.getElementById('nav-cuenta').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarSeccion('cuenta');
-    });
-    
-    document.getElementById('nav-carrito').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarSeccion('carrito');
-    });
-    
-    document.getElementById('nav-historial').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarSeccion('historial');
-    });
-    
-    // Botones en la sección de cuenta
-    document.getElementById('btn-ver-carrito').addEventListener('click', function() {
-      mostrarSeccion('carrito');
-    });
-    
-    document.getElementById('btn-ver-historial').addEventListener('click', function() {
-      mostrarSeccion('historial');
-    });
-    
-    // Botón "Ver suplementos" del inicio
-    document.getElementById('btn-ver-productos').addEventListener('click', function(e) {
-      e.preventDefault();
-      mostrarSeccion('productos');
-    });
-  });
-</script>
 
 </body>
 </html>
