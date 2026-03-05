@@ -25,13 +25,13 @@
   </div>
 
   <script>
-    document.getElementById('register-form').addEventListener('submit', (e) => {
+    document.getElementById('register-form').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const name = document.getElementById('reg-name').value;
-      const email = document.getElementById('reg-email').value;
-      const pass = document.getElementById('reg-password').value;
-      const confirm = document.getElementById('reg-confirm').value;
+      var name = document.getElementById('reg-name').value;
+      var email = document.getElementById('reg-email').value;
+      var pass = document.getElementById('reg-password').value;
+      var confirm = document.getElementById('reg-confirm').value;
       
       if (pass !== confirm) {
         alert('Las contraseñas no coinciden');
