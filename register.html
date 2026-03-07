@@ -26,12 +26,12 @@
 
   <script>
     document.getElementById('register-form').addEventListener('submit', function(e) {
-      e.preventDefault();
+      e.preventDefault();  // ← ESTO ES CLAVE
       
-      const name = document.getElementById('reg-name').value;
-      const email = document.getElementById('reg-email').value;
-      const pass = document.getElementById('reg-password').value;
-      const confirm = document.getElementById('reg-confirm').value;
+      var name = document.getElementById('reg-name').value;
+      var email = document.getElementById('reg-email').value;
+      var pass = document.getElementById('reg-password').value;
+      var confirm = document.getElementById('reg-confirm').value;
       
       if (pass !== confirm) {
         alert('Las contraseñas no coinciden');
@@ -46,7 +46,7 @@
       }));
       
       alert('Registro exitoso. Por favor inicia sesión.');
-      window.location.href = 'index.html';  // ← Esto redirige al login
+      window.location.href = 'index.html';
     });
   </script>
 </body>
