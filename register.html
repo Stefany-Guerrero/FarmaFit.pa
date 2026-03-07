@@ -23,6 +23,31 @@
       <a href="index.html">Ya tengo cuenta</a>
     </div>
   </div>
-  <script src="js/login.js"></script>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('reg-name').value;
+      const email = document.getElementById('reg-email').value;
+      const pass = document.getElementById('reg-password').value;
+      const confirm = document.getElementById('reg-confirm').value;
+      
+      if (pass !== confirm) {
+        alert('Las contraseñas no coinciden');
+        return;
+      }
+      
+      // Guardar usuario
+      localStorage.setItem('usuario', JSON.stringify({
+        nombre: name,
+        email: email,
+        password: pass
+      }));
+      
+      alert('Registro exitoso. Por favor inicia sesión.');
+      window.location.href = 'index.html';  // ← Esto redirige al login
+    });
+  </script>
 </body>
 </html>
