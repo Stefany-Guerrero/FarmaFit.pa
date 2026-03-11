@@ -441,3 +441,11 @@
 
 </body>
 </html>
+
+<script>
+  if (localStorage.getItem('ultimaSeccion')) {
+    const seccion = localStorage.getItem('ultimaSeccion');
+    document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+    document.getElementById(seccion).style.display = 'block';
+  }
+</script>
