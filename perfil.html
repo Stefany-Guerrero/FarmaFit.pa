@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmaFit | Editar Perfil</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .perfil-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #F3CCDE;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .perfil-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .perfil-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #5B3765;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .perfil-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .perfil-campo {
+      margin-bottom: 20px;
+    }
+    .perfil-campo label {
+      display: block;
+      font-weight: bold;
+      color: #5B3765;
+      margin-bottom: 5px;
+    }
+    .perfil-campo input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    .perfil-botones {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .btn-perfil {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-guardar {
+      background: #5B3765;
+      color: white;
+    }
+    .btn-cancelar {
+      background: #ccc;
+      color: #333;
+    }
+    .btn-subir-foto {
+      background: #9E6899;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body class="login-body">
+  <div class="perfil-container">
+    <h2 style="color:#5B3765; text-align:center;">Editar Perfil</h2>
+    
+    <div class="perfil-header">
+      <div class="perfil-avatar" id="avatar-preview">
+        <img id="avatar-img" src="" style="display:none; width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div>
+        <input type="file" id="avatar-upload" accept="image/*" style="display:none;">
+        <button class="btn-subir-foto" onclick="document.getElementById('avatar-upload').click()">
+          📷 Cambiar foto
+        </button>
+      </div>
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Nombre completo</label>
+      <input type="text" id="edit-nombre" placeholder="Tu nombre">
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Correo electrónico</label>
+      <input type="email" id="edit-email" placeholder="tu@email.com">
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Teléfono</label>
+      <input type="tel" id="edit-telefono" placeholder="Número de contacto">
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Nueva contraseña (opcional)</label>
+      <input type="password" id="edit-password" placeholder="Dejar vacío para no cambiar">
+    </div>
+    
+    <div class="perfil-botones">
+      <button class="btn-perfil btn-guardar" id="btn-guardar">💾 Guardar cambios</button>
+      <button class="btn-perfil btn-cancelar" onclick="window.location.href='home.html#cuenta'">✖ Cancelar</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const usuario = JSON.parse(localStorage.getItem("usuario")) || {};
+      const avatar = localStorage.getItem("avatar") || "";
+      
+      document.getElementById("edit-nombre").value = usuario.nombre || "";
+      document.getElementById("edit-email").value = usuario.email || "";
+      document.getElementById("edit-telefono").value = usuario.telefono || "";
+      
+      if (avatar) {
+        const img = document.getElementById("avatar-img");
+        img.src = avatar;
+        img.style.display = "block";
+      }
+      
+      document.getElementById("avatar-upload").addEventListener("change", function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          if (!file.type.match('image.*')) {
+            alert('❌ Selecciona una imagen');
+            return;
+          }
+          if (file.size > 2 * 1024 * 1024) {
+            alert('❌ Máximo 2MB');
+            return;
+          }
+          
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const img = document.getElementById("avatar-img");
+            img.src = e.target.result;
+            img.style.display = "block";
+            localStorage.setItem("avatar", e.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+      
+      document.getElementById("btn-guardar").addEventListener("click", function() {
+        const nombre = document.getElementById("edit-nombre").value;
+        const email = document.getElementById("edit-email").value;
+        const telefono = document.getElementById("edit-telefono").value;
+        const password = document.getElementById("edit-password").value;
+        
+        if (!nombre || !email) {
+          alert("❌ Nombre y email son obligatorios");
+          return;
+        }
+        
+        const usuarioActual = JSON.parse(localStorage.getItem("usuario")) || {};
+        usuarioActual.nombre = nombre;
+        usuarioActual.email = email;
+        usuarioActual.telefono = telefono;
+        
+        if (password) {
+          usuarioActual.password = password;
+        }
+        
+        localStorage.setItem("usuario", JSON.stringify(usuarioActual));
+        alert("✅ Perfil actualizado correctamente");
+        window.location.href = "home.html#cuenta";
+      });
+    });
+  </script>
+</body>
+</html>
