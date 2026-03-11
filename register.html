@@ -3,50 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FarmaFit | Registro</title>
+  <title>FarmaFit | Editar Perfil</title>
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .perfil-container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #F3CCDE;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .perfil-avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #5B3765;
+    }
+    .perfil-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .perfil-campo {
+      margin-bottom: 15px;
+    }
+    .perfil-campo label {
+      display: block;
+      font-weight: bold;
+      color: #5B3765;
+      margin-bottom: 5px;
+    }
+    .perfil-campo input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .perfil-botones {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .btn-perfil {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-guardar {
+      background: #5B3765;
+      color: white;
+    }
+    .btn-cancelar {
+      background: #ccc;
+      color: #333;
+    }
+    .btn-subir-foto {
+      display: block;
+      margin: 10px auto;
+      background: #9E6899;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="login-body">
-  <div class="login-container">
-    <img src="img/FarmaFitv3.png" alt="FarmaFit" class="login-logo">
-    <h2>Crear cuenta</h2>
+  <div class="perfil-container">
+    <h2 style="color:#5B3765; text-align:center;">Editar Perfil</h2>
     
-    <form class="login-form" id="register-form">
-      <input type="text" id="reg-name" placeholder="Nombre completo" required>
-      <input type="email" id="reg-email" placeholder="Correo electrónico" required>
-      <input type="password" id="reg-password" placeholder="Contraseña" required>
-      <input type="password" id="reg-confirm" placeholder="Confirmar contraseña" required>
-      <button type="submit" class="btn">Registrarse</button>
-    </form>
+    <div class="perfil-avatar" id="avatar-preview">
+      <img id="avatar-img" src="" style="display:none; width:100%; height:100%; object-fit:cover;">
+    </div>
     
-    <div class="login-options">
-      <a href="index.html">Ya tengo cuenta</a>
+    <input type="file" id="avatar-upload" accept="image/*" style="display:none;">
+    <button class="btn-subir-foto" onclick="document.getElementById('avatar-upload').click()">
+      📷 Cambiar foto
+    </button>
+    
+    <div class="perfil-campo">
+      <label>Nombre completo</label>
+      <input type="text" id="edit-nombre" placeholder="Tu nombre">
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Correo electrónico</label>
+      <input type="email" id="edit-email" placeholder="tu@email.com">
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Teléfono</label>
+      <input type="tel" id="edit-telefono" placeholder="Número de contacto">
+    </div>
+    
+    <div class="perfil-campo">
+      <label>Nueva contraseña (opcional)</label>
+      <input type="password" id="edit-password" placeholder="Dejar vacío para no cambiar">
+    </div>
+    
+    <div class="perfil-botones">
+      <button class="btn-perfil btn-guardar" id="btn-guardar">💾 Guardar cambios</button>
+      <button class="btn-perfil btn-cancelar" onclick="window.location.href='home.html'">✖ Cancelar</button>
     </div>
   </div>
 
   <script>
-    document.getElementById('register-form').addEventListener('submit', function(e) {
-      e.preventDefault();  // ← ESTO ES CLAVE
+    document.addEventListener("DOMContentLoaded", function() {
+      const usuario = JSON.parse(localStorage.getItem("usuario")) || {};
+      const avatar = localStorage.getItem("avatar") || "";
       
-      var name = document.getElementById('reg-name').value;
-      var email = document.getElementById('reg-email').value;
-      var pass = document.getElementById('reg-password').value;
-      var confirm = document.getElementById('reg-confirm').value;
+      document.getElementById("edit-nombre").value = usuario.nombre || "";
+      document.getElementById("edit-email").value = usuario.email || "";
+      document.getElementById("edit-telefono").value = usuario.telefono || "";
       
-      if (pass !== confirm) {
-        alert('Las contraseñas no coinciden');
-        return;
+      if (avatar) {
+        const img = document.getElementById("avatar-img");
+        img.src = avatar;
+        img.style.display = "block";
       }
       
-      // Guardar usuario
-      localStorage.setItem('usuario', JSON.stringify({
-        nombre: name,
-        email: email,
-        password: pass
-      }));
+      document.getElementById("avatar-upload").addEventListener("change", function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          if (!file.type.match('image.*')) {
+            alert('❌ Selecciona una imagen');
+            return;
+          }
+          if (file.size > 2 * 1024 * 1024) {
+            alert('❌ Máximo 2MB');
+            return;
+          }
+          
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const img = document.getElementById("avatar-img");
+            img.src = e.target.result;
+            img.style.display = "block";
+            localStorage.setItem("avatar", e.target.result);
+            alert("✅ Foto actualizada");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
       
-      alert('Registro exitoso. Por favor inicia sesión.');
-      window.location.href = 'index.html';
+      document.getElementById("btn-guardar").addEventListener("click", function() {
+        const nombre = document.getElementById("edit-nombre").value;
+        const email = document.getElementById("edit-email").value;
+        const telefono = document.getElementById("edit-telefono").value;
+        const password = document.getElementById("edit-password").value;
+        
+        if (!nombre || !email) {
+          alert("❌ Nombre y email son obligatorios");
+          return;
+        }
+        
+        const usuarioActual = JSON.parse(localStorage.getItem("usuario")) || {};
+        usuarioActual.nombre = nombre;
+        usuarioActual.email = email;
+        usuarioActual.telefono = telefono;
+        
+        if (password) {
+          usuarioActual.password = password;
+        }
+        
+        localStorage.setItem("usuario", JSON.stringify(usuarioActual));
+        alert("✅ Perfil actualizado correctamente");
+        window.location.href = "home.html";
+      });
     });
   </script>
 </body>
